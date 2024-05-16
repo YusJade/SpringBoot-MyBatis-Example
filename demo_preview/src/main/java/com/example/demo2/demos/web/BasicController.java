@@ -16,11 +16,15 @@
 
 package com.example.demo2.demos.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
@@ -28,6 +32,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class BasicController {
 
+    @Resource
+    private DemoDao demoDao;
     // http://127.0.0.1:8080/hello?name=lisi
     @RequestMapping("/hello")
     @ResponseBody
@@ -42,7 +48,8 @@ public class BasicController {
         User user = new User();
         user.setName("theonefx");
         user.setAge(666);
-        return user;
+        List<User> list = demoDao.getAllUsers();
+        return list.get(0);
     }
 
     // http://127.0.0.1:8080/save_user?name=newName&age=11
