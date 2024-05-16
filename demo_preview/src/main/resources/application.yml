@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/go?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password: 150181
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
