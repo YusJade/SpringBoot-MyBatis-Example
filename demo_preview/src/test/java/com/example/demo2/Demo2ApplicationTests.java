@@ -10,11 +10,12 @@ import java.util.List;
 class Demo2ApplicationTests {
 
     @Resource
-    DemoDao demoDao;
+    HelloService helloService;
 
     @Test
     void contextLoads() {
-        List<User> list = demoDao.getAllUsers();
-        System.out.println(list);
+        System.out.println(helloService.sayHello(0));
+        System.out.println(helloService.sayHello(1));
+        System.out.println(helloService.sayHello(2));
     }
 }
