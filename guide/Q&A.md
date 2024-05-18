@@ -41,3 +41,11 @@ java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport
             <scope>provided</scope>
         </dependency>
 ```
+
+### No.04 运行Demo2ApplicationTests时发生错误
+#### 问题描述
+```
+java:org.apache.ibatis.binding.BindingException:Invalid bound statement (not found):com.example.demo2.DemoDao.getAllUsers
+```
+#### 解决方案
+在`application.yml`中修改mybatis缩进，`mybatis:`要和`spring:`对齐
