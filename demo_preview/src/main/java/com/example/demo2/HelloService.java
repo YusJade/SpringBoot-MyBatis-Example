@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public class HelloService {
     @Resource
-    DemoDao demoDao;
+    private DemoDao demoDao;
 
     public String sayHello(Integer index) {
         List<User> list = demoDao.getAllUsers();
