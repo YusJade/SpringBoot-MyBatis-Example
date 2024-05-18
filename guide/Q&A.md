@@ -42,10 +42,35 @@ java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport
         </dependency>
 ```
 
-### No.04 运行Demo2ApplicationTests时发生错误
+### No.04 编译运行时发生错误 "java:org.apache.ibatis.binding.BindingException"
 #### 问题描述
 ```
 java:org.apache.ibatis.binding.BindingException:Invalid bound statement (not found):com.example.demo2.DemoDao.getAllUsers
 ```
+#### 原因
+MyBatis 找不到`com.example.demo2.DemoDao.getAllUsers`对应的`mappper`。
+
 #### 解决方案
-在`application.yml`中修改mybatis缩进，`mybatis:`要和`spring:`对齐
+如果你的`application.yml`配置如下：
+```yml
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password: 150181
+    driver-class-name: com.mysql.cj.jdbc.Driver
+        mybatis:
+            mapper-locations: classpath:mappers/*.xml
+```
+那需要修改`mybatis`缩进，`mybatis:`要和`spring:`对齐。
+正确的形式应该如下：
+```yml
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password: 150181
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+    mapper-locations: classpath:mappers/*.xml
+```
