@@ -2,6 +2,7 @@ package com.yuxeng.display.usermodel;
 
 import lombok.Data;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Data
@@ -16,5 +17,5 @@ public class User {
     private String email;
     private String max_borrow_days;
     private String max_borrow_books;
-    private Date created_at;
+    private Timestamp created_at;
 }

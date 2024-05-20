@@ -8,12 +8,13 @@
     <insert id="insert" useGeneratedKeys = "true" keyProperty="id" keyColumn="id">
         INSERT INTO tb_user(username, password, real_name,
                             gender, phone_number, email,
-                            max_borrow_days, max_borrow_books,
-                            created_at)
+                            max_borrow_days, max_borrow_books)
             VALUES
             (#{username}, #{password},
              #{real_name}, #{gender}, #{phone_number},
-             #{email}, #{max_borrow_days}, #{max_borrow_books},
-             #{created_at})
+             #{email}, #{max_borrow_days}, #{max_borrow_books})
     </insert>
+    <select id="findByUsername" resultType="com.yuxeng.display.usermodel.User">
+        select  * from tb_user where username=#{username}
+    </select>
 </mapper>

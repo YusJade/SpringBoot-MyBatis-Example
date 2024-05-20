@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="920ebc42-5c51-4fe4-8ece-325464512012" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yuxeng/display/DemoDisplayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserDaoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/yuxeng/display/DemoDisplayApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_preview/target/classes/com/example/demo2/HelloService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../demo_preview/target/classes/com/example/demo2/HelloService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_preview/target/classes/com/example/demo2/SayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../demo_preview/target/classes/com/example/demo2/SayController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +23,10 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -43,6 +35,10 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2gggKl6D45Qv4zvXNLCiCLobdvf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -52,6 +48,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.DemoDisplayApplicationTests.executor": "Debug",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -74,7 +71,22 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.DemoDisplayApplication">
+    <configuration name="DemoDisplayApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="display" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuxeng.display.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuxeng.display" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.DemoDisplayApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DemoDisplayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="display" />
@@ -92,6 +104,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.DemoDisplayApplication" />
+        <item itemvalue="JUnit.DemoDisplayApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -111,6 +124,8 @@
       <option name="presentableId" value="Default" />
       <updated>1716119165854</updated>
       <workItem from="1716119166841" duration="4155000" />
+      <workItem from="1716124575307" duration="5191000" />
+      <workItem from="1716188513289" duration="1629000" />
     </task>
     <servers />
   </component>
@@ -122,12 +137,54 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserController.java</url>
-          <line>10</line>
+          <line>11</line>
           <properties class="com.yuxeng.display.usermodel.UserController" method="register">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserService.java</url>
+          <line>29</line>
+          <properties class="com.yuxeng.display.usermodel.UserService" method="findById">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserController.java</url>
+          <line>23</line>
+          <properties class="com.yuxeng.display.usermodel.UserController" method="getUserById">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserService.java</url>
+          <line>18</line>
+          <properties class="com.yuxeng.display.usermodel.UserService" method="login">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/yuxeng/display/DemoDisplayApplicationTests.java</url>
+          <line>14</line>
+          <properties class="com.yuxeng.display.DemoDisplayApplicationTests" method="contextLoads">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/test/java/com/yuxeng/display/DemoDisplayApplicationTests.java</url>
+          <line>11</line>
+          <properties field="userService" class="com.yuxeng.display.DemoDisplayApplicationTests" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

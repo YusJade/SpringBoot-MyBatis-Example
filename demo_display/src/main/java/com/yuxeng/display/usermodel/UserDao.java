@@ -8,4 +8,5 @@ public interface UserDao {
     Integer insert(User user);
     void  update(User user);
     void deleteById(Integer id);
+    User findByUsername(String username);
 }
