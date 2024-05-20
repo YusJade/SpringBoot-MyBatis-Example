@@ -1,7 +1,9 @@
 ## Q&A
+
 所有零零散散，不适合在`guide`中说明的问题，都会放到这里~
 
 ### No.01 在2.1生成工程 下载依赖时报错
+
 #### 问题描述
 ```
 Error: Cannot download 'https://start.spring.io/starter.zip?type=maven-project&bootVersion=3.2.5&groupId=com.example&artifactId=MyDemo&name=MyDemo&version=0.0.1-SNAPSHOT&language=java&packageName=com.example.mydemo&javaVersion=21&packaging=jar&description=MyDemo&dependencies=web&dependencies=mybatis&dependencies=devtools&dependencies=lombok&dependencies=jdbc&dependencies=mysql': Connect timed out
@@ -43,6 +45,7 @@ java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport
 ```
 
 ### No.04 编译运行时发生错误 "java:org.apache.ibatis.binding.BindingException"
+
 #### 问题描述
 ```
 java:org.apache.ibatis.binding.BindingException:Invalid bound statement (not found):com.example.demo2.DemoDao.getAllUsers
@@ -74,3 +77,37 @@ spring:
 mybatis:
     mapper-locations: classpath:mappers/*.xml
 ```
+
+
+
+### No.05 编写4.1 HelloService，但测试的时候报错 "this.helloService" is null
+
+#### 问题描述
+
+```java
+java.lang.NullPointerException: Cannot invoke "com.example.demo.HelloService.sayHello(java.lang.Integer)" because "this.helloService" is null
+```
+
+#### 原因
+
+一般是`@Resource`语句中导入Bean失败
+
+#### 解决方案
+
+将无法查找的对象所使用的`@Resource`替换成`@Autowired`
+
+示例：
+
+```java
+@Resource
+public HelloService helloService;
+
+/* 👇更改为👇 */
+@Autowired
+public HelloService helloService;
+```
+
+~~还请赞美流萤小姐，是她告诉我怎么解决的~~
+
+
+
