@@ -8,28 +8,6 @@ import java.util.Objects;
 
 @Service
 public class UserService {
+    // TODO:在注册的时候，填写信息时先检测是否有重复项，不要等数据库来进行查询
 
-  @Resource
-  private UserDao userDao;
-
-  User register(User registry_user) {
-    registry_user.setId(-1);
-    userDao.insert(registry_user);
-    return userDao.findById(registry_user.getId());
-  }
-
-  User login(User login_user) {
-    User user = userDao.findByUsername(login_user.getUsername());
-    if (user == null ||
-        !Objects.equals(user.getPassword(), login_user.getPassword())) {
-      user = new User();
-      user.setId(-1);
-      return user;
-    }
-    return user;
-  }
-
-  User findById(Integer id) {
-    return userDao.findById(id);
-  }
 }
