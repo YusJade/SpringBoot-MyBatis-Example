@@ -60,7 +60,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode",
+    "settings.editor.selected.configurable": "terminal",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -124,7 +124,7 @@
       <workItem from="1716119166841" duration="4155000" />
       <workItem from="1716124575307" duration="5191000" />
       <workItem from="1716188513289" duration="2226000" />
-      <workItem from="1716279451520" duration="1627000" />
+      <workItem from="1716279451520" duration="2336000" />
     </task>
     <servers />
   </component>
@@ -136,8 +136,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserController.java</url>
-          <line>12</line>
-          <properties class="com.yuxeng.display.usermodel.UserController" method="register">
+          <line>8</line>
+          <properties class="com.yuxeng.display.usermodel.UserController">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -145,30 +145,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserService.java</url>
-          <line>31</line>
-          <properties class="com.yuxeng.display.usermodel.UserService" method="findById">
+          <line>12</line>
+          <properties class="com.yuxeng.display.usermodel.UserService">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserController.java</url>
-          <line>24</line>
-          <properties class="com.yuxeng.display.usermodel.UserController" method="getUserById">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserService.java</url>
-          <line>20</line>
-          <properties class="com.yuxeng.display.usermodel.UserService" method="login">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/yuxeng/display/DemoDisplayApplicationTests.java</url>

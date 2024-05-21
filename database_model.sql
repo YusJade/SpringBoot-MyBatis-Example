@@ -1,5 +1,5 @@
 CREATE TABLE `tb_admin` (
-  `id` int PRIMARY KEY,
+  `id` bigint PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(50) UNIQUE,
   `password` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -9,14 +9,14 @@ CREATE TABLE `tb_admin` (
 );
 
 CREATE TABLE `tb_book_category` (
-  `id` int PRIMARY KEY,
+  `id` bigint PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(50) UNIQUE,
   `quantity` int,
   `created_at` datetime DEFAULT (now())
 );
 
 CREATE TABLE `tb_book` (
-  `id` int PRIMARY KEY,
+  `id` bigint PRIMARY KEY AUTO_INCREMENT,
   `title` varchar(50),
   `author` varchar(50),
   `category_id` int,
@@ -26,7 +26,7 @@ CREATE TABLE `tb_book` (
 );
 
 CREATE TABLE `tb_borrow` (
-  `id` int PRIMARY KEY,
+  `id` bigint PRIMARY KEY AUTO_INCREMENT,
   `user_id` int,
   `book_id` int,
   `borrow_date` datetime DEFAULT (now()),
@@ -35,7 +35,7 @@ CREATE TABLE `tb_borrow` (
 );
 
 CREATE TABLE `tb_user` (
-  `id` int PRIMARY KEY,
+  `id` bigint PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(50) UNIQUE,
   `password` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
