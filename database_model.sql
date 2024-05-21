@@ -1,6 +1,6 @@
 CREATE TABLE `tb_admin` (
   `id` bigint PRIMARY KEY AUTO_INCREMENT,
-  `username` varchar(50) UNIQUE,
+  `username` varchar(50) UNIQUE NOT NULL,
   `password` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
   `phone` varchar(50) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE `tb_book` (
   `id` bigint PRIMARY KEY AUTO_INCREMENT,
   `title` varchar(50),
   `author` varchar(50),
-  `category_id` int,
+  `category_id` bigint,
   `publisher` varchar(50),
   `quantity` int,
   `created_at` datetime DEFAULT (now())
@@ -27,8 +27,8 @@ CREATE TABLE `tb_book` (
 
 CREATE TABLE `tb_borrow` (
   `id` bigint PRIMARY KEY AUTO_INCREMENT,
-  `user_id` int,
-  `book_id` int,
+  `user_id` bigint,
+  `book_id` bigint,
   `borrow_date` datetime DEFAULT (now()),
   `return_date` datetime,
   `really_return_date` datetime
@@ -36,7 +36,7 @@ CREATE TABLE `tb_borrow` (
 
 CREATE TABLE `tb_user` (
   `id` bigint PRIMARY KEY AUTO_INCREMENT,
-  `username` varchar(50) UNIQUE,
+  `username` varchar(50) UNIQUE NOT NULL,
   `password` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
   `gender` varchar(50) DEFAULT '男',
