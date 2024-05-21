@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="920ebc42-5c51-4fe4-8ece-325464512012" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../demo_preview/target/classes/com/example/demo2/HelloService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../demo_preview/target/classes/com/example/demo2/HelloService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo_preview/target/classes/com/example/demo2/SayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../demo_preview/target/classes/com/example/demo2/SayController.class" afterDir="false" />
-    </list>
+    <list default="true" id="920ebc42-5c51-4fe4-8ece-325464512012" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,8 +14,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="XML MyBatis Mapper" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -63,6 +60,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -126,6 +124,7 @@
       <workItem from="1716119166841" duration="4155000" />
       <workItem from="1716124575307" duration="5191000" />
       <workItem from="1716188513289" duration="2226000" />
+      <workItem from="1716279451520" duration="1627000" />
     </task>
     <servers />
   </component>
@@ -137,7 +136,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserController.java</url>
-          <line>11</line>
+          <line>12</line>
           <properties class="com.yuxeng.display.usermodel.UserController" method="register">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -146,7 +145,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserService.java</url>
-          <line>29</line>
+          <line>31</line>
           <properties class="com.yuxeng.display.usermodel.UserService" method="findById">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -155,7 +154,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserController.java</url>
-          <line>23</line>
+          <line>24</line>
           <properties class="com.yuxeng.display.usermodel.UserController" method="getUserById">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -164,7 +163,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserService.java</url>
-          <line>18</line>
+          <line>20</line>
           <properties class="com.yuxeng.display.usermodel.UserService" method="login">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

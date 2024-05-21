@@ -8,11 +8,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class DemoDisplayApplicationTests {
 
-    @Resource
-    UserService userService;
+  @Resource
+  UserService userService;
 
-    @Test
-    void contextLoads() {
-    }
+  @Test
+  void contextLoads() {
+  }
 
 }
