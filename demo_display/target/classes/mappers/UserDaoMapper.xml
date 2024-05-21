@@ -1,20 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yuxeng.display.usermodel.UserDao">
-    <!--namespace根据自己需要创建的的mapper的路径和名称填写-->
-    <select id="findById" resultType="com.yuxeng.display.usermodel.User">
-        select * from tb_user where id=#{id}
-    </select>
-    <insert id="insert" useGeneratedKeys = "true" keyProperty="id" keyColumn="id">
-        INSERT INTO tb_user(username, password, real_name,
-                            gender, phone_number, email,
-                            max_borrow_days, max_borrow_books)
-            VALUES
-            (#{username}, #{password},
-             #{real_name}, #{gender}, #{phone_number},
-             #{email}, #{max_borrow_days}, #{max_borrow_books})
-    </insert>
-    <select id="findByUsername" resultType="com.yuxeng.display.usermodel.User">
-        select  * from tb_user where username=#{username}
-    </select>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yuxeng.display.usermodel.User">
+  <!--  INSERT  -->
+  <insert id="insertUser" parameterType="com.yuxeng.display.usermodel.User">
+    INSERT INTO user VALUES(#{username}, #{password}, #{name}, #{gender}, #{phone}, #{email},
+    #{max_borrow_days}, #{max_borrow_books})
+  </insert>
+  <!--  SELECT  -->
+  <select id="getAllUser" resultType="com.yuxeng.display.usermodel.User">
+    SELECT * FROM tb_user
+  </select>
+  <select id="getUserById" resultType="com.yuxeng.display.usermodel.User">
+    SELECT * FROM tb_user WHERE id = #{id}
+  </select>
+  <select id="getUserByUsername" resultType="com.yuxeng.display.usermodel.User">
+    SELECT * FROM tb_user WHERE username = #{username}
+  </select>
+  <select id="getUserByEmail" resultType="com.yuxeng.display.usermodel.User">
+    SELECT * FROM tb_user WHERE email = #{email}
+  </select>
+  <select id="getUserByPhone" resultType="com.yuxeng.display.usermodel.User">
+    SELECT * FROM tb_user WHERE phone = #{phone}
+  </select>
+  <!--  UPDATE  -->
+  <update id="updateUserAllById" parameterType="com.yuxeng.display.usermodel.User">
+    UPDATE tb_user SET username = #{username}, name = #{name}, gender = #{gender}, phone =
+    #{phone}, email = #{email}, max_borrow_days = #{max_borrow_days}, max_borrow_books =
+    #{max_borrow_books} WHERE id = #{id}
+  </update>
+  <update id="updateUserPasswordById" parameterType="com.yuxeng.display.usermodel.User">
+    UPDATE tb_user SET password = #{password} WHERE id = #{id}
+  </update>
+  <!--  DELETE  -->
+  <delete id="deleteUserById" parameterType="com.yuxeng.display.usermodel.User">
+    DELETE FROM tb_user WHERE id = #{id}
+  </delete>
 </mapper>
