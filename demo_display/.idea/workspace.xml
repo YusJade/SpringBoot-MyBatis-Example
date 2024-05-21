@@ -13,9 +13,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Interface" />
         <option value="XML MyBatis Mapper" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -124,7 +124,7 @@
       <workItem from="1716119166841" duration="4155000" />
       <workItem from="1716124575307" duration="5191000" />
       <workItem from="1716188513289" duration="2226000" />
-      <workItem from="1716279451520" duration="4199000" />
+      <workItem from="1716279451520" duration="5886000" />
     </task>
     <servers />
   </component>
