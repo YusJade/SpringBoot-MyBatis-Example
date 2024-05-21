@@ -1,3 +1,5 @@
+USE demo;
+
 CREATE TABLE `tb_admin` (
   `id` bigint PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(50) UNIQUE NOT NULL,
