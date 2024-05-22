@@ -52,7 +52,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DemoDisplayApplication.executor": "Run",
+    "Spring Boot.DemoDisplayApplication.executor": "Debug",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -130,7 +130,7 @@
       <workItem from="1716124575307" duration="5191000" />
       <workItem from="1716188513289" duration="2226000" />
       <workItem from="1716279451520" duration="5886000" />
-      <workItem from="1716342660080" duration="11812000" />
+      <workItem from="1716342660080" duration="15451000" />
     </task>
     <servers />
   </component>
@@ -172,6 +172,16 @@
           <line>11</line>
           <properties field="userService" class="com.yuxeng.display.DemoDisplayApplicationTests" />
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/interceptor/AdminLoginInterceptor.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/interceptor/AdminLoginInterceptor.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

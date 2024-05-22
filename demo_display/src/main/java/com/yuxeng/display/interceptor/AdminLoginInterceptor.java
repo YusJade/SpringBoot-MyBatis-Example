@@ -4,6 +4,7 @@ import com.yuxeng.display.adminmodel.Admin;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,10 +20,12 @@ public class AdminLoginInterceptor implements HandlerInterceptor {
       if (admin != null) {
         return true;
       }
-      response.sendRedirect(request.getContextPath() + "login");
+//      response.sendRedirect(request.getContextPath() + "/login");
+//      System.out.println("rediredt to " + request.getContextPath() + "/login");
     } catch (Exception e) {
       e.printStackTrace();
     }
+    response.setStatus(HttpStatus.UNAUTHORIZED.value());
     return false;
   }
 
