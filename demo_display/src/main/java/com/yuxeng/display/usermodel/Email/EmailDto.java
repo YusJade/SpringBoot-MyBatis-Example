@@ -1,0 +1,16 @@
+package com.yuxeng.display.usermodel.Email;
+
+import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class EmailDto {
+  private List<String> tos;
+  private String subject;
+  private String content;
+}
