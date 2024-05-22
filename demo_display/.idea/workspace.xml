@@ -69,6 +69,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Documents\CodeField\SpringBoot-MyBatis-Example\demo_display\src\main\java" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.DemoDisplayApplication">
     <configuration name="DemoDisplayApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
@@ -125,7 +130,7 @@
       <workItem from="1716124575307" duration="5191000" />
       <workItem from="1716188513289" duration="2226000" />
       <workItem from="1716279451520" duration="5886000" />
-      <workItem from="1716342660080" duration="8417000" />
+      <workItem from="1716342660080" duration="11812000" />
     </task>
     <servers />
   </component>
@@ -167,11 +172,6 @@
           <line>11</line>
           <properties field="userService" class="com.yuxeng.display.DemoDisplayApplicationTests" />
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/adminmodel/AdminController.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
