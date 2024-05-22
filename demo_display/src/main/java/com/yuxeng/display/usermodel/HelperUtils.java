@@ -1,24 +1,40 @@
 package com.yuxeng.display.usermodel;
 
+import jakarta.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class HelperUtils {
+
   /*  TODO：检测机制——规划
-      Username：
-      1.检测是否重复-->最好不要让数据库报错
-      2.检测是否合规-->不能带有fxxk等不优雅字段，不能与管理员同名
-      3.限制使用英文
-      4.彩蛋
-      Password：
-      1.强度检测[待定]
-      2.不能带有特殊字符
-      phone：
-      1.手机号是否规范[盒武器]
-      2.彩蛋
+
       email：
-      1.是否为邮箱的格式
       2.可以用作忘记密码时的验证手段
-      gender：
-      1.只能从三个中选：[男，女，沃尔玛购物袋(彩蛋)]
-      name：
-      1.2~4个字
    */
+  @Resource
+  UserDao userDao;
+  @Resource
+  Config cfg;
+
+  public boolean checkUsernameDuplicate(String username) {
+    return userDao.getUserByUsername(username) == null;
+  }
+
+  public boolean checkUsernameValidity(String username) {
+    return username.matches(cfg.USERNAME_REGEX) && !username.equals("admin")
+        && username.length() <= 50;
+  }
+
+  public boolean checkPasswordStrength(String password){
+    return password.matches(cfg.PASSWORD_REGEX) && password.length() <= 50;
+  }
+
+  public boolean checkEmailValidity(String email){
+    return email.matches(cfg.EMAIL_REGEX);
+  }
+
+  public boolean checkGenderValidity(String gender){
+    return cfg.GENDER_LIST.contains(gender);
+  }
 }

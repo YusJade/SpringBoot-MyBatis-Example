@@ -1,19 +1,21 @@
 package com.yuxeng.display.usermodel;
 
 import jakarta.annotation.Resource;
-import org.apache.ibatis.jdbc.Null;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Objects;
 
 @Service
 public class UserService {
+  /*
+  TODO:
+  1.完善返回清单
 
+   */
   @Resource
   UserDao userDao;
   @Resource
   Config cfg;
+  @Resource
+  HelperUtils helper;
 
   /**
    * 登陆检测
@@ -22,17 +24,17 @@ public class UserService {
    * @param password 密码
    * @return String / boolean  // 是否需要提供哪个填写出问题了 MARK
    */
-  public String validateUser(String username, String password) {
+  public boolean validateUser(String username, String password) {
     User db_user = userDao.getUserByUsername(username);
     if (db_user == null) {
-      return "账号输入错误";  // TODO:是否需要转为json-->Controller层再写 | 将错误信息统一管理
+      return cfg.FAIL;  // TODO:是否需要转为json-->Controller层再写 | 将错误信息统一管理
     }
 
     if (!password.equals(db_user.getPassword())) {
-      return "密码输入错误";
+      return cfg.FAIL;
     }
 
-    return "成功";
+    return cfg.SUCCESS;
   }
 
   /**
@@ -48,77 +50,57 @@ public class UserService {
    */
   public boolean registerUser(String username, String password, String name, String gender,
       String phone, String email) {
-    // 最大借阅日和最大借书量为默认值，仅选项仅管理员可更改
-
-    // TODO:检测username、password、gender、phone、email等信息的合规性
+    // TODO:可以改为返回string类型，提示报什么错
+    if (!helper.checkUsernameValidity(username) || !helper.checkPasswordStrength(password)
+        || !helper.checkGenderValidity(gender) || !helper.checkEmailValidity(email)) {
+      return cfg.FAIL;
+    }
 
     // TODO:insertUser在失败时会报什么类型的错
     try {
       int db_id = userDao.insertUser(username, password, name, gender, phone, email,
-          cfg.max_borrow_days,
-          cfg.max_borrow_books);
+          cfg.MAX_BORROW_DAYS,
+          cfg.MAX_BORROW_BOOKS);
       // DEBUG
       System.out.println("Insert DB_ID : " + db_id);
 
     } catch (Exception e) {
-      return false;
+      return cfg.FAIL;
     }
-    return true;
+    return cfg.SUCCESS;
   }
+
 
   public boolean resetPassword(String username) {
     // TODO：查询登陆状态——应该在Controller里查询/写重载函数
     // TODO：如果未登录，要使用什么来验证
     // TODO：邮箱
-     String Firefly =
-         """
-             @@@@@@@@@@@@@@@@@@@@###%@@@@@@@@@@@@%%@%@%####*#@@@@@@@@@@@@
-             @@@@@@@@@@@@@@@@@%#*#%@@@@@@@@@@@@@@@@@@@%%@@@%#**%@@@@@@@@@
-             @@@@@@@@@@@@@@@%**%@@@@@@@*+#*#*====++**##%@@@@@@%#+%@@@@@@@
-             @@@@@%%@@%@@@@*+%@@%@@@%*--*#***=--::::---==*@@@@%@%+#@@@@@@
-             @@%%@%#%%%@@%+*@@@@%@@@%%%@@@%%@%###**+==--::-%@@@%%@+#@@@@@
-             @@@%%@@@@%@#=#@@@@@@@@@@@@@@%@@@@@@@@@@@@%#*+-:#@@@#@@=#@@@@
-             @@@@%%@%%%*+*@@@@@@@@%%%%%%#@@@%@@@@@@%@@@@@@@%*%@@@#%*#*#@@
-             @@@@%@@%@%+*%@@@@@@%@@@@@%#@@%@@@%%@@@%@%%%@@@@@%@@@%#*%@*#%
-             @@@@@@@@@=**%#@@@@##@%%#%%%@@@@@@@@@@%@%%%%%%@@@@@@@@*#@%%#%
-             @@@@@@@@%=#+**@@@%+##%%@@%%@@@@@@@@@%%@@@@@@%@@@@@@@@*%@@@@%
-             @@@@@@@@*+#+++#@@##@@@@@@@%%%@@@@%@%%@%%@@@@@@@@@@@@@**%##+#
-             @@@@@@@@++*#%@+*%%=:+*#%#%%@%%@%%#%%@@@%#%@@#@@@@@@@@*-++=-%
-             @@@@@%###%@@@%#%%%#*:--==*@@@%%%%##%%@@@@%%*#@@@@@@@%#--=++@
-             @@#*#%@%@@@@%+*@%%%@@@@@@@@@@@@@@@#-====+=+#@@@@@@@@+#=::=:#
-             %*#@@@*#@@@#+*+#%%###%@@@@%%%%@@@@@@%#*=*#*%@@@@@@@+**+--*%@
-             +@@@#*+%%%%**##**@%%%%##%%%%%%%@@@@@%%@%%#%@@@@@#@#++**=-:*@
-             @@@**%@@@@@@@@@@#%@@@@#*@%%%%%%%%%%###%%###@@@%*+#=*+*=@%--@
-             #@#*@@@%%%%%%%%%%++****%@@@@@@@@*%@@%%##@%#+=+*+*++%*+@@@@@@
-             #+#@@@%%#@@@@@@@%##%%#%%@%%%%%%@#%%@@@%=+==+*##**+*@@*@@@@@@
-             +#@@@%%%@@@@@@@@%%%%%%@@@@@@@@%%%####*+*#*+++**+**%@@@*@@@@@
-             %@@@#%#%@@@@@@@%%%%%#%@@%@@@@%%%%%%%#%%#**###*=+**@@@@@#%@@@
-             @@@%%%%@@@@@@@%%%%%#%@@@@@@@%%%%%%%%%@@%#%%%@@@#+=@@@@@@##@@
-             @@%%%%@@@@@@@@%%%%%%@@@@@@@%%%%%%%#%@@@@%@@%#%@@@**@@@@@@#@@
-             @%#%#%@@@@@@@%%%%%%@@@@@@@@%%%%%%%#@@@@@@@@%@#%@@@*%@@@@%*@@
-             %#%#%@@@%@@@%%%%%#%@@%@@@@%%%%%%%%%@@@@@@@%%%#@@@%*@@@%**@@@
-             %%%%@@@@@@@%%%%%%%@@@@@@@%%%%%%%%%@@@@@@@%%%#%@@@*#%###%@@@@
-             %%%@@@@@@@@%%%%%%@@@@@@@@%%%%%%%#@@@@%@@@%%%#@@@@+%%%#@@%@@@
-             %#%@@@@@@@%%%%%#%@@%@@@@%%%%%%%%%@@%%@@@%%%#%@@@*#@%%#%%%@@@
-             %%@@@@@@@%%%%%#%@@@@@@@%%%%%%%%%@%%#%@@%%%##@@@%*@@@%%%%#%@@
-             %@@@@%@@@%%%%%%@@@@@@@%%%%%%%###%%##@@@%%%#@@@@+%@@@%@@@@@@@
-         """;
 
-     return true;
+
+    return true;
   }
 
-  public String resetPassword(String username, String new_password) {
-    // TODO: 加入新密码检测机制
+  /**
+   * 修改密码——登陆状态
+   * @param username     昵称-String
+   * @param new_password 新密码-String
+   * @return String
+   */
+  public boolean resetPassword(String username, String new_password) {
+    if (!helper.checkPasswordStrength(new_password)) {
+      return cfg.FAIL;
+    }
+
     try {
       int update_record = userDao.updateUserPasswordByUsername(username, new_password);
 
       if (update_record > 0) {
-        return "修改成功";
+        return cfg.SUCCESS;
       } else {
-        return "修改失败";
+        return cfg.FAIL;
       }
     } catch (Exception e) {
-      return "输入规范点，检测机制没这么智能：（";
+      return cfg.FAIL;
     }
   }
 }
