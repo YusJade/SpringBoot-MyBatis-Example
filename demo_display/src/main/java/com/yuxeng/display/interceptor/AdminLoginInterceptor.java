@@ -16,6 +16,7 @@ public class AdminLoginInterceptor implements HandlerInterceptor {
     System.out.println("AdminLoginInterceptor::preHandle is executed.");
     try {
       HttpSession session = request.getSession();
+
       Admin admin = (Admin) session.getAttribute("admin");
       if (admin != null) {
         return true;

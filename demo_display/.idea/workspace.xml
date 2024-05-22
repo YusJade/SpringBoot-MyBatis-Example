@@ -52,7 +52,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DemoDisplayApplication.executor": "Debug",
+    "Spring Boot.DemoDisplayApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -130,7 +130,7 @@
       <workItem from="1716124575307" duration="5191000" />
       <workItem from="1716188513289" duration="2226000" />
       <workItem from="1716279451520" duration="5886000" />
-      <workItem from="1716342660080" duration="15451000" />
+      <workItem from="1716342660080" duration="22839000" />
     </task>
     <servers />
   </component>
@@ -167,6 +167,15 @@
           </properties>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/adminmodel/AdminController.java</url>
+          <line>34</line>
+          <properties class="com.yuxeng.display.adminmodel.AdminController" method="login">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/test/java/com/yuxeng/display/DemoDisplayApplicationTests.java</url>
           <line>11</line>
@@ -175,13 +184,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/interceptor/AdminLoginInterceptor.java</url>
-          <line>22</line>
+          <line>23</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/interceptor/AdminLoginInterceptor.java</url>
           <line>17</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/adminmodel/AdminController.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,5 +1,6 @@
 package com.yuxeng.display.adminmodel;
 
+import com.yuxeng.display.bookmodel.Book;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -57,5 +58,10 @@ public class AdminController {
     }
     System.out.println("已登录的管理员：" + admin);
     return admin;
+  }
+
+  @GetMapping("/book")
+  public List<Book> getBookByKeyword(@RequestParam String keyword) {
+    return adminService.getAdminByKeyword(keyword);
   }
 }

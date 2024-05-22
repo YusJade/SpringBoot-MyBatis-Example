@@ -30,4 +30,10 @@
     </where>
   </select>
 
+  <select id="findBookByKeyword" resultType="com.yuxeng.display.bookmodel.Book">
+    select * from tb_book where
+        title REGEXP #{keyword} or
+        author REGEXP #{keyword} or
+        publisher REGEXP #{keyword}
+  </select>
 </mapper>

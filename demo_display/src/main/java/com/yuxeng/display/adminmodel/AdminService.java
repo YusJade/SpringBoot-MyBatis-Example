@@ -1,5 +1,6 @@
 package com.yuxeng.display.adminmodel;
 
+import com.yuxeng.display.bookmodel.Book;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpSession;
 import java.net.http.HttpRequest;
@@ -10,7 +11,11 @@ import org.springframework.stereotype.Service;
 public class AdminService {
 
   @Resource
-  AdminDao adminDao;
+  private AdminDao adminDao;
+
+  List<Book> getAdminByKeyword(String keyword) {
+    return adminDao.findByKeyword(keyword);
+  }
 
   Admin getAdminByUsername(String username) {
     Admin conditions = new Admin();
