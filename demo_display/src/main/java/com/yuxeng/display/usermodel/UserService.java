@@ -10,9 +10,9 @@ import java.util.Objects;
 @Service
 public class UserService {
 
-  @Autowired
+  @Resource
   UserDao userDao;
-  @Autowired
+  @Resource
   Config cfg;
 
   /**
