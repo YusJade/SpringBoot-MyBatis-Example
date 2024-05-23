@@ -51,6 +51,7 @@ public class AdminController {
 
   @GetMapping("/info")
   public Admin getInfo(HttpServletRequest request) {
+    // 从 Session 中获取
     Admin admin = (Admin) request.getSession().getAttribute("admin");
     if (admin == null) {
       System.out.println("管理员未登录");

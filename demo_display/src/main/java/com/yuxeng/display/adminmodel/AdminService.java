@@ -14,7 +14,10 @@ public class AdminService {
   private AdminDao adminDao;
 
   List<Book> getAdminByKeyword(String keyword) {
-    return adminDao.findByKeyword(keyword);
+    if (keyword != null) {
+      return adminDao.findBookByKeyword(keyword);
+    }
+    return adminDao.findBookByKeyword("");
   }
 
   Admin getAdminByUsername(String username) {
