@@ -31,7 +31,7 @@ class UserTests {
     message.setSubject("Test");
     message.setText("Testing");
     message.setTo("3524506658@qq.com");
-    message.setFrom("LuluDominic97@outlook.fr");
+    message.setFrom("eigb903@sinpor.top");
 
     javaMailSender.send(message);
   }

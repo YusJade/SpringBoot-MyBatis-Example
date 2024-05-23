@@ -13,10 +13,10 @@ spring:
   session:
     timeout: 216000
   mail:
-    host: smtp-mail.outlook.com
-    port: 589
-    username: LuluDominic97@outlook.fr
-    password: KQVWztgr0730
+    host: smtp.sinpor.top
+    port: 465
+    username: eigb903@sinpor.top
+    password: sinpor123
     properties:
       mail:
         smtp:
