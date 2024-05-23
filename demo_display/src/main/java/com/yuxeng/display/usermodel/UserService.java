@@ -51,7 +51,7 @@ public class UserService {
   public boolean registerUser(String username, String password, String name, String gender,
       String phone, String email) {
     // TODO:可以改为返回string类型，提示报什么错
-    if (!helper.checkUsernameValidity(username) || !helper.checkPasswordStrength(password)
+    if (!helper.checkUsernameValidity(username) || helper.checkPasswordStrength(password)
         || !helper.checkGenderValidity(gender) || !helper.checkEmailValidity(email)) {
       return cfg.FAIL;
     }
@@ -87,7 +87,7 @@ public class UserService {
    * @return String
    */
   public boolean resetPassword(String username, String new_password) {
-    if (!helper.checkPasswordStrength(new_password)) {
+    if (helper.checkPasswordStrength(new_password)) {
       return cfg.FAIL;
     }
 

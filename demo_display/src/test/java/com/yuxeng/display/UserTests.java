@@ -1,38 +1,54 @@
 package com.yuxeng.display;
 
-import com.yuxeng.display.usermodel.Email.AuthServiceImpl;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import com.yuxeng.display.usermodel.Email.EmailService;
+import com.yuxeng.display.usermodel.HelperUtils;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
-import org.springframework.test.context.junit4.SpringRunner;
+//import org.springframework.mail.SimpleMailMessage;
+//import org.springframework.mail.javamail.JavaMailSenderImpl;
+//import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
 class UserTests {
+  @Resource
+  private EmailService emailService;
 
   @Resource
-  private AuthServiceImpl authServiceImpl;
-
-  @Resource
-  JavaMailSenderImpl javaMailSender;
+  private HelperUtils helper;
 
   @Test
-  void checkSendEmailStatus() {
-    authServiceImpl.sendEmailCode("3524506658@qq.com");
+  public void sendMailTest() {
+    emailService.setMailConfig();
+    emailService.sendMail();
   }
 
   @Test
-  void simpleSendEmailTest() {
-    SimpleMailMessage message = new SimpleMailMessage();
-    message.setSubject("Test");
-    message.setText("Testing");
-    message.setTo("3524506658@qq.com");
-    message.setFrom("eigb903@sinpor.top");
-
-    javaMailSender.send(message);
+  public void waitTimeTest(){
+//    helper.startScheduledTask(emailService.testTime(), 60);
+    emailService.testTime();
+//    System.out.println("Test");
   }
+
+  @Test
+  public void waitTimeTestA() {
+    // 调用 testTime 方法并验证其行为
+    helper.startScheduledTask(emailService.testTime(), 2);
+//    Runnable task = emailService.testTime();
+
+    // 等待一段时间，确保任务被执行
+    try {
+      Thread.sleep(5000); // 等待 1 秒
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+
+    // 添加其他断言或验证逻辑
+    // ...
+  }
+
 }
