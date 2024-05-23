@@ -12,5 +12,18 @@ spring:
     password: 150181
   session:
     timeout: 216000
+  mail:
+    host: smtp-mail.outlook.com
+    port: 589
+    username: LuluDominic97@outlook.fr
+    password: KQVWztgr0730
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+          starttls:
+            required: true
+
 mybatis:
   mapper-locations: classpath:mappers/*.xml

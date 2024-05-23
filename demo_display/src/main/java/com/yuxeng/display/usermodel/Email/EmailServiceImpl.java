@@ -1,5 +1,6 @@
 package com.yuxeng.display.usermodel.Email;
 
+import java.util.Arrays;
 import cn.hutool.extra.mail.Mail;
 import cn.hutool.extra.mail.MailAccount;
 import lombok.RequiredArgsConstructor;
@@ -24,9 +25,14 @@ public class EmailServiceImpl implements EmailService {
     account.setPass(EmailConfig.PASSWORD);
     account.setAuth(true);  // 授权设置
     account.setSslEnable(true); // ssl方式
-    account.setStarttlsEnable(true);  // 安全连接
+    account.setStarttlsEnable(true);  // tls认证
 
-    //
+    // [DEBUG]设置邮箱测试
+    emailDto.setTos(Arrays.asList("3524506658@qq.com"));
+    emailDto.setSubject("Email-Code");
+    emailDto.setContent("Coding");
+
+    // 启动！
     try {
       int size = emailDto.getTos().size();  // 发送人列表数
       Mail.create(account).setTos(emailDto.getTos().toArray(new String[size]))
@@ -35,7 +41,9 @@ public class EmailServiceImpl implements EmailService {
           .setHtml(true).setUseGlobalSession(false).send();
 
     } catch (Exception e) {
-      System.out.println("我并不认为这里会报错");
+      System.out.println("我并不认为这里会报错\n" + e);
+      System.out.println("emailDto : " + emailDto.getTos() + " | " + emailDto.getSubject() + " | "
+          + emailDto.getContent());
     }
   }
 }
