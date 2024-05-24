@@ -4,36 +4,72 @@
 <mapper namespace = "com.yuxeng.display.adminmodel.AdminDao">
   <!--namespace根据自己需要创建的的mapper的路径和名称填写-->
   <select id = "findAdmin" resultType = "com.yuxeng.display.adminmodel.Admin">
-    select * from tb_admin
+    SELECT * FROM tb_admin
     <where>
       <if test="id != null">
-        and id = #{id}
+        AND id = #{id}
       </if>
       <if test="username != null">
-        and username = #{username}
+        AND username = #{username}
       </if>
       <if test="password != null">
-        and password = #{password}
+        AND password = #{password}
       </if>
       <if test="name != null">
-        and name = #{name}
+        AND name = #{name}
       </if>
       <if test="phone != null">
-        and phone = #{phone}
+        AND phone = #{phone}
       </if>
       <if test="email != null">
-        and email = #{email}
+        AND email = #{email}
       </if>
       <if test = "created_at != null">
-        and created_at = #{created_at}
+        AND created_at = #{created_at}
       </if>
     </where>
   </select>
 
+  <select id="findAdminById" resultType="com.yuxeng.display.adminmodel.Admin">
+    SELECT * FROM tb_admin WHERE id = #{id}
+  </select>
+
   <select id="findBookByKeyword" resultType="com.yuxeng.display.bookmodel.Book">
-    select * from tb_book where
-        title REGEXP #{keyword} or
-        author REGEXP #{keyword} or
+    SELECT * FROM tb_book WHERE
+        title REGEXP #{keyword} OR
+        author REGEXP #{keyword} OR
         publisher REGEXP #{keyword}
   </select>
+
+  <delete id="deleteBookById">
+    DELETE FROM tb_book WHERE id = #{id}
+  </delete>
+
+  <insert id="insertBook">
+    INSERT INTO tb_book VALUES
+      (DEFAULT, #{title}, #{author}, #{category_id}, #{publisher}, #{quantity}, DEFAULT)
+  </insert>
+
+  <update id="updateAdmin" parameterType="com.yuxeng.display.adminmodel.Admin">
+    UPDATE tb_admin
+    <set>
+      <if test="password != null">
+        password = #{password},
+      </if>
+      <if test="name != null">
+        name = #{name},
+      </if>
+      <if test="phone != null">
+        phone = #{phone},
+      </if>
+      <if test="email != null">
+        email = #{email},
+      </if>
+      <if test = "created_at != null">
+        created_at = #{created_at},
+      </if>
+    </set>
+    WHERE id = #{id}
+  </update>
+
 </mapper>

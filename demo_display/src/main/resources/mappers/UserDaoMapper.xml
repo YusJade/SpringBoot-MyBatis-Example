@@ -41,4 +41,5 @@
   <delete id="deleteUserById" parameterType="com.yuxeng.display.usermodel.User">
     DELETE FROM tb_user WHERE id = #{id}
   </delete>
+
 </mapper>
