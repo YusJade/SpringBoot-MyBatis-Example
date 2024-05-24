@@ -2,9 +2,8 @@ package com.yuxeng.display.adminmodel;
 
 import com.yuxeng.display.bookmodel.Book;
 import jakarta.annotation.Resource;
-import jakarta.servlet.http.HttpSession;
-import java.net.http.HttpRequest;
 import java.util.List;
+import java.util.Map;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,13 +12,42 @@ public class AdminService {
   @Resource
   private AdminDao adminDao;
 
-  Integer updateBasicInfo(Admin admin) {
+  /**
+   * 用户登录服务
+   * @param loginInfo 用户名和密码
+   * @return -1：用户不存在；0：密码错误；1：密码正确
+   */
+  int login(Map<String, String> loginInfo) {
+    String username = loginInfo.get("username");
+    String password = loginInfo.get("password");
+    if (username == null)
+      return -1;
+
+    Admin admin = adminDao.selectAdminByUsername(username);
+    if (admin == null)
+      return -1;
+    if (admin.getPassword().equals(password)) {
+      return 1;
+    }
+    return 0;
+  }
+
+  int updateInfo(int idUpdated, Map<String, String> info) {
+    Admin admin = new Admin();
+    admin.setId(idUpdated);
+    admin.setName(info.get("name"));
+    admin.setPhone(info.get("phone"));
+    admin.setEmail(info.get("email"));
     adminDao.updateAdmin(admin);
     return admin.getId();
   }
 
   Admin getAdminById(Integer id) {
-    return adminDao.findAdminById(id);
+    return adminDao.selectAdminById(id);
+  }
+
+  Admin getAdminByUsername(String username) {
+    return adminDao.selectAdminByUsername(username);
   }
 
   List<Book> getAdminByKeyword(String keyword) {
@@ -27,16 +55,6 @@ public class AdminService {
       return adminDao.findBookByKeyword(keyword);
     }
     return adminDao.findBookByKeyword("");
-  }
-
-  Admin getAdminByUsername(String username) {
-    Admin conditions = new Admin();
-    conditions.setUsername(username);
-    List<Admin> res = adminDao.findAdmin(conditions);
-    if (res.isEmpty()) {
-      return null;
-    }
-    return res.getFirst();
   }
 
   int insertBook(Book book) {
@@ -62,14 +80,18 @@ public class AdminService {
     return 0;
   }
 
-  boolean updatePassword(Integer id, String initPassword, String newPassword) {
-    Admin admin = adminDao.findAdminById(id);
-    if (admin != null && admin.getPassword().equals(initPassword)) {
-      admin.setPassword(newPassword);
-      int rowAffected = adminDao.updateAdmin(admin);
-      return rowAffected == 1;
+  int updatePassword(Integer id, Map<String, String> passwords) {
+    Admin admin = adminDao.selectAdminById(id);
+    String originPassword = passwords.get("origin_password");
+    String newPassword = passwords.get("new_password");
+    if (admin == null) {
+      return -1;
     }
-    return false;
+    if (newPassword != null && admin.getPassword().equals(originPassword)) {
+      admin.setPassword(newPassword);
+      return adminDao.updateAdmin(admin);
+    }
+    return 0;
   }
 
 }

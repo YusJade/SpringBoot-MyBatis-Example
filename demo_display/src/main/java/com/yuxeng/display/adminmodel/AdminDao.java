@@ -6,9 +6,9 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface AdminDao {
-  List<Admin> findAdmin(Admin condition);
-
-  Admin findAdminById(int id);
+  List<Admin> selectAdmin(Admin condition);
+  Admin selectAdminById(int id);
+  Admin selectAdminByUsername(String username);
   List<Book> findBookByKeyword(String keyword);
 
   int updateAdmin(Admin admin);
