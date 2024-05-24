@@ -4,10 +4,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.yuxeng.display.usermodel.Email.EmailService;
 import com.yuxeng.display.usermodel.HelperUtils;
+import com.yuxeng.display.usermodel.UserDao;
+import com.yuxeng.display.usermodel.UserService;
 import jakarta.annotation.Resource;
+import java.util.Scanner;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 //import org.springframework.mail.SimpleMailMessage;
 //import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -15,40 +19,89 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class UserTests {
+
   @Resource
   private EmailService emailService;
 
   @Resource
   private HelperUtils helper;
 
+  @Resource
+  private UserDao userDao;
+
+  @Resource
+  private UserService userService;
+
+  @MockBean
+  private Scanner scanner;
+
   @Test
   public void sendMailTest() {
     emailService.setMailConfig();
-    emailService.sendMail();
+    emailService.sendMail("35245906658@qq.com");
   }
 
   @Test
-  public void waitTimeTest(){
-//    helper.startScheduledTask(emailService.testTime(), 60);
-    emailService.testTime();
-//    System.out.println("Test");
+  public void waitTimeTestNotWhile() {
+    helper.startScheduledTask(emailService.testTime(), 10);
+    System.out.println("End");
   }
 
   @Test
-  public void waitTimeTestA() {
-    // 调用 testTime 方法并验证其行为
-    helper.startScheduledTask(emailService.testTime(), 2);
-//    Runnable task = emailService.testTime();
+  public void waitTimeTestWithWhile() {
+    helper.startScheduledTask(emailService.testTime(), 5);
 
-    // 等待一段时间，确保任务被执行
-    try {
-      Thread.sleep(5000); // 等待 1 秒
-    } catch (InterruptedException e) {
-      e.printStackTrace();
+    // 需要while保持@Test的活性，定时任务在另外一个线程里
+    while (true) {
+      int x = 1;
+    }
+  }
+
+  @Test
+  void resetPasswordWOCheckTest(){
+    String username = "Firefly";
+    String password = "1234Qwert12345";
+    userService.resetPasswordWOCheck(username,password);
+  }
+  @Test
+  void addUser() {
+    String username = "Firefly";
+    String password = "Abcdef12";
+    String name = "SAM";
+    String gender = "lady";
+    String phone = "10086";
+    String email = "3524506658@qq.com";
+    if (userService.registerUser(username, password, name, gender, phone, email)) {
+      System.out.println("Insert Success");
+    } else {
+      System.out.println(helper.checkUsernameValidity(username));
+      System.out.println(helper.checkPasswordStrength(password));
+      System.out.println(helper.checkGenderValidity(gender));
+      System.out.println(helper.checkEmailValidity(email));
+    }
+  }
+
+  @Test
+  void resetPasswordSendMailTest() {
+    String username = "Firefly";
+    if (userService.resetPasswordSendMail(username)) {
+      System.out.println("Send Email Success");
     }
 
-    // 添加其他断言或验证逻辑
-    // ...
+    String code = "123456";
+//    try {
+//      Thread.sleep(20000); // 暂停20秒，测试验证码过期
+//    }catch (Exception e) {
+//      System.out.println("Stop ERROR");
+//    }
+
+    if (userService.resetPasswordCheckCode(code)) {
+      System.out.println("Check Code Success");
+
+      if (userService.resetPasswordWOCheck("Firefly", "Test1234Test")) {
+        System.out.println("Change Password Success");
+      }
+    }
   }
 
 }

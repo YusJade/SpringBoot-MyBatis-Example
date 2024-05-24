@@ -8,5 +8,5 @@ public class EmailConfig {
   public static String PASSWORD = "sinpor123";
 
   public static String SOURCES = "0123456789";
-  public static final int CODETIME = 600000;
+  public static final int CODETIME = 600;
 }

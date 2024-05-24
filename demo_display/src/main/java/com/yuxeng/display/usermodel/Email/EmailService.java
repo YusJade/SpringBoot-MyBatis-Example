@@ -5,7 +5,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 public interface EmailService {
   void setMailConfig();
 
-  void sendMail();
+  void sendMail(String email);
 
   void generateRandomCode();
 
