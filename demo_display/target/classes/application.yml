@@ -12,5 +12,18 @@ spring:
     password: 150181
   session:
     timeout: 216000
+  mail:
+    host: smtp.sinpor.top
+    port: 465
+    username: eigb903@sinpor.top
+    password: sinpor123
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+          starttls:
+            required: true
+
 mybatis:
   mapper-locations: classpath:mappers/*.xml

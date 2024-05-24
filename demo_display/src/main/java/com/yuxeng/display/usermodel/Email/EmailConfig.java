@@ -1,11 +1,12 @@
 package com.yuxeng.display.usermodel.Email;
 
-import org.springframework.stereotype.Service;
-
 public class EmailConfig {
-  public static final String EMAIL = "LuluDominic97@outlook.fr";
-  public static final String HOST = "smtp.office365.com";
-  public static final int PORT = 587;
-  public static final String USERNAME = "Outlook-822-Test";
-  public static final String PASSWORD = "KQVWztgr0730";
+  public static String EMAIL = "eigb903@sinpor.top";
+  public static String HOST = "smtp.sinpor.top";
+  public static int PORT = 465;
+  public static String USERNAME = "eigb903@sinpor.top";
+  public static String PASSWORD = "sinpor123";
+
+  public static String SOURCES = "0123456789";
+  public static final int CODETIME = 600000;
 }
