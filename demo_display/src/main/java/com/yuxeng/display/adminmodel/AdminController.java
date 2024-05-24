@@ -47,7 +47,6 @@ public class AdminController {
 
   @GetMapping("/{id}")
   public Responses<Admin> queryInfo(@PathVariable Integer id) {
-    // 从 Session 中获取
     Admin admin = adminService.getAdminById(id);
     if (admin == null) {
       return new Responses<>(ResponseCode.ACCOUNT_NOT_EXIST, "管理员不存在", null);
@@ -66,36 +65,15 @@ public class AdminController {
   public Responses<String> modifyPassword(@PathVariable int id,
       @RequestBody Map<String, String> passwords) {
     int res = adminService.updatePassword(id, passwords);
+    // 根据处理结果返回对应的响应体
     return switch (res) {
-      case 0 -> new Responses<String>(ResponseCode.WRONG_PASSWORD, "密码错误",
+      case 0 -> new Responses<>(ResponseCode.WRONG_PASSWORD, "密码错误",
           "");
-      case 1 -> new Responses<String>(ResponseCode.LOGIN_SUCCESS, "密码修改成功",
+      case 1 -> new Responses<>(ResponseCode.LOGIN_SUCCESS, "密码修改成功",
           passwords.get("new_password"));
-      case -1 -> new Responses<String>(ResponseCode.ACCOUNT_NOT_EXIST, "管理员不存在",
+      case -1 -> new Responses<>(ResponseCode.ACCOUNT_NOT_EXIST, "管理员不存在",
           "");
       default -> new Responses<>(ResponseCode.FAILED, "系统错误", "");
     };
   }
-
-//  @GetMapping("/book-search")
-//  public List<Book> getBookByKeyword(@RequestParam String keyword) {
-//    return adminService.getAdminByKeyword(keyword);
-//  }
-//
-//  @PostMapping("/book-insert")
-//  public int insertBook(@RequestBody Book book) {
-//    return adminService.insertBook(book);
-//  }
-//
-//  @PostMapping("/book-delete")
-//  public int deleteBookById(@RequestParam int id) {
-//    return  adminService.deleteBookById(id);
-//  }
-//
-//  @PostMapping("/book-update")
-//  public int updateBook(@RequestBody Book book) {
-//
-//    return -1;
-//  }
-
 }

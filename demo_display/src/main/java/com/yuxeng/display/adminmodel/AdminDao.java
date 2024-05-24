@@ -6,16 +6,14 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface AdminDao {
+
+  /**
+   *
+   * @param condition 筛选条件，属性为 null 则忽略
+   * @return 符合条件的管理员信息
+   */
   List<Admin> selectAdmin(Admin condition);
   Admin selectAdminById(int id);
   Admin selectAdminByUsername(String username);
-  List<Book> findBookByKeyword(String keyword);
-
   int updateAdmin(Admin admin);
-
-  int deleteBookById(int id);
-
-  int insertBook(Book book);
-
-  int updateBook(Book book);
 }
