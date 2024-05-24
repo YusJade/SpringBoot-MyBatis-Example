@@ -9,7 +9,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/demo?userUnicode=True?characterEncoding=UTF-8?allowMultiQueries=True
     username: root
-    password: 9966330
+    password: xxxxx
   session:
     timeout: 216000
   mail:
