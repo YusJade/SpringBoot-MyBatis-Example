@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuxeng.display.bookmodel.BookDao">
+
+  <select id="matchBook" resultType="int">
+    SELECT COUNT(*)
+    FROM tb_book
+    <where>
+      <if test="keyword != null">
+        (title LIKE CONCAT('%', #{keyword}, '%')
+        OR author LIKE CONCAT('%', #{keyword}, '%')
+        OR publisher LIKE CONCAT('%', #{keyword}, '%'))
+      </if>
+    </where>
+  </select>
+
+  <select id="queryBook" resultType="com.yuxeng.display.bookmodel.Book">
+    SELECT * FROM tb_book
+    <where>
+      <if test="keyword != null">
+        (title LIKE CONCAT('%', #{keyword}, '%')
+        OR author LIKE CONCAT('%', #{keyword}, '%')
+        OR publisher LIKE CONCAT('%', #{keyword}, '%'))
+      </if>
+    </where>
+  </select>
+
+  <select id="getAllBooks" resultType="com.yuxeng.display.bookmodel.Book">
+    SELECT * FROM tb_book
+  </select>
+
+  <delete id="deleteBook">
+    DELETE FROM tb_book WHERE id = #{id}
+  </delete>
+
+  <insert id="addBook">
+    INSERT INTO tb_book (title, author, category_id, publisher, quantity, created_at)
+    VALUES (#{title}, #{author}, #{category_id}, #{publisher}, #{quantity}, #{created_at})
+  </insert>
+
+  <select id="getBook" resultType="com.yuxeng.display.bookmodel.Book">
+    SELECT * FROM tb_book WHERE id = #{id}
+  </select>
+
+  <update id="editBook">
+    UPDATE tb_book
+    <set>
+      <if test="title != null">
+        title = #{title},
+      </if>
+      <if test="author != null">
+        author = #{author},
+      </if>
+      <if test="category_id != null">
+        category_id = #{category_id},
+      </if>
+      <if test="publisher != null">
+        publisher = #{publisher},
+      </if>
+      <if test="quantity != null">
+        quantity = #{quantity},
+      </if>
+      <if test="created_at != null">
+        created_at = #{created_at},
+      </if>
+    </set>
+    WHERE id = #{id}
+  </update>
+
+</mapper>
