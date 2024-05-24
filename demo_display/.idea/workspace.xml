@@ -13,8 +13,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="XML MyBatis Mapper" />
+        <option value="Interface" />
+        <option value="spring-beans.schema" />
         <option value="Class" />
       </list>
     </option>
@@ -47,41 +48,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.DemoDisplayApplicationTests.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.UserTests.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.DemoDisplayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;S:/Study/GitHub/Project/SpringBoot-MyBatis-Example/demo_display&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.BookTests.addBookTest.executor": "Debug",
+    "JUnit.BookTests.deleteBookTest.executor": "Run",
+    "JUnit.BookTests.editBookTest.executor": "Run",
+    "JUnit.BookTests.executor": "Run",
+    "JUnit.BookTests.getAllBooksTest.executor": "Run",
+    "JUnit.BookTests.getBookTest.executor": "Run",
+    "JUnit.BookTests.matchBookTest.executor": "Run",
+    "JUnit.BookTests.queryBookTest.executor": "Run",
+    "JUnit.DemoDisplayApplicationTests.executor": "Debug",
+    "JUnit.UserTests.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.DemoDisplayApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "S:/Study/GitHub/Project/MyLibrary",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Documents\CodeField\SpringBoot-MyBatis-Example\demo_display\src\main\java" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.yuxeng.display" />
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserTests">
-    <configuration name="DemoDisplayApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BookTests.getBookTest">
+    <configuration name="BookTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
       <extension name="coverage">
         <pattern>
@@ -90,13 +103,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.yuxeng.display" />
-      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.DemoDisplayApplicationTests" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookTests.addBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
       <extension name="coverage">
         <pattern>
@@ -105,31 +118,68 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.yuxeng.display" />
-      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.UserTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="METHOD_NAME" value="addBookTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DemoDisplayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="BookTests.deleteBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yuxeng.display.DemoDisplayApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.yuxeng.display.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.yuxeng.display" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="METHOD_NAME" value="deleteBookTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookTests.editBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="display" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuxeng.display" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="METHOD_NAME" value="editBookTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookTests.getBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="display" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuxeng.display.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuxeng.display" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="METHOD_NAME" value="getBookTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserTests" />
-        <item itemvalue="Spring Boot.DemoDisplayApplication" />
-        <item itemvalue="JUnit.DemoDisplayApplicationTests" />
+        <item itemvalue="JUnit.BookTests.getBookTest" />
+        <item itemvalue="JUnit.BookTests.addBookTest" />
+        <item itemvalue="JUnit.BookTests.deleteBookTest" />
+        <item itemvalue="JUnit.BookTests" />
+        <item itemvalue="JUnit.BookTests.editBookTest" />
       </list>
     </recent_temporary>
   </component>
@@ -158,6 +208,8 @@
       <workItem from="1716462932174" duration="11988000" />
       <workItem from="1716533484536" duration="125000" />
       <workItem from="1716533696073" duration="357000" />
+      <workItem from="1716534093437" duration="7604000" />
+      <workItem from="1716549929823" duration="7035000" />
     </task>
     <servers />
   </component>
