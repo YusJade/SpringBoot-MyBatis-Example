@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class Admin {
 
-  private Integer id;
+  private int id;
   private String username;
   private String password;
   private String name;
