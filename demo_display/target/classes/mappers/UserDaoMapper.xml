@@ -64,4 +64,5 @@
     FROM tb_user
     WHERE id = #{id}
   </delete>
+
 </mapper>

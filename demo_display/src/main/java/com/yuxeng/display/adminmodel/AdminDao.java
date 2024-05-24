@@ -8,5 +8,14 @@ import org.apache.ibatis.annotations.Mapper;
 public interface AdminDao {
   List<Admin> findAdmin(Admin condition);
 
+  Admin findAdminById(int id);
   List<Book> findBookByKeyword(String keyword);
+
+  int updateAdmin(Admin admin);
+
+  int deleteBookById(int id);
+
+  int insertBook(Book book);
+
+  int updateBook(Book book);
 }
