@@ -16,7 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class EmailServiceImpl implements EmailService {
 
-  public String code;  // 临时验证码
+  public static String code;  // 临时验证码
+
   @Resource
   JavaMailSenderImpl mailSender;  // 邮件对象
   @Resource
@@ -34,13 +35,13 @@ public class EmailServiceImpl implements EmailService {
   }
 
   @Override
-  public void sendMail() {
+  public void sendMail(String email) {
     // 发送邮件
     SimpleMailMessage message = new SimpleMailMessage();
     message.setSubject("Your Code");
     message.setText(this.code);
     message.setFrom(EmailConfig.EMAIL);
-    message.setTo("3524506658@qq.com");
+    message.setTo(email);
 
     mailSender.send(message);
   }
@@ -57,15 +58,20 @@ public class EmailServiceImpl implements EmailService {
     }
 
     code = flag.toString();
+//    code = "123456"; // MARK:测试用
+    // 对验证码定时重置，第二个参数为等待时间(S)，默认10min
     helper.startScheduledTask(resetCode(), EmailConfig.CODETIME); // 启动定时器
+//    helper.startScheduledTask(resetCode(), 15); // MARK:Test用，15秒过期
+
   }
 
   @Override
   public Runnable resetCode(){
-    // 该任务是定时任务——10min
-    code = null;
-    helper.stopScheduledTask(); // 关闭定时器
-    return null;
+    // 该任务是定时任务——CODETIME
+    return  () -> {
+      code = null;
+      helper.stopScheduledTask(); // 关闭定时器
+    };
   }
 
   @Override

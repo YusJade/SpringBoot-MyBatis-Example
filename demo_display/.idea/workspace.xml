@@ -54,7 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.DemoDisplayApplication.executor": "Debug",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Merging master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -134,7 +134,7 @@
       <workItem from="1716342660080" duration="26054000" />
       <workItem from="1716430137538" duration="4228000" />
       <workItem from="1716462932174" duration="11988000" />
-      <workItem from="1716511696566" duration="3224000" />
+      <workItem from="1716511696566" duration="3995000" />
     </task>
     <servers />
   </component>
@@ -146,7 +146,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserController.java</url>
-          <line>8</line>
+          <line>62</line>
           <properties class="com.yuxeng.display.usermodel.UserController">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -155,8 +155,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserService.java</url>
-          <line>19</line>
-          <properties class="com.yuxeng.display.usermodel.UserService" method="validateUser">
+          <line>26</line>
+          <properties class="com.yuxeng.display.usermodel.UserService" method="loginUser">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

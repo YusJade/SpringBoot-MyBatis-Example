@@ -12,9 +12,9 @@ public class User {
   private Long id;  // PK & AutoIncreament
   private String username;  // Unique
   private String password;
-  private String real_name;
+  private String name;
   private String gender;
-  private String phone_number;  // Unique
+  private String phone;  // Unique
   private String email;  // Unique
   private Long max_borrow_days;
   private Long max_borrow_books;

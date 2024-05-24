@@ -1,5 +1,6 @@
 package com.yuxeng.display.usermodel;
 
+import java.sql.Timestamp;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -8,8 +9,7 @@ public interface UserDao {
 
   /* INSERT */
   // Return：插入用户的ID
-  int insertUser(String username, String password, String name, String gender, String phone,
-      String email, Long max_borrow_days, Long max_borrow_books);
+  int insertUser(User db);
 
   /* SELECT */
   List<User> getAllUser();
