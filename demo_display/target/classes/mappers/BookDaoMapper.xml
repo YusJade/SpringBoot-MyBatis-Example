@@ -3,7 +3,18 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yuxeng.display.bookmodel.BookDao">
 
-  <select id="matchBook" resultType="int">
+  <!-- 根据id获取书籍 -->
+  <select id="selectBookById" resultType="com.yuxeng.display.bookmodel.Book">
+    SELECT * FROM tb_book WHERE id = #{id}
+  </select>
+
+  <!-- 获取所有书籍 -->
+  <select id="selectAllBooks" resultType="com.yuxeng.display.bookmodel.Book">
+    SELECT * FROM tb_book
+  </select>
+
+  <!-- 关键词搜索书籍数量 -->
+  <select id="selectBookByKeyword_int" resultType="int">
     SELECT COUNT(*)
     FROM tb_book
     <where>
@@ -15,7 +26,8 @@
     </where>
   </select>
 
-  <select id="queryBook" resultType="com.yuxeng.display.bookmodel.Book">
+  <!-- 关键词搜索书籍 -->
+  <select id="selectBookByKeyword" resultType="com.yuxeng.display.bookmodel.Book">
     SELECT * FROM tb_book
     <where>
       <if test="keyword != null">
@@ -26,44 +38,45 @@
     </where>
   </select>
 
-  <select id="getAllBooks" resultType="com.yuxeng.display.bookmodel.Book">
-    SELECT * FROM tb_book
+  <!-- 获取特定分类书籍数量 -->
+  <select id="selectBookByCategory_int" resultType="int">
+    SELECT COUNT(*)
+    FROM tb_book
+    WHERE category_id = #{category_id}
   </select>
 
+  <!-- 获取特定分类的书籍 -->
+  <select id="selectBookByCategory" resultType="com.yuxeng.display.bookmodel.Book">
+    SELECT * FROM tb_book
+    WHERE category_id = #{category_id}
+  </select>
+
+  <!-- 获取所有分类 -->
+  <select id="selectAllCategory" resultType="com.yuxeng.display.bookmodel.Book_Category">
+    SELECT * FROM tb_book_category
+  </select>
+
+  <!-- 删除书籍 -->
   <delete id="deleteBook">
     DELETE FROM tb_book WHERE id = #{id}
   </delete>
 
-  <insert id="addBook">
+  <!-- 插入新书籍 -->
+  <insert id="insertBook">
     INSERT INTO tb_book (title, author, category_id, publisher, quantity, created_at)
     VALUES (#{title}, #{author}, #{category_id}, #{publisher}, #{quantity}, #{created_at})
   </insert>
 
-  <select id="getBook" resultType="com.yuxeng.display.bookmodel.Book">
-    SELECT * FROM tb_book WHERE id = #{id}
-  </select>
-
-  <update id="editBook">
+  <!-- 更新书籍 -->
+  <update id="updateBook">
     UPDATE tb_book
     <set>
-      <if test="title != null">
-        title = #{title},
-      </if>
-      <if test="author != null">
-        author = #{author},
-      </if>
-      <if test="category_id != null">
-        category_id = #{category_id},
-      </if>
-      <if test="publisher != null">
-        publisher = #{publisher},
-      </if>
-      <if test="quantity != null">
-        quantity = #{quantity},
-      </if>
-      <if test="created_at != null">
-        created_at = #{created_at},
-      </if>
+      <if test="title != null"> title = #{title}, </if>
+      <if test="author != null"> author = #{author}, </if>
+      <if test="category_id != null"> category_id = #{category_id}, </if>
+      <if test="publisher != null"> publisher = #{publisher}, </if>
+      <if test="quantity != null"> quantity = #{quantity}, </if>
+      <if test="created_at != null"> created_at = #{created_at}, </if>
     </set>
     WHERE id = #{id}
   </update>

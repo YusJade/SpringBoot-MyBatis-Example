@@ -22,8 +22,6 @@ public class AdminLoginInterceptor implements HandlerInterceptor {
       if (admin != null) {
         return true; // 放行
       }
-//      response.sendRedirect(request.getContextPath() + "/login");
-//      System.out.println("rediredt to " + request.getContextPath() + "/login");
     } catch (Exception e) {
       e.printStackTrace();
     }
