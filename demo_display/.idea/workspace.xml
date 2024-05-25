@@ -14,10 +14,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="XML MyBatis Mapper" />
-        <option value="Interface" />
-        <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -28,6 +28,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="LLMProjectSettings">
+    <option name="aiignore_manually_set" value="true" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -42,6 +45,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;JUnit.BookTests.addBookTest.executor&quot;: &quot;Debug&quot;,
@@ -71,6 +75,41 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.BookServiceTests.executor": "Run",
+    "JUnit.BookServiceTests.testCountBookByKeyword.executor": "Run",
+    "JUnit.BookTests.addBookTest.executor": "Run",
+    "JUnit.BookTests.deleteBookTest.executor": "Run",
+    "JUnit.BookTests.editBookTest.executor": "Run",
+    "JUnit.BookTests.executor": "Run",
+    "JUnit.BookTests.getAllBooksTest.executor": "Run",
+    "JUnit.BookTests.getBookTest.executor": "Run",
+    "JUnit.BookTests.matchBookTest.executor": "Run",
+    "JUnit.BookTests.queryBookTest.executor": "Run",
+    "JUnit.DemoDisplayApplicationTests.contextLoads.executor": "Run",
+    "JUnit.DemoDisplayApplicationTests.executor": "Debug",
+    "JUnit.UserTests.executor": "Run",
+    "JUnit.UserTests.sendMailTest.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.DemoDisplayApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "S:/Study/GitHub/Project/SpringBoot-MyBatis-Example/demo_display",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> Stashed changes
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -82,12 +121,49 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Documents\CodeField\SpringBoot-MyBatis-Example\demo_display\src\main\java" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.yuxeng.display.bookmodel.Service.impl" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.yuxeng.display" />
       <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.DemoDisplayApplication">
+<<<<<<< Updated upstream
+=======
+    <configuration name="BookServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="display" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuxeng.display.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuxeng.display" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookServiceTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookServiceTests.testCountBookByKeyword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="display" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuxeng.display.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuxeng.display" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookServiceTests" />
+      <option name="METHOD_NAME" value="testCountBookByKeyword" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+>>>>>>> Stashed changes
     <configuration name="BookTests.addBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
       <extension name="coverage">
@@ -120,18 +196,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< Updated upstream
     <configuration name="BookTests.getBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="DemoDisplayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+>>>>>>> Stashed changes
       <module name="display" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yuxeng.display.DemoDisplayApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.yuxeng.display.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.yuxeng.display" />
-      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests" />
-      <option name="METHOD_NAME" value="getBookTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -168,8 +246,13 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.DemoDisplayApplication" />
+<<<<<<< Updated upstream
         <item itemvalue="JUnit.UserTests" />
         <item itemvalue="JUnit.BookTests.getBookTest" />
+=======
+        <item itemvalue="JUnit.BookServiceTests" />
+        <item itemvalue="JUnit.BookServiceTests.testCountBookByKeyword" />
+>>>>>>> Stashed changes
         <item itemvalue="JUnit.BookTests.addBookTest" />
         <item itemvalue="JUnit.BookTests.deleteBookTest" />
       </list>
@@ -178,8 +261,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.2" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.2" />
+        <option value="bundled-jdk-9f38398b9061-77ac15d44862-intellij.indexing.shared.core-IU-242.10180.25" />
+        <option value="bundled-js-predefined-1d06a55b98c1-cb551a44b0f8-JavaScript-IU-242.10180.25" />
       </set>
     </attachedChunks>
   </component>
@@ -198,18 +281,48 @@
       <workItem from="1716342660080" duration="26054000" />
       <workItem from="1716430137538" duration="4228000" />
       <workItem from="1716462932174" duration="11988000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1716511696566" duration="16356000" />
+>>>>>>> Stashed changes
       <workItem from="1716533484536" duration="125000" />
       <workItem from="1716533696073" duration="357000" />
       <workItem from="1716534093437" duration="7604000" />
       <workItem from="1716549929823" duration="7035000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1716511696566" duration="13361000" />
+      <workItem from="1716652819123" duration="127000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< Updated upstream
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="136" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="127" />
+                  <entry key="Table.GitHub.CommitStatus.ColumnIdWidth" value="119" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+>>>>>>> Stashed changes
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

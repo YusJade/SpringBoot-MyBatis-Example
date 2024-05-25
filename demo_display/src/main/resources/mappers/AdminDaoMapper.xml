@@ -38,7 +38,7 @@
     SELECT * FROM tb_admin WHERE username = #{username}
   </select>
 
-  <select id="findBookByKeyword" resultType="com.yuxeng.display.bookmodel.Book">
+  <select id="findBookByKeyword" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
     SELECT * FROM tb_book WHERE
         title REGEXP #{keyword} OR
         author REGEXP #{keyword} OR

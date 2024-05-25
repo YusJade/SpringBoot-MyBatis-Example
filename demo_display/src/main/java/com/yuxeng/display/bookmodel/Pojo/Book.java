@@ -1,4 +1,4 @@
-package com.yuxeng.display.bookmodel;
+package com.yuxeng.display.bookmodel.Pojo;
 
 import java.sql.Timestamp;
 import lombok.Data;

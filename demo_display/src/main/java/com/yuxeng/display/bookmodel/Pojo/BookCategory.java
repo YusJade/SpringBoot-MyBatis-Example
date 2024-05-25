@@ -1,10 +1,10 @@
-package com.yuxeng.display.bookmodel;
+package com.yuxeng.display.bookmodel.Pojo;
 
 import java.sql.Timestamp;
 import lombok.Data;
 
 @Data
-public class Book_Category {
+public class BookCategory {
   private long id;
   private String name;
   private Integer quantity;

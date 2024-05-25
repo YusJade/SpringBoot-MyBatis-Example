@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yuxeng.display.bookmodel.BookDao">
+<mapper namespace="com.yuxeng.display.bookmodel.Dao.BookDao">
 
   <!-- 根据id获取书籍 -->
-  <select id="selectBookById" resultType="com.yuxeng.display.bookmodel.Book">
+  <select id="selectBookById" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
     SELECT * FROM tb_book WHERE id = #{id}
   </select>
 
   <!-- 获取所有书籍 -->
-  <select id="selectAllBooks" resultType="com.yuxeng.display.bookmodel.Book">
+  <select id="selectAllBooks" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
     SELECT * FROM tb_book
   </select>
 
@@ -27,7 +27,7 @@
   </select>
 
   <!-- 关键词搜索书籍 -->
-  <select id="selectBookByKeyword" resultType="com.yuxeng.display.bookmodel.Book">
+  <select id="selectBookByKeyword" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
     SELECT * FROM tb_book
     <where>
       <if test="keyword != null">
@@ -46,15 +46,15 @@
   </select>
 
   <!-- 获取特定分类的书籍 -->
-  <select id="selectBookByCategory" resultType="com.yuxeng.display.bookmodel.Book">
+  <select id="selectBookByCategory" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
     SELECT * FROM tb_book
     WHERE category_id = #{category_id}
   </select>
 
-  <!-- 获取所有分类 -->
-  <select id="selectAllCategory" resultType="com.yuxeng.display.bookmodel.Book_Category">
-    SELECT * FROM tb_book_category
-  </select>
+<!--  &lt;!&ndash; 获取所有分类 &ndash;&gt;-->
+<!--  <select id="selectAllCategory" resultType="com.yuxeng.display.bookmodel.Pojo.BookCategory">-->
+<!--    SELECT * FROM tb_book_category-->
+<!--  </select>-->
 
   <!-- 删除书籍 -->
   <delete id="deleteBook">

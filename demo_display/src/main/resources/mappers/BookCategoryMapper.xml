@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuxeng.display.bookmodel.Dao.BookCategoryDao">
+
+  <!-- 显示全部分类 -->
+  <select id="listCategory" resultType="com.yourpackage.Category">
+    SELECT * FROM tb_book_category
+  </select>
+
+  <!-- 更新书籍分类信息 -->
+  <update id="updateBookCategory">
+    UPDATE tb_book_category
+    SET name = #{name}
+    WHERE id = #{id}
+  </update>
+
+  <!-- 删除书籍分类 -->
+  <delete id="deleteBookCategory">
+    DELETE FROM tb_book_category
+    WHERE id = #{id}
+  </delete>
+
+  <!-- 添加新书籍分类 -->
+  <insert id="addBookCategory" parameterType="string">
+    INSERT INTO tb_book_category (name)
+    VALUES (#{name})
+  </insert>
+
+</mapper>
