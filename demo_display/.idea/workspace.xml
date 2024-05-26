@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="920ebc42-5c51-4fe4-8ece-325464512012" name="Changes" comment="" />
+    <list default="true" id="ad48f1bf-943c-423b-9d80-c855d025c2a1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,158 +13,51 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="XML MyBatis Mapper" />
-        <option value="Enum" />
-        <option value="spring-beans.schema" />
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
   <component name="LLMProjectSettings">
     <option name="aiignore_manually_set" value="true" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
-}</component>
-  <component name="ProjectId" id="2gggKl6D45Qv4zvXNLCiCLobdvf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2gzrQ3MTH1cMRaVYFXF34jhASIt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< Updated upstream
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.BookTests.addBookTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.BookTests.deleteBookTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTests.editBookTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTests.getAllBooksTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTests.getBookTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTests.matchBookTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTests.queryBookTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DemoDisplayApplicationTests.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.UserTests.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.DemoDisplayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;S:/Study/GitHub/Project/MyLibrary&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "JUnit.BookServiceTests.executor": "Run",
-    "JUnit.BookServiceTests.testCountBookByKeyword.executor": "Run",
-    "JUnit.BookTests.addBookTest.executor": "Run",
-    "JUnit.BookTests.deleteBookTest.executor": "Run",
-    "JUnit.BookTests.editBookTest.executor": "Run",
     "JUnit.BookTests.executor": "Run",
-    "JUnit.BookTests.getAllBooksTest.executor": "Run",
-    "JUnit.BookTests.getBookTest.executor": "Run",
-    "JUnit.BookTests.matchBookTest.executor": "Run",
-    "JUnit.BookTests.queryBookTest.executor": "Run",
-    "JUnit.DemoDisplayApplicationTests.contextLoads.executor": "Run",
-    "JUnit.DemoDisplayApplicationTests.executor": "Debug",
-    "JUnit.UserTests.executor": "Run",
-    "JUnit.UserTests.sendMailTest.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "JUnit.BookTests.testBookCategoryPojo.executor": "Run",
+    "JUnit.BookTests.testBookPojo.executor": "Run",
+    "JUnit.BookTests.testListBooksByPage.executor": "Run",
+    "JUnit.BookTests.testListCategory.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DemoDisplayApplication.executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "serendipity",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "S:/Study/GitHub/Project/SpringBoot-MyBatis-Example/demo_display",
+    "last_opened_file_path": "S:/Study/GitHub/Project/Books-Management-System",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
->>>>>>> Stashed changes
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
-    ]
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Documents\CodeField\SpringBoot-MyBatis-Example\demo_display\src\main\java" />
-    </key>
-    <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="com.yuxeng.display.bookmodel.Service.impl" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.yuxeng.display" />
-      <recent name="" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Spring Boot.DemoDisplayApplication">
-<<<<<<< Updated upstream
-=======
-    <configuration name="BookServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="display" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yuxeng.display.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.yuxeng.display" />
-      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookServiceTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookServiceTests.testCountBookByKeyword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="display" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yuxeng.display.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.yuxeng.display" />
-      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookServiceTests" />
-      <option name="METHOD_NAME" value="testCountBookByKeyword" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
->>>>>>> Stashed changes
-    <configuration name="BookTests.addBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager" selected="JUnit.BookTests.testListBooksByPage">
+    <configuration name="BookTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
       <extension name="coverage">
         <pattern>
@@ -174,13 +67,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.yuxeng.display" />
       <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests" />
-      <option name="METHOD_NAME" value="addBookTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookTests.deleteBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookTests.testBookCategoryPojo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
       <extension name="coverage">
         <pattern>
@@ -190,31 +82,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.yuxeng.display" />
       <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests" />
-      <option name="METHOD_NAME" value="deleteBookTest" />
+      <option name="METHOD_NAME" value="testBookCategoryPojo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< Updated upstream
-    <configuration name="BookTests.getBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-=======
-    <configuration name="DemoDisplayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
->>>>>>> Stashed changes
-      <module name="display" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yuxeng.display.DemoDisplayApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yuxeng.display.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookTests.testBookPojo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
       <extension name="coverage">
         <pattern>
@@ -223,38 +97,52 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.yuxeng.display" />
-      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.UserTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="METHOD_NAME" value="testBookPojo" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DemoDisplayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="BookTests.testListBooksByPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yuxeng.display.DemoDisplayApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.yuxeng.display.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.yuxeng.display" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="METHOD_NAME" value="testListBooksByPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookTests.testListCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="display" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuxeng.display.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuxeng.display" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="METHOD_NAME" value="testListCategory" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.DemoDisplayApplication" />
-<<<<<<< Updated upstream
-        <item itemvalue="JUnit.UserTests" />
-        <item itemvalue="JUnit.BookTests.getBookTest" />
-=======
-        <item itemvalue="JUnit.BookServiceTests" />
-        <item itemvalue="JUnit.BookServiceTests.testCountBookByKeyword" />
->>>>>>> Stashed changes
-        <item itemvalue="JUnit.BookTests.addBookTest" />
-        <item itemvalue="JUnit.BookTests.deleteBookTest" />
+        <item itemvalue="JUnit.BookTests.testListBooksByPage" />
+        <item itemvalue="JUnit.BookTests.testListCategory" />
+        <item itemvalue="JUnit.BookTests" />
+        <item itemvalue="JUnit.BookTests.testBookCategoryPojo" />
+        <item itemvalue="JUnit.BookTests.testBookPojo" />
       </list>
     </recent_temporary>
   </component>
@@ -269,112 +157,32 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="920ebc42-5c51-4fe4-8ece-325464512012" name="Changes" comment="" />
-      <created>1716119165854</created>
+      <changelist id="ad48f1bf-943c-423b-9d80-c855d025c2a1" name="Changes" comment="" />
+      <created>1716711228175</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1716119165854</updated>
-      <workItem from="1716119166841" duration="4155000" />
-      <workItem from="1716124575307" duration="5191000" />
-      <workItem from="1716188513289" duration="2226000" />
-      <workItem from="1716279451520" duration="5886000" />
-      <workItem from="1716342660080" duration="26054000" />
-      <workItem from="1716430137538" duration="4228000" />
-      <workItem from="1716462932174" duration="11988000" />
-<<<<<<< Updated upstream
-=======
-      <workItem from="1716511696566" duration="16356000" />
->>>>>>> Stashed changes
-      <workItem from="1716533484536" duration="125000" />
-      <workItem from="1716533696073" duration="357000" />
-      <workItem from="1716534093437" duration="7604000" />
-      <workItem from="1716549929823" duration="7035000" />
-<<<<<<< Updated upstream
-=======
-      <workItem from="1716511696566" duration="13361000" />
-      <workItem from="1716652819123" duration="127000" />
->>>>>>> Stashed changes
+      <updated>1716711228175</updated>
+      <workItem from="1716711229720" duration="12350000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-<<<<<<< Updated upstream
-  <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
-=======
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ID_WIDTH">
-                <map>
-                  <entry key="Table.Default.Author.ColumnIdWidth" value="136" />
-                  <entry key="Table.Default.Date.ColumnIdWidth" value="127" />
-                  <entry key="Table.GitHub.CommitStatus.ColumnIdWidth" value="119" />
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
->>>>>>> Stashed changes
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserController.java</url>
-          <line>62</line>
-          <properties class="com.yuxeng.display.usermodel.UserController">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserService.java</url>
-          <line>26</line>
-          <properties class="com.yuxeng.display.usermodel.UserService" method="loginUser">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/com/yuxeng/display/DemoDisplayApplicationTests.java</url>
-          <line>14</line>
-          <properties class="com.yuxeng.display.DemoDisplayApplicationTests" method="contextLoads">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/test/java/com/yuxeng/display/DemoDisplayApplicationTests.java</url>
-          <line>11</line>
-          <properties field="userService" class="com.yuxeng.display.DemoDisplayApplicationTests" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/adminmodel/AdminController.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="registry_user" />
-      </configuration>
-    </watches-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/demo_display$BookTests_testListCategory.ic" NAME="BookTests.testListCategory Coverage Results" MODIFIED="1716737706289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.yuxeng.display.*</FILTER>
+    </SUITE>
   </component>
 </project>

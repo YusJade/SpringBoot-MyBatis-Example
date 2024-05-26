@@ -36,7 +36,7 @@ public class BookServiceImpl implements BookService{
   }
 
   @Override
-  public List<BookCategory> listByCategory() {
+  public List<BookCategory> listCategory() {
     return bookDao.selectBookByCategory();
   }
 
