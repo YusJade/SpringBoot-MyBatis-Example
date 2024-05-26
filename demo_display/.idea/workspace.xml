@@ -13,10 +13,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="XML MyBatis Mapper" />
         <option value="Enum" />
         <option value="spring-beans.schema" />
         <option value="Interface" />
+        <option value="XML MyBatis Mapper" />
         <option value="Class" />
       </list>
     </option>
