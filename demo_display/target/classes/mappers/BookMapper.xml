@@ -19,7 +19,7 @@
     </if>
     <if test="publisher != null and publisher != ''">
       AND publisher LIKE CONCAT('%', #{publisher}, '%')
-    </if>
+    </if>gitg
   </select>
 
   <!-- 根据查询参数获取符合条件的书籍数量 -->
