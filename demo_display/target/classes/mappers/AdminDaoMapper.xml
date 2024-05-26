@@ -54,7 +54,7 @@
       (DEFAULT, #{title}, #{author}, #{category_id}, #{publisher}, #{quantity}, DEFAULT)
   </insert>
 
-  <update id="updateAdmin" parameterType="com.yuxeng.display.adminmodel.Admin">
+  <update id="updateAdmin" parameterType="Map">
     UPDATE tb_admin
     <set>
       <if test="password != null">

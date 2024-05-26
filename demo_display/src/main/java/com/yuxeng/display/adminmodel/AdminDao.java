@@ -1,6 +1,7 @@
 package com.yuxeng.display.adminmodel;
 
 import java.util.List;
+import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
@@ -14,5 +15,5 @@ public interface AdminDao {
   List<Admin> selectAdmin(Admin condition);
   Admin selectAdminById(int id);
   Admin selectAdminByUsername(String username);
-  int updateAdmin(Admin admin);
+  int updateAdmin(Map<String, Object> content);
 }

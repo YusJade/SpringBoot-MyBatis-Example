@@ -56,9 +56,10 @@ public class AdminController {
 
   @PutMapping("/{id}")
   public Responses<Integer> modifyInfo(@PathVariable int id,
-      @RequestBody Map<String, String> info) {
-    adminService.updateInfo(id, info);
-    return new Responses<>(ResponseCode.SUCCESS, "信息修改成功", id);
+      @RequestBody Map<String, Object> info) {
+    return adminService.updateInfo(id, info) == 0 ?
+        new Responses<>(ResponseCode.ACCOUNT_NOT_EXIST, "账户不存在", 0) :
+        new Responses<>(ResponseCode.SUCCESS, "信息修改成功", id);
   }
 
   @PutMapping("/{id}/password")

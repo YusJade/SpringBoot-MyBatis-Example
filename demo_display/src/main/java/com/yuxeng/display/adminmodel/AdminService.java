@@ -39,18 +39,9 @@ public class AdminService {
    * @param info 与修改相关的信息
    * @return 被修改的管理员 id
    */
-  int updateInfo(int id, Map<String, String> info) {
-    Admin admin = new Admin();
-    admin.setId(id);
-    admin.setUsername(info.get("username"));
-    admin.setName(info.get("name"));
-    admin.setPhone(info.get("phone"));
-    admin.setEmail(info.get("email"));
-    if (adminDao.selectAdminById(id).getUsername().equals(admin.getUsername())) {
-      admin.setUsername(null);
-    }
-    adminDao.updateAdmin(admin);
-    return admin.getId();
+  int updateInfo(int id, Map<String, Object> info) {
+    info.put("id", id);
+    return adminDao.updateAdmin(info);
   }
 
   Admin getAdminById(Integer id) {
@@ -61,6 +52,9 @@ public class AdminService {
     return adminDao.selectAdminByUsername(username);
   }
 
+  /**
+   * @return -1：账户不存在；n>=0：更新的记录数
+   */
   int updatePassword(Integer id, Map<String, String> passwords) {
     Admin admin = adminDao.selectAdminById(id);
     String originPassword = passwords.get("origin_password");
@@ -69,8 +63,9 @@ public class AdminService {
       return -1;
     }
     if (newPassword != null && admin.getPassword().equals(originPassword)) {
-      admin.setPassword(newPassword);
-      return adminDao.updateAdmin(admin);
+      if (newPassword.equals(originPassword))
+        return  1;
+      return adminDao.updateAdmin(Map.of("password", newPassword));
     }
     return 0;
   }

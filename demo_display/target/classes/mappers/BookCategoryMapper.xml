@@ -4,7 +4,7 @@
 <mapper namespace="com.yuxeng.display.bookmodel.Dao.BookCategoryDao">
 
   <!-- 显示全部分类 -->
-  <select id="selectCategory" resultType="com.yourpackage.Category">
+  <select id="selectCategory" resultType="com.yuxeng.display.bookmodel.Pojo.BookCategory">
     SELECT * FROM tb_book_category
   </select>
 
