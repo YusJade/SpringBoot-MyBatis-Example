@@ -8,7 +8,7 @@ public interface BookCategoryService {
 
   void updateBookCategory(BookCategory category);
 
-  void delBookCategory(Integer categoryId);
+  void removeBookCategory(Integer categoryId);
 
-  void addBookCategory(String categoryName);
+  void saveBookCategory(String categoryName);
 }

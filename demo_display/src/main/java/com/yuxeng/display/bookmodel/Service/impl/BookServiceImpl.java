@@ -18,7 +18,7 @@ public class BookServiceImpl implements BookService{
   private BookDao bookDao;
 
   @Override
-  public PageBean<Book> getListBooksByPage(Map<String,Object> paramMap){
+  public PageBean<Book> listBooksByPage(Map<String,Object> paramMap){
     PageBean<Book> pageBean = new PageBean<Book>(
         (Integer) paramMap.get("pageOn"),
         (Integer) paramMap.get("pageSize")
@@ -36,7 +36,7 @@ public class BookServiceImpl implements BookService{
   }
 
   @Override
-  public List<BookCategory> getListCategory() {
+  public List<BookCategory> listByCategory() {
     return bookDao.selectBookByCategory();
   }
 
@@ -46,7 +46,7 @@ public class BookServiceImpl implements BookService{
   }
 
   @Override
-  public Book selectById(int bookId) {
+  public Book getBookById(int bookId) {
     return bookDao.selectById(bookId);
   }
 

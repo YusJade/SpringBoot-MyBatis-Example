@@ -3,58 +3,57 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yuxeng.display.bookmodel.Dao.BookDao">
 
-  <!-- 根据id获取书籍 -->
-  <select id="selectBookById" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
-    SELECT * FROM tb_book WHERE id = #{id}
+  <!-- 根据查询参数获取所有符合条件的书籍 -->
+  <select id="selectBook" parameterType="map" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
+    SELECT *
+    FROM tb_book
+    WHERE 1 = 1
+    <if test="title != null and title != ''">
+      AND title LIKE CONCAT('%', #{title}, '%')
+    </if>
+    <if test="author != null and author != ''">
+      AND author LIKE CONCAT('%', #{author}, '%')
+    </if>
+    <if test="category_id != null">
+      AND category_id = #{category_id}
+    </if>
+    <if test="publisher != null and publisher != ''">
+      AND publisher LIKE CONCAT('%', #{publisher}, '%')
+    </if>
   </select>
 
-  <!-- 获取所有书籍 -->
-  <select id="selectAllBooks" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
-    SELECT * FROM tb_book
-  </select>
-
-  <!-- 关键词搜索书籍数量 -->
-  <select id="selectBookByKeyword_int" resultType="int">
+  <!-- 根据查询参数获取符合条件的书籍数量 -->
+  <select id="selectBookCount" parameterType="map" resultType="int">
     SELECT COUNT(*)
     FROM tb_book
-    <where>
-      <if test="keyword != null">
-        (title LIKE CONCAT('%', #{keyword}, '%')
-        OR author LIKE CONCAT('%', #{keyword}, '%')
-        OR publisher LIKE CONCAT('%', #{keyword}, '%'))
-      </if>
-    </where>
+    WHERE 1=1
+    <if test="title != null and title != ''">
+      AND title LIKE CONCAT('%', #{title}, '%')
+    </if>
+    <if test="author != null and author != ''">
+      AND author LIKE CONCAT('%', #{author}, '%')
+    </if>
+    <if test="category_id != null">
+      AND category_id = #{category_id}
+    </if>
+    <if test="publisher != null and publisher != ''">
+      AND publisher LIKE CONCAT('%', #{publisher}, '%')
+    </if>
   </select>
 
-  <!-- 关键词搜索书籍 -->
-  <select id="selectBookByKeyword" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
-    SELECT * FROM tb_book
-    <where>
-      <if test="keyword != null">
-        (title LIKE CONCAT('%', #{keyword}, '%')
-        OR author LIKE CONCAT('%', #{keyword}, '%')
-        OR publisher LIKE CONCAT('%', #{keyword}, '%'))
-      </if>
-    </where>
+
+  <!-- 根据书籍类别查询所有书籍 -->
+  <select id="selectBookByCategory" resultType="com.yuxeng.display.bookmodel.Pojo.BookCategory">
+    SELECT id AS categoryId, name AS categoryName
+    FROM tb_book_category
   </select>
 
-  <!-- 获取特定分类书籍数量 -->
-  <select id="selectBookByCategory_int" resultType="int">
-    SELECT COUNT(*)
+  <!-- 根据书籍ID查询书籍详情 -->
+  <select id="selectById" parameterType="int" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
+    SELECT *
     FROM tb_book
-    WHERE category_id = #{category_id}
+    WHERE id = #{book_id}
   </select>
-
-  <!-- 获取特定分类的书籍 -->
-  <select id="selectBookByCategory" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
-    SELECT * FROM tb_book
-    WHERE category_id = #{category_id}
-  </select>
-
-<!--  &lt;!&ndash; 获取所有分类 &ndash;&gt;-->
-<!--  <select id="selectAllCategory" resultType="com.yuxeng.display.bookmodel.Pojo.BookCategory">-->
-<!--    SELECT * FROM tb_book_category-->
-<!--  </select>-->
 
   <!-- 删除书籍 -->
   <delete id="deleteBook">

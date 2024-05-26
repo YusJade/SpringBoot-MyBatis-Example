@@ -15,7 +15,7 @@ public class BookCategoryServiceImpl implements BookCategoryService {
 
   @Override
   public ArrayList<BookCategory> listCategory() {
-    return bookCategoryDao.listCategory();
+    return bookCategoryDao.selectCategory();
   }
 
   @Override
@@ -24,12 +24,12 @@ public class BookCategoryServiceImpl implements BookCategoryService {
   }
 
   @Override
-  public void delBookCategory(Integer categoryId) {
+  public void removeBookCategory(Integer categoryId) {
     bookCategoryDao.deleteBookCategory(categoryId);
   }
 
   @Override
-  public void addBookCategory(String categoryName) {
-    bookCategoryDao.addBookCategory(categoryName);
+  public void saveBookCategory(String categoryName) {
+    bookCategoryDao.insertBookCategory(categoryName);
   }
 }

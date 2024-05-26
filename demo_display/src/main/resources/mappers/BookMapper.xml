@@ -7,7 +7,7 @@
   <select id="selectBook" parameterType="map" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
     SELECT *
     FROM tb_book
-    WHERE 1=1
+    WHERE 1 = 1
     <if test="title != null and title != ''">
       AND title LIKE CONCAT('%', #{title}, '%')
     </if>

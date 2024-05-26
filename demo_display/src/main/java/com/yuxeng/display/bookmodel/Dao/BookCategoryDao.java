@@ -11,7 +11,7 @@ public interface BookCategoryDao {
    * 显示全部分类
    * @return 分类的列表
    */
-  ArrayList<BookCategory> listCategory();
+  ArrayList<BookCategory> selectCategory();
 
   /**
    * 更新书籍分类信息
@@ -29,6 +29,6 @@ public interface BookCategoryDao {
    * 添加新书籍分类
    * @param categoryName 新分类的名称
    */
-  void addBookCategory(String categoryName);
+  void insertBookCategory(String categoryName);
 }
 

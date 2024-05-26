@@ -10,13 +10,13 @@ import java.util.Map;
 
 public interface BookService {
 
-  PageBean<Book> getListBooksByPage (Map<String, Object> paramMap);
+  PageBean<Book> listBooksByPage(Map<String, Object> paramMap);
 
-  List<BookCategory> getListCategory();
+  List<BookCategory> listByCategory();
 
   void saveBook(Book book);
 
-  Book selectById(int bookId);
+  Book getBookById(int bookId);
 
   void updateBook(Book book);
 
