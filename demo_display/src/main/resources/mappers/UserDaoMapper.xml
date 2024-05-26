@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yuxeng.display.usermodel.UserDao">
+<!--  在调用SQL语句前已对字段属性做出检测，详细看HelpUtils -->
   <!--  INSERT  -->
-  <!-- 其余字段在Insert前需要做检测 -->
   <insert id="insertUser" parameterType="com.yuxeng.display.usermodel.User" useGeneratedKeys="true"
     keyProperty="id">
     INSERT INTO tb_user(username, password, name, gender, phone, email, max_borrow_days,

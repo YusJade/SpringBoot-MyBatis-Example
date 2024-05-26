@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender"> <!-- 不用管复制就行 -->
+    <file>../java/com/yuxeng/display/usermodel/Logs/ALog.log</file>  <!-- 路径 -->
+    <append>true</append>  <!-- append+true表示允许追加模式 -->
+    <encoder>
+      <!-- 日志输出格式 | H-Min-Sec | 左对齐七位 | 最大长度为100 | 使用Windows换行 -->
+      <pattern>%d{HH:mm:ss} [%thread] %-7level %logger{100} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  <root level="INFO">
+    <appender-ref ref="FILE" />
+  </root>
+</configuration>

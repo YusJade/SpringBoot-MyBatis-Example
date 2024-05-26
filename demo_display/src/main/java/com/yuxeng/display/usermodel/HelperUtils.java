@@ -39,20 +39,20 @@ public class HelperUtils {
   }
 
   public boolean checkUsernameValidity(String username) {
-    return username.matches(cfg.USERNAME_REGEX) && !username.equals("admin")
+    return username.matches(Config.USERNAME_REGEX) && !username.equals("admin")
         && username.length() <= 50;
   }
 
   public boolean checkPasswordStrength(String password){
-    return !password.matches(cfg.PASSWORD_REGEX) || password.length() > 50;
+    return !password.matches(Config.PASSWORD_REGEX) || password.length() > 50;
   }
 
   public boolean checkEmailValidity(String email){
-    return email.matches(cfg.EMAIL_REGEX);
+    return email.matches(Config.EMAIL_REGEX);
   }
 
   public boolean checkGenderValidity(String gender){
-    return cfg.GENDER_LIST.contains(gender);
+    return Config.GENDER_LIST.contains(gender);
   }
 
   public void stopScheduledTask() {

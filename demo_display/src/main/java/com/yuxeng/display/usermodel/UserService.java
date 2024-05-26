@@ -5,8 +5,10 @@ import com.yuxeng.display.usermodel.Email.EmailServiceImpl;
 import jakarta.annotation.Resource;
 import java.sql.Timestamp;
 import java.time.Instant;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class UserService {
 
@@ -14,11 +16,10 @@ public class UserService {
   TODO:
   1.完善返回清单
 
+
    */
   @Resource
   UserDao userDao;
-  @Resource
-  Config cfg;
   @Resource
   HelperUtils helper;
   @Resource
@@ -30,17 +31,17 @@ public class UserService {
    * @param password 密码
    * @return String / boolean  // 是否需要提供哪个填写出问题了 MARK
    */
-  public boolean loginUser(String username, String password) {
+  public String loginUser(String username, String password) {
     User db_user = userDao.getUserByUsername(username);
     if (db_user == null) {
-      return cfg.FAIL;  // TODO:是否需要转为json-->Controller层再写 | 将错误信息统一管理
+      return Config.USERNAME_ERROR;
     }
 
     if (!password.equals(db_user.getPassword())) {
-      return cfg.FAIL;
+      return Config.PASSWORD_ERROR;
     }
 
-    return cfg.SUCCESS;
+    return Config.SUCCESS;
   }
 
   /**
@@ -54,14 +55,14 @@ public class UserService {
    * @param email    String-邮箱
    * @return boolean
    */
-  public boolean registerUser(String username, String password, String name, String gender,
+  public String registerUser(String username, String password, String name, String gender,
       String phone, String email) {
     // POST —— 已经过验证
     // TODO:可以改为返回string类型，提示报什么错
     // TODO:insertUser在失败时会报什么类型的错
     if (!helper.checkUsernameValidity(username) || !helper.checkPasswordStrength(password)
         || !helper.checkGenderValidity(gender) || !helper.checkEmailValidity(email)) {
-      return cfg.FAIL;
+      return Config.FAIL;
     }
 
     User db_user = new User();
@@ -71,8 +72,8 @@ public class UserService {
     db_user.setPhone(phone);
     db_user.setGender(gender);
     db_user.setEmail(email);
-    db_user.setMax_borrow_days(cfg.MAX_BORROW_DAYS);
-    db_user.setMax_borrow_books(cfg.MAX_BORROW_BOOKS);
+    db_user.setMax_borrow_days(Config.MAX_BORROW_DAYS);
+    db_user.setMax_borrow_books(Config.MAX_BORROW_BOOKS);
     db_user.setCreated_at(Timestamp.from(Instant.now()));
     try {
       int db_id = userDao.insertUser(db_user);
@@ -81,18 +82,18 @@ public class UserService {
 
     } catch (Exception e) {
       System.out.println(e);
-      return cfg.FAIL;
+      return Config.FAIL;
     }
-    return cfg.SUCCESS;
+    return Config.SUCCESS;
   }
 
 
-  public boolean resetPasswordSendMail(String username) {
+  public String resetPasswordSendMail(String username) {
     // POST——已通过验证
     // TODO：查询登陆状态——应该在Controller里查询/写重载函数
     User db_user = userDao.getUserByUsername(username);
     if (db_user == null) {
-      return cfg.FAIL;
+      return Config.USERNAME_ERROR;
     }
     String db_email = db_user.getEmail();
 
@@ -100,44 +101,47 @@ public class UserService {
       emailService.setMailConfig();
       emailService.generateRandomCode();  // TODO:考虑将其移动到Helper中
       emailService.sendMail(db_email);
-      return true;
+      return Config.SUCCESS;
     } catch (Exception e) {
-      System.out.println("ERROR : " + e);
-      return false;
+      log.error("| Reset Password Send Mail | : ",e);
+      return Config.FAIL;
     }
   }
 
-  public boolean resetPasswordCheckCode(String code) {
+  public String vertifyCode(String code) {
     // POST——已通过验证
-    return code.equals(EmailServiceImpl.code);
+    if (code.equals(EmailServiceImpl.code)){
+      return Config.SUCCESS;
+    }
+    return Config.FAIL;
   }
 
 
   /**
    * 修改密码——登陆状态
-   *
-   * @param username     昵称-String
+   * @param id  id值
    * @param new_password 新密码-String
    * @return String
    */
-  public boolean resetPasswordWOCheck(String username, String new_password) {
+  public String resetPassword(Long id, String new_password) {
     // PORT——已通过验证
     if (!helper.checkPasswordStrength(new_password)) {
       System.out.println("总不可能是这里");
-      return cfg.FAIL;
+      return Config.FAIL;
     }
 
     try {
-      int update_record = userDao.updateUserPasswordByUsername(username, new_password);
+//      int update_record = userDao.updateUserPasswordByUsername(username, new_password);
+        int update_record = userDao.updateUserPasswordById(id,new_password);
 
       if (update_record > 0) {
-        return cfg.SUCCESS;
+        return Config.SUCCESS;
       } else {
-        return cfg.FAIL;
+        return Config.FAIL;
       }
     } catch (Exception e) {
       System.out.println("ERROR : "+e);
-      return cfg.FAIL;
+      return Config.FAIL;
     }
   }
 }

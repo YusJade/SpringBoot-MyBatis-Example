@@ -9,7 +9,6 @@ import com.yuxeng.display.usermodel.UserService;
 import jakarta.annotation.Resource;
 import java.util.Scanner;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
@@ -61,7 +60,7 @@ class UserTests {
   void resetPasswordWOCheckTest(){
     String username = "Firefly";
     String password = "1234Qwert12345";
-    userService.resetPasswordWOCheck(username,password);
+    userService.resetPassword(username,password);
   }
   @Test
   void addUser() {
@@ -95,10 +94,10 @@ class UserTests {
 //      System.out.println("Stop ERROR");
 //    }
 
-    if (userService.resetPasswordCheckCode(code)) {
+    if (userService.vertifyCode(code)) {
       System.out.println("Check Code Success");
 
-      if (userService.resetPasswordWOCheck("Firefly", "Test1234Test")) {
+      if (userService.resetPassword("Firefly", "Test1234Test")) {
         System.out.println("Change Password Success");
       }
     }

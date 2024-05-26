@@ -9,12 +9,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/demo?userUnicode=True?characterEncoding=UTF-8?allowMultiQueries=True
     username: root
-<<<<<<< Updated upstream
-    password: 150181
-=======
-    password: huang33280234
+    password: 9966330
 
->>>>>>> Stashed changes
+
   session:
     timeout: 216000
   mail:
