@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad48f1bf-943c-423b-9d80-c855d025c2a1" name="Changes" comment="" />
+    <list default="true" id="ad48f1bf-943c-423b-9d80-c855d025c2a1" name="Changes" comment="修改Book的mapper文件，添加一些注释" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,7 +162,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716711228175</updated>
-      <workItem from="1716711229720" duration="12350000" />
+      <workItem from="1716711229720" duration="12859000" />
     </task>
     <servers />
   </component>
