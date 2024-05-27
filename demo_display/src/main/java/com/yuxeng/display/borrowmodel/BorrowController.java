@@ -29,6 +29,13 @@ public class BorrowController {
         borrowService.listAllBorrow());
   }
 
+  /**
+   * 多条件查询借阅记录
+   * @param userId 用户 Id
+   * @param bookId 图书 Id
+   * @param categoryId 图书分类 Id
+   * @return 符合条件的所有借阅记录
+   */
   @GetMapping("/history")
   Responses<List<Borrow>> queryBorrow(
       @RequestParam(value = "user_id", required = false) Integer userId,
@@ -40,18 +47,30 @@ public class BorrowController {
 
 
   @PostMapping
-  void addBorrow(Map<String, Object> borrow) {
+  void addBorrow(Map<String, Object> map) {
     // TODO: 对于同一本书，在未归还前，用户不能再次借阅
   }
 
-  @DeleteMapping("/return")
-  void returnBorrow(int id) {
-
+  @PutMapping("/{id}/return-book")
+  Responses<Integer> returnBorrow(@PathVariable int id) {
+    return switch (borrowService.returnBorrow(id)) {
+      case -3 -> new Responses<>(ResponseCode.BORROW_NOT_EXIST, "借阅记录不存在", 0);
+      case -2 -> new Responses<>(ResponseCode.RETURN_ALREADY, "已归还，请勿重复归还", id);
+      case -1 -> new Responses<>(ResponseCode.RETURN_OVERDUE, "逾期归还", id);
+      case 0 -> new Responses<>(ResponseCode.FAILED, "系统错误", 0);
+      default -> new Responses<>(ResponseCode.SUCCESS, "图书归还成功", id);
+    };
   }
 
-  @PutMapping("/renew")
-  void renewBorrow() {
-
+  @PutMapping("/{id}/renew-book")
+  Responses<Integer> renewBorrow(@PathVariable int id) {
+    return switch (borrowService.renewBorrow(id)) {
+      case -3 -> new Responses<>(ResponseCode.BORROW_NOT_EXIST, "借阅记录不存在", 0);
+      case -2 -> new Responses<>(ResponseCode.RETURN_ALREADY, "已归还，无法续借", id);
+      case -1 -> new Responses<>(ResponseCode.RETURN_OVERDUE, "借阅已逾期，请先归还图书", id);
+      case 0 -> new Responses<>(ResponseCode.FAILED, "系统错误", 0);
+      default -> new Responses<>(ResponseCode.SUCCESS, "图书续借成功", id);
+    };
   }
 
 }

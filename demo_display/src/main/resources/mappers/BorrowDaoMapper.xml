@@ -21,4 +21,26 @@
       </if>
     </where>
   </select>
+
+  <update id="updateBorrowById">
+    UPDATE tb_borrow
+    <set>
+      <if test="user_id != null ">
+        user_id = #{user_id}
+      </if>
+      <if test="book_id != null ">
+        book_id = #{book_id}
+      </if>
+      <if test="borrow_date != null ">
+        borrow_date = #{borrow_date}
+      </if>
+      <if test="return_date != null ">
+        return_date = #{return_date}
+      </if>
+      <if test="really_return_date != null ">
+        really_return_date = #{really_return_date}
+      </if>
+    </set>
+    WHERE id = #{id}
+  </update>
 </mapper>
