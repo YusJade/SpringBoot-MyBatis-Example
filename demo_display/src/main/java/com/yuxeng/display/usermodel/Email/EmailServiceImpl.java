@@ -22,6 +22,7 @@ public class EmailServiceImpl implements EmailService {
   // 邮箱--验证码
   // ConcurrentHashMap允许并发访问
   // 使用getter封装map
+  // 为什么有static还要使用@Getter了？————问就是偶尔会出现奇妙的线程问题
   @Getter
   public static Map<String, String> codeRecord = new ConcurrentHashMap<>();
 
@@ -49,14 +50,14 @@ public class EmailServiceImpl implements EmailService {
    */
   @Override
   public void sendMail(String mail) {
-    // 发送邮件
+    // 发送邮件 TODO:有空整个邮箱列表，循环至可连接邮箱
     SimpleMailMessage message = new SimpleMailMessage();
     message.setSubject("Your Code");
     message.setText(codeRecord.get(mail));
     message.setFrom(EmailConfig.EMAIL);
     message.setTo(mail);
 
-    mailSender.send(message);
+    mailSender.send(message); // 发送
   }
 
   /*
@@ -74,7 +75,7 @@ public class EmailServiceImpl implements EmailService {
     }
 
     codeRecord.put(mail, flag.toString()); // 记录
-    System.out.println(codeRecord);
+    System.out.println("[DEBUG] EmailService | GenerateRandomCode | Code Recorder : " + codeRecord);
     // 对验证码定时重置，第二个参数为等待时间(S)，默认10min
     helper.startScheduledTask(resetCode(mail), EmailConfig.CODETIME); // 启动定时器
   }
@@ -86,7 +87,8 @@ public class EmailServiceImpl implements EmailService {
   public Runnable resetCode(String mail) {
     // 该任务是定时任务——CODETIME
     return () -> {
-      System.out.println("Reset Code  |  " + codeRecord); // DEBUG:查看剩余有效验证码列表
+      System.out.println(
+          "[DEL] EmailService | ResetCode | CodeRecorder : " + codeRecord.get(mail)); // DEBUG:查看剩余有效验证码列表
       codeRecord.remove(mail);
     };
   }

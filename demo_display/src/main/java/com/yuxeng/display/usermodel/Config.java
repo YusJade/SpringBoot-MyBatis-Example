@@ -12,7 +12,7 @@ public class Config {
   /* 正则表达式 */
   static String USERNAME_REGEX = "[a-zA-Z][a-zA-Z0-9_]*$";  // Username起名规则
   static String PASSWORD_REGEX = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])\\S{8,}$"; // Password
-  static String EMAIL_REGEX = "^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$";
+  static String MAIL_REGEX = "^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$";
 
   /* 匹配列表 */
   static List<String> GENDER_LIST = Arrays.asList("男", "女", "男性", "女性", "男人", "女人",

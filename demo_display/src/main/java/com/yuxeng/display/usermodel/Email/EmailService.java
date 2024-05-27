@@ -6,7 +6,7 @@ public interface EmailService {
 
   void setMailConfig();
 
-  void sendMail(String email);
+  void sendMail(String mail);
 
   void generateRandomCode(String mail);
 
