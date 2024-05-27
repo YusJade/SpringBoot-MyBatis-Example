@@ -61,7 +61,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DemoDisplayApplication.executor": "Run",
+    "Spring Boot.DemoDisplayApplication.executor": "Debug",
     "git-widget-placeholder": "YuXeng",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "S:/Study/GitHub/Project/MyLibrary",
@@ -179,8 +179,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-77ac15d44862-intellij.indexing.shared.core-IU-242.10180.25" />
-        <option value="bundled-js-predefined-1d06a55b98c1-cb551a44b0f8-JavaScript-IU-242.10180.25" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
       </set>
     </attachedChunks>
   </component>
@@ -204,6 +203,7 @@
       <workItem from="1716533696073" duration="357000" />
       <workItem from="1716534093437" duration="7604000" />
       <workItem from="1716549929823" duration="7035000" />
+      <workItem from="1716774934448" duration="14226000" />
     </task>
     <servers />
   </component>
@@ -257,11 +257,6 @@
           <line>11</line>
           <properties field="userService" class="com.yuxeng.display.DemoDisplayApplicationTests" />
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/adminmodel/AdminController.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
