@@ -5,7 +5,6 @@ import jakarta.annotation.Resource;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.concurrent.ScheduledFuture;
-import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.stereotype.Service;
 
@@ -13,13 +12,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class HelperUtils {
 
-  /*  TODO：检测机制——规划
-
-   */
   @Resource
   UserDao userDao;
-  @Resource
-  Config cfg;
 
   private ThreadPoolTaskScheduler taskScheduler;
 
@@ -27,46 +21,65 @@ public class HelperUtils {
 
   /* INIT */
   @PostConstruct // 自动调用——在注入时
-  private void taskSchedulerInit(){
+  private void taskSchedulerInit() {
     taskScheduler = new ThreadPoolTaskScheduler();
     taskScheduler.setPoolSize(10);
     taskScheduler.setThreadNamePrefix("Task-");
     taskScheduler.initialize();
   }
 
-  public boolean checkUsernameDuplicate(String username) {
+  /*
+  检测用户名是否重复
+   */
+  public boolean checkUsernameRepeat(String username) {
     return userDao.getUserByUsername(username) == null;
   }
 
+  /*
+  检测用户名是否符合要求
+   */
   public boolean checkUsernameValidity(String username) {
+    System.out.println("DEBUG : Username");
     return username.matches(Config.USERNAME_REGEX) && !username.equals("admin")
         && username.length() <= 50;
   }
 
-  public boolean checkPasswordStrength(String password){
-    return !password.matches(Config.PASSWORD_REGEX) || password.length() > 50;
+  /*
+  检测密码强度
+   */
+  public boolean checkPasswordStrength(String password) {
+    System.out.println("DEBUG : Password");
+    return password.matches(Config.PASSWORD_REGEX) && password.length() <= 50;
   }
 
-  public boolean checkEmailValidity(String email){
+  /*
+  检测邮箱是否符合要求
+   */
+  public boolean checkEmailValidity(String email) {
+    System.out.println("DEBUG : Email");
     return email.matches(Config.EMAIL_REGEX);
   }
 
-  public boolean checkGenderValidity(String gender){
+  /*
+  检测性别是否符合要求
+   */
+  public boolean checkGenderValidity(String gender) {
+    System.out.println("DEBUG : Gender");
     return Config.GENDER_LIST.contains(gender);
   }
 
+  /*
+  [DEBUG] 取消所有线程的定时任务
+   */
   public void stopScheduledTask() {
-    // 取消定时任务
     if (scheduledFuture != null) {
       scheduledFuture.cancel(true);
       scheduledFuture = null;
     }
   }
 
-  /**
-   * 对传入的方法启动定时
-   * @param scheduledFunc 需要开启定时任务的函数
-   * @param waitTime  等待时间(min)
+  /*
+  对传入的方法启用定时器
    */
   public void startScheduledTask(Runnable scheduledFunc, int waitTime) {
     // 启动定时任务

@@ -1,6 +1,5 @@
 package com.yuxeng.display.usermodel;
 
-import java.sql.Timestamp;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -8,8 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserDao {
 
   /* INSERT */
-  // Return：插入用户的ID
-  int insertUser(User db);
+  void insertUser(User db);
 
   /* SELECT */
   List<User> getAllUser();
@@ -23,12 +21,15 @@ public interface UserDao {
   User getUserByPhone(String phone);
 
   /* UPDATE */
-  // Return：更新的记录数
-  int updateUserAllById(Long id, String username, String password, String name, String gender,
-      String phone, String email, Long max_borrow_days, Long max_borrow_books);
+  // Return：更新的记录
   int updateUserPasswordById(Long id, String password);
+
   int updateUserPasswordByUsername(String username, String password);
+
+  int updateUserBasicInfo(User user);
 
   /* DELETE */
   int deleteUserById(Long id);
+
+
 }

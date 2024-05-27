@@ -13,11 +13,18 @@ public class LoginConfig implements WebMvcConfigurer {
     // 注册管理员登录拦截器
     InterceptorRegistration registration = registry.addInterceptor(new AdminLoginInterceptor());
     // 拦截所有路径
-    registration.addPathPatterns("/**");
+    registration.addPathPatterns("/admin/**");
     // 放行特定的路径
     registration.excludePathPatterns(
         "/admin/login"
-    );
+        );
     // TODO: 注册用户登录拦截器
+    InterceptorRegistration userRegistration = registry.addInterceptor(new UserLoginOmterceptor());
+    userRegistration.addPathPatterns("/user/**");
+    userRegistration.excludePathPatterns(
+        "/user/login",
+        "/user/register",
+        "/user/send-code",
+        "/user/{mail}/code");
   }
 }

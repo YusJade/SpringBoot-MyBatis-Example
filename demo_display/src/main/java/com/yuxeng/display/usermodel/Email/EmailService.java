@@ -1,15 +1,15 @@
 package com.yuxeng.display.usermodel.Email;
 
-import org.springframework.scheduling.annotation.Scheduled;
+import java.util.Map;
 
 public interface EmailService {
+
   void setMailConfig();
 
   void sendMail(String email);
 
-  void generateRandomCode();
+  void generateRandomCode(String mail);
 
-  Runnable resetCode();
+  Runnable resetCode(String mail);
 
-  Runnable testTime();
 }

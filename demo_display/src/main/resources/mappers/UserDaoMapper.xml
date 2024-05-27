@@ -37,7 +37,7 @@
     WHERE phone = #{phone}
   </select>
   <!--  UPDATE  -->
-  <update id="updateUserAllById" parameterType="com.yuxeng.display.usermodel.User">
+  <update id="updateUserBasicInfo" parameterType="com.yuxeng.display.usermodel.User">
     UPDATE tb_user
     SET username         = #{username},
         name             = #{name},
@@ -64,5 +64,4 @@
     FROM tb_user
     WHERE id = #{id}
   </delete>
-
 </mapper>
