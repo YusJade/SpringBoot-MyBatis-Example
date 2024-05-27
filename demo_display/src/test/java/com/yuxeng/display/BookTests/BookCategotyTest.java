@@ -15,7 +15,7 @@ import org.mockito.MockitoAnnotations;
 import java.util.ArrayList;
 import java.util.List;
 
-class BookCategoryServiceTest {
+class BookCategoryTest {
 
   @Mock
   private BookCategoryDao bookCategoryDao;

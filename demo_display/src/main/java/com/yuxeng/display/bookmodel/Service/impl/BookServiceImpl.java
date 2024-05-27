@@ -4,6 +4,8 @@ import com.yuxeng.display.bookmodel.Dao.BookDao;
 import com.yuxeng.display.bookmodel.Pojo.Book;
 import com.yuxeng.display.bookmodel.Pojo.BookCategory;
 import com.yuxeng.display.util.PageBean;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,21 +20,29 @@ public class BookServiceImpl implements BookService{
   private BookDao bookDao;
 
   @Override
-  public PageBean<Book> listBooksByPage(Map<String,Object> paramMap){
-    PageBean<Book> pageBean = new PageBean<Book>(
-        (Integer) paramMap.get("pageOn"),
-        (Integer) paramMap.get("pageSize")
-    );
-    Integer startIndex = pageBean.getStartIndex();
-    paramMap.put("startIndex",startIndex);
+  public PageBean<Book> listBooksByPage(List<String> params) {
+    int pageOn = Integer.parseInt(params.get(0)); // 获取当前页码
+    int pageSize = Integer.parseInt(params.get(1)); // 获取每页显示的数量
 
+    PageBean<Book> pageBean = new PageBean<>(pageOn, pageSize);
+    int startIndex = pageBean.getStartIndex(); // 计算起始索引
+
+    // 构建参数Map
+    Map<String, Object> paramMap = new HashMap<>();
+    paramMap.put("startIndex", startIndex);
+    for (int i = 2; i < params.size(); i++) {
+      paramMap.put("param" + (i - 1), params.get(i)); // 参数名为param1, param2, ...
+    }
+
+    // 查询符合条件的图书列表
     List<Book> datas = bookDao.selectBook(paramMap);
     pageBean.setDatas(datas);
 
-    Integer totalRecords = bookDao.selectBookCount(paramMap);
+    // 查询符合条件的图书总数
+    int totalRecords = bookDao.selectBookCount(paramMap);
     pageBean.setTotalSize(totalRecords);
-    return pageBean;
 
+    return pageBean;
   }
 
   @Override

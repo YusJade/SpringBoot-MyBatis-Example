@@ -39,7 +39,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.BookCategoryServiceTest.executor": "Run",
+    "JUnit.BookTest.testGetBookById.executor": "Run",
     "JUnit.BookTest.testListBooksByPage.executor": "Run",
+    "JUnit.BookTest.testListCategory.executor": "Run",
+    "JUnit.BookTest.testRemoveBook.executor": "Run",
+    "JUnit.BookTest.testSaveBook.executor": "Run",
+    "JUnit.BookTest.testUpdateBook.executor": "Run",
     "JUnit.BookTests.executor": "Run",
     "JUnit.BookTests.testBookCategoryPojo.executor": "Run",
     "JUnit.BookTests.testBookPojo.executor": "Run",
@@ -49,11 +55,15 @@
     "JUnit.UserTests.sendMailTest.executor": "Run",
     "JUnit.UserTests.waitTimeTestNotWhile.executor": "Run",
     "JUnit.UserTests.waitTimeTestWithWhile.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.DemoDisplayApplication.executor": "Run",
     "git-widget-placeholder": "serendipity",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "S:/Study/GitHub/Project/SpringBoot-MyBatis-Example/demo_display",
+    "last_opened_file_path": "S:/Study/GitHub/Project/zpy_demo/SpringBoot-MyBatis-Example/demo_display",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -62,8 +72,8 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.BookCategoryServiceTest">
-    <configuration name="BookCategoryServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BookTest.testListBooksByPage">
+    <configuration name="BookCategoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
       <extension name="coverage">
         <pattern>
@@ -72,7 +82,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
-      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookCategoryServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookCategoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -94,6 +104,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BookTest.testListBooksByPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="display" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuxeng.display.BookTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
+      <option name="METHOD_NAME" value="testListBooksByPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BookTest.testRemoveBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
       <extension name="coverage">
@@ -105,22 +131,6 @@
       <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
       <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
       <option name="METHOD_NAME" value="testRemoveBook" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookTest.testSaveBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="display" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yuxeng.display.BookTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
-      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
-      <option name="METHOD_NAME" value="testSaveBook" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -144,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BookCategoryServiceTest" />
+        <item itemvalue="JUnit.BookTest.testListBooksByPage" />
         <item itemvalue="JUnit.BookTest.testRemoveBook" />
-        <item itemvalue="JUnit.BookTest.testUpdateBook" />
         <item itemvalue="JUnit.BookTest.testGetBookById" />
-        <item itemvalue="JUnit.BookTest.testSaveBook" />
+        <item itemvalue="JUnit.BookCategoryTest" />
+        <item itemvalue="JUnit.BookTest.testUpdateBook" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +179,8 @@
       <option name="presentableId" value="Default" />
       <updated>1716711228175</updated>
       <workItem from="1716711229720" duration="12350000" />
-      <workItem from="1716792153899" duration="779000" />
+      <workItem from="1716792153899" duration="9169000" />
+      <workItem from="1716816568872" duration="7225000" />
     </task>
     <servers />
   </component>

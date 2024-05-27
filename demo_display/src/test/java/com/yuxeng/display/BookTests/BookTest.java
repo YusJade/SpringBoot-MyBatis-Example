@@ -9,6 +9,7 @@ import com.yuxeng.display.bookmodel.Pojo.Book;
 import com.yuxeng.display.bookmodel.Pojo.BookCategory;
 import com.yuxeng.display.bookmodel.Service.impl.BookServiceImpl;
 import com.yuxeng.display.util.PageBean;
+import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -35,20 +36,25 @@ class BookTest {
 
   @Test
   void testListBooksByPage() {
-    Map<String, Object> params = new HashMap<>();
-    params.put("pageOn", 1);
-    params.put("pageSize", 10);
+    // 准备测试参数
+    List<String> params = new ArrayList<>();
+    params.add("1"); // pageOn
+    params.add("10"); // pageSize
 
+    // 准备模拟数据
     List<Book> books = Arrays.asList(new Book(), new Book());
     when(bookDao.selectBook(any())).thenReturn(books);
     when(bookDao.selectBookCount(any())).thenReturn(2);
 
+    // 调用被测试的方法
     PageBean<Book> result = bookService.listBooksByPage(params);
 
+    // 验证结果
     assertNotNull(result);
     assertEquals(2, result.getTotalSize());
     assertEquals(books, result.getDatas());
   }
+
 
   @Test
   void testListCategory() {

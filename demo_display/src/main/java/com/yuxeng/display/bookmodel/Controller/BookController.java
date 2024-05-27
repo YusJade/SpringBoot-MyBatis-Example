@@ -1,22 +1,16 @@
 package com.yuxeng.display.bookmodel.Controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.yuxeng.display.bookmodel.Pojo.Book;
 import com.yuxeng.display.bookmodel.Pojo.BookCategory;
 import com.yuxeng.display.bookmodel.Service.BookService;
 import com.yuxeng.display.util.PageBean;
-import jakarta.servlet.http.HttpSession;
-import com.yuxeng.display.util.StringUtil;
-import java.util.HashMap;
+import com.yuxeng.display.util.ResponseCode;
+import com.yuxeng.display.util.Responses;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Map;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/book")
@@ -25,38 +19,60 @@ public class BookController {
   @Autowired
   private BookService bookService;
 
-  // 显示全部书籍
-  @RequestMapping(value = "/listBook")
-  @ResponseBody
-  public String queryBook(@RequestParam(value = "page", defaultValue = "1") Integer pageOn,
-      @RequestParam(value = "limit", defaultValue = "5") Integer pageSize,
-      String bookName,String author,String categoryId, HttpSession session
-  ) {
-    // 创建一个Map对象，用于存储分页和查询参数
-    Map<String,Object> paramMap = new HashMap<>();
-    paramMap.put("pageOn",pageOn);
-    paramMap.put("pageSize",pageSize);
+  @GetMapping
+  // TODO： 没有书籍和关键词匹配的情况
+  public Responses<PageBean<Book>> queryBook(@RequestParam List<String> paramMap) {
+    return new Responses<>(ResponseCode.SUCCESS,"书籍查询成功",
+        bookService.listBooksByPage(paramMap));
+  }
 
-    // 判断查询条件是否为空
-    if (StringUtil.isNotEmpty(bookName)) paramMap.put("bookName",bookName);
-    if (StringUtil.isNotEmpty(author)) paramMap.put("author", author);
-    if (StringUtil.isNotEmpty(categoryId)) paramMap.put("categoryId", Integer.parseInt(categoryId));
 
-    // 查询分页图书数据
-    PageBean<Book> pageBean = bookService.listBooksByPage(paramMap);
+  @PostMapping
+  public Responses<Book> addBook(@RequestBody Book book) {
+    // 先根据图书id查看图书是否存在
+    Book existingBook = bookService.getBookById(book.getId());
+    if (existingBook != null) {
+      // 图书已存在，则增加数量
+      int newQuantity = existingBook.getQuantity() + book.getQuantity();
+      existingBook.setQuantity(newQuantity);
+        return new Responses<>(ResponseCode.SUCCESS, "图书数量增加成功", existingBook);
+    } else {
+      // TODO 固定输入的信息
+      // 图书不存在，依次输入图书信息并保存
+      return new Responses<>(ResponseCode.SUCCESS, "图书添加成功", book);
+    }
+  }
 
-    // 获取类别
-    List<BookCategory> categoryList = bookService.listCategory();
-    String category = "category";
-    session.setAttribute(category,categoryList);
 
-    ObjectMapper mapper = new ObjectMapper();
-    ObjectNode obj = mapper.createObjectNode();
+  @GetMapping("/{id}")
+  public Responses<Book> getBook(@PathVariable int id) {
+    // 根据图书ID获取图书详情
+    Book book = bookService.getBookById(id);
+    if (book != null) {
+      return new Responses<>(ResponseCode.SUCCESS, "图书查询成功", book);
+    } else {
+      return new Responses<>(ResponseCode.BOOK_NOT_EXIST, "图书不存在", null);
+    }
+  }
 
-    obj.put("code",0);
-    obj.put("message","");
-    obj.put("count",pageBean.getTotalPage());
-    obj.putPOJO("data", pageBean.getDatas());
-    return obj.toString();
+  @PutMapping("/{id}")
+  public Responses<Book> updateBook(@PathVariable int id, @RequestBody Book book) {
+    // 更新图书信息
+    book.setId(id);
+    bookService.updateBook(book);
+    return new Responses<>(ResponseCode.SUCCESS, "图书信息更新成功", book);
+  }
+
+  @DeleteMapping("/{id}")
+  public Responses<String> deleteBook(@PathVariable int id) {
+    // 删除图书
+    bookService.removeBook(id);
+    return new Responses<>(ResponseCode.SUCCESS, "图书删除成功", null);
+  }
+
+  @GetMapping("/recommend")
+  public Responses<List<Book>> getRecommendedBooks() {
+    // TODO：获取推荐图书，实现逻辑在BookService中
+    return null; // 占位符
   }
 }
