@@ -15,14 +15,17 @@
   <select id="selectBorrow" resultType="com.yuxeng.display.borrowmodel.Borrow">
     SELECT * FROM tb_borrow
     <where>
-      <if test="user_id != null">
-          AND user_id = #{user_id}
+      <if test="map.user_id != null">
+        AND user_id = #{map.user_id}
       </if>
-      <if test="book_id != null">
-          AND book_id = #{book_id}
+      <if test="map.book_id != null">
+        AND book_id = #{map.book_id}
       </if>
-      <if test="category_id != null">
-        AND (SELECT category_id FROM tb_book WHERE tb_book.id = book_id LIMIT 1) = #{category_id}
+      <if test="map.category_id != null">
+        AND (SELECT category_id FROM tb_book WHERE tb_book.id = book_id LIMIT 1) = #{map.category_id}
+      </if>
+      <if test="isContainFinished == false">
+        AND really_return_date IS NULL
       </if>
     </where>
   </select>
@@ -30,11 +33,18 @@
   <select id="countBorrow" resultType="java.lang.Integer">
     SELECT COUNT(*) FROM tb_borrow
     <where>
-      <if test="user_id != null">
-        user_id = #{user_id}
+      <if test="map.user_id != null">
+        AND user_id = #{map.user_id}
       </if>
-      <if test="book_id != null">
-        book_id = #{book_id}
+      <if test="map.book_id != null">
+        AND book_id = #{map.book_id}
+      </if>
+      <if test="map.category_id != null">
+        AND (SELECT category_id FROM tb_book, tb_borrow
+          WHERE tb_book.id == tb_borrow.book_id LIMIT 1) = #{map.category_id}
+      </if>
+      <if test="isContainFinished == false">
+        AND really_return_date IS NULL
       </if>
     </where>
   </select>

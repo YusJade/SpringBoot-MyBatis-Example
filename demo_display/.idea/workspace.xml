@@ -206,7 +206,7 @@
       <workItem from="1716533696073" duration="357000" />
       <workItem from="1716534093437" duration="7604000" />
       <workItem from="1716549929823" duration="7035000" />
-      <workItem from="1716774934448" duration="22977000" />
+      <workItem from="1716774934448" duration="25656000" />
     </task>
     <servers />
   </component>
@@ -269,6 +269,11 @@
           <line>11</line>
           <properties field="userService" class="com.yuxeng.display.DemoDisplayApplicationTests" />
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/borrowmodel/BorrowService.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

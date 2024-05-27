@@ -39,30 +39,30 @@ public class BorrowService {
     map.put("user_id", userId);
     map.put("book_id", bookId);
     map.put("category_id", categoryId);
-    return borrowDao.selectBorrow(map);
+    return borrowDao.selectBorrow(map, true);
   }
 
   List<Borrow> listBorrowByBook(int bookId) {
     Map<String, Object> map = new HashMap<>();
     map.put("book_id", bookId);
-    return borrowDao.selectBorrow(map);
+    return borrowDao.selectBorrow(map, true);
   }
 
   List<Borrow> listBorrowByUser(int userId) {
     Map<String, Object> map = new HashMap<>();
     map.put("book_id", userId);
-    return borrowDao.selectBorrow(map);
+    return borrowDao.selectBorrow(map, true);
   }
 
   List<Borrow> listBorrowByCategory(int categoryId) {
     Map<String, Object> map = new HashMap<>();
     map.put("book_id", categoryId);
-    return borrowDao.selectBorrow(map);
+    return borrowDao.selectBorrow(map, true);
   }
 
   List<Borrow> listAllBorrow() {
     Map<String, Object> map = new HashMap<>();
-    return borrowDao.selectBorrow(map);
+    return borrowDao.selectBorrow(map, true);
   }
 
   /**
@@ -83,10 +83,12 @@ public class BorrowService {
     if (book == null) {
       return -2; // 图书不存在，无法借阅
     }
-    if (!borrowDao.selectBorrow(Map.of("user_id", userId, "book_id", bookId)).isEmpty()) {
+    if (!borrowDao.selectBorrow(Map.of("user_id", userId, "book_id", bookId),
+        false).isEmpty()) {
       return -3; // 同种图书已被用户借阅，且未被归还，无法再次借阅
     }
-    if (user.getMax_borrow_books() == borrowDao.countBorrow(Map.of("user_id", userId))) {
+    if (user.getMax_borrow_books() <=
+        borrowDao.countBorrow(Map.of("user_id", userId), false)) {
       return 0; // 用户已经达到最大借阅数，无法订阅
     }
     // 设置借阅日期
@@ -107,9 +109,9 @@ public class BorrowService {
 
   /**
    * 续借图书
+   *
    * @param id 借阅记录 id
-   * @return -3：记录不存在；-2：图书已归还，无法续借；-1：逾期；
-   * 0：系统错误或无法更新；1：成功续借
+   * @return -3：记录不存在；-2：图书已归还，无法续借；-1：逾期； 0：系统错误或无法更新；1：成功续借
    */
   int renewBorrow(int id) {
     Borrow borrow = borrowDao.selectBorrowById(id);
@@ -137,9 +139,9 @@ public class BorrowService {
 
   /**
    * 续借图书
+   *
    * @param id 借阅记录 id
-   * @return -3：记录不存在；-2：图书已归还；-1：逾期；
-   * 0：系统错误或无法更新；1：成功续借
+   * @return -3：记录不存在；-2：图书已归还；-1：逾期； 0：系统错误或无法更新；1：成功续借
    */
   int returnBorrow(int id) {
     Borrow borrow = borrowDao.selectBorrowById(id);
@@ -152,7 +154,7 @@ public class BorrowService {
     Calendar calendar = Calendar.getInstance();
     Timestamp curDate = Timestamp.from(calendar.toInstant());
     if (borrow.getReturn_date().compareTo(curDate) < 0) {
-      return  -1;
+      return -1;
     }
     return borrowDao.updateBorrowById(
         Map.of("id", borrow.getId(),
