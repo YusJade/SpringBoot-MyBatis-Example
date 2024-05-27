@@ -61,7 +61,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DemoDisplayApplication.executor": "Debug",
+    "Spring Boot.DemoDisplayApplication.executor": "Run",
     "git-widget-placeholder": "YuXeng",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "S:/Study/GitHub/Project/MyLibrary",
@@ -76,6 +76,9 @@
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "mysql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
     ]
   }
 }]]></component>
@@ -203,7 +206,7 @@
       <workItem from="1716533696073" duration="357000" />
       <workItem from="1716534093437" duration="7604000" />
       <workItem from="1716549929823" duration="7035000" />
-      <workItem from="1716774934448" duration="19166000" />
+      <workItem from="1716774934448" duration="22977000" />
     </task>
     <servers />
   </component>
@@ -251,6 +254,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/borrowmodel/BorrowController.java</url>
+          <line>51</line>
+          <properties class="com.yuxeng.display.borrowmodel.BorrowController" method="addBorrow">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/test/java/com/yuxeng/display/DemoDisplayApplicationTests.java</url>

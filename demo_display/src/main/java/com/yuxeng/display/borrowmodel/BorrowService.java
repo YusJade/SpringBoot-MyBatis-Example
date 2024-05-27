@@ -123,11 +123,11 @@ public class BorrowService {
     Calendar calendar = Calendar.getInstance();
     Timestamp curDate = Timestamp.from(calendar.toInstant());
     Timestamp returnDate = borrow.getReturn_date();
-    if (curDate.compareTo(returnDate) < 0) {
+    if (curDate.compareTo(returnDate) > 0) {
       return -1;
     }
     // 未逾期则续满
-    User user = userDao.getUserById((long) borrow.getId());
+    User user = userDao.getUserById((long) borrow.getUser_id());
     calendar.add(Calendar.DATE, Math.toIntExact(user.getMax_borrow_days()));
     returnDate = Timestamp.from(calendar.toInstant());
     return borrowDao.updateBorrowById(

@@ -62,7 +62,7 @@ public class AdminController {
         new Responses<>(ResponseCode.SUCCESS, "信息修改成功", id);
   }
 
-  @PutMapping("/{id}/password")
+  @PutMapping("/{id}/reset-password")
   public Responses<String> modifyPassword(@PathVariable int id,
       @RequestBody Map<String, String> passwords) {
     int res = adminService.updatePassword(id, passwords);
