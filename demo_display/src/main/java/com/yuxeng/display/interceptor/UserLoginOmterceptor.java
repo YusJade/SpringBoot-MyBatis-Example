@@ -31,12 +31,14 @@ public class UserLoginOmterceptor implements HandlerInterceptor {
   }
 
   @Override
-  public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handle, ModelAndView modelAndView) throws  Exception{
+  public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handle,
+      ModelAndView modelAndView) throws Exception {
     System.out.println("[HANDLE] | PostHandle Working");
   }
 
   @Override
-  public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception{
+  public void afterCompletion(HttpServletRequest request, HttpServletResponse response,
+      Object handler, Exception ex) throws Exception {
     System.out.println("[HANDLE] | AfterHandle Working");
   }
 

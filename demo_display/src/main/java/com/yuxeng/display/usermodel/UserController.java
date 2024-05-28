@@ -44,6 +44,7 @@ public class UserController {
   @PostMapping("/register")
   public Responses<Long> registerUser(@RequestBody Map<String, String> userRequest) {
     // POST -- 注册用户 -- 已验证
+    // TODO: 状态码新增用户名重复 BY YuXeng
     return switch (userService.registerUser(userRequest)) {
       case Config.INFO_NOT_ALLOW ->
           new Responses<>(ResponseCode.BAD_REQUEST, "Input Info Unallow", null);
