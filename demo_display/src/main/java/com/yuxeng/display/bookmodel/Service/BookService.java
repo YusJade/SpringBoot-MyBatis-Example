@@ -55,4 +55,6 @@ public interface BookService {
    * @param bookId 要移除的图书ID。
    */
   void removeBook(int bookId);
+
+  PageBean<Book> recommendBook(int userId);
 }

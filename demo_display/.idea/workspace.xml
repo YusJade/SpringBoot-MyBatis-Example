@@ -25,6 +25,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="LLMProjectSettings">
     <option name="aiignore_manually_set" value="true" />
   </component>
@@ -64,7 +68,7 @@
     "Spring Boot.DemoDisplayApplication.executor": "Run",
     "git-widget-placeholder": "serendipity",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "S:/Study/GitHub/Project/zpy_demo/SpringBoot-MyBatis-Example/demo_display",
+    "last_opened_file_path": "S:/Study/GitHub/Project/SpringBoot-MyBatis-Example/demo_display/src/main/java/com/yuxeng/display",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,7 +77,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.BookTest.testSaveBook">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="S:\Study\GitHub\Project\SpringBoot-MyBatis-Example\demo_display\src\main\java\com\yuxeng\display" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.DemoDisplayApplication">
     <configuration name="BookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
       <extension name="coverage">
@@ -85,22 +94,6 @@
       <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
       <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookTest.testGetBookById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="display" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yuxeng.display.BookTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
-      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
-      <option name="METHOD_NAME" value="testGetBookById" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,13 +146,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DemoDisplayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="display" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yuxeng.display.DemoDisplayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuxeng.display.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.DemoDisplayApplication" />
         <item itemvalue="JUnit.BookTest.testSaveBook" />
         <item itemvalue="JUnit.BookTest" />
         <item itemvalue="JUnit.BookTest.testListBooksByPage" />
         <item itemvalue="JUnit.BookTest.testRemoveBook" />
-        <item itemvalue="JUnit.BookTest.testGetBookById" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +189,7 @@
       <workItem from="1716711229720" duration="12350000" />
       <workItem from="1716792153899" duration="9169000" />
       <workItem from="1716816568872" duration="7225000" />
-      <workItem from="1716867231879" duration="9833000" />
+      <workItem from="1716867231879" duration="17153000" />
     </task>
     <servers />
   </component>

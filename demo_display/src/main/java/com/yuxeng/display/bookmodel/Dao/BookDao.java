@@ -2,6 +2,7 @@ package com.yuxeng.display.bookmodel.Dao;
 
 import com.yuxeng.display.bookmodel.Pojo.Book;
 import com.yuxeng.display.bookmodel.Pojo.BookCategory;
+import com.yuxeng.display.util.PageBean;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
@@ -61,5 +62,12 @@ public interface BookDao {
    * @param book 要更新的Book对象
    */
   void updateBook(Book book);
+
+  /**
+   * 给用户推荐书籍
+   * @param userId 用户id
+   * @return 给用户推荐的书籍的列表，按照分页显示
+   */
+  PageBean<Book> recommendBook(int userId);
 }
 

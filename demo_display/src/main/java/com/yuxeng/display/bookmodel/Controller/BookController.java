@@ -1,8 +1,8 @@
 package com.yuxeng.display.bookmodel.Controller;
 
 import com.yuxeng.display.bookmodel.Pojo.Book;
-import com.yuxeng.display.bookmodel.Pojo.BookCategory;
 import com.yuxeng.display.bookmodel.Service.BookService;
+import com.yuxeng.display.usermodel.UserController;
 import com.yuxeng.display.util.PageBean;
 import com.yuxeng.display.util.ResponseCode;
 import com.yuxeng.display.util.Responses;
@@ -18,6 +18,8 @@ public class BookController {
 
   @Autowired
   private BookService bookService;
+  @Autowired
+  private UserController user;
 
   @GetMapping
   public Responses<PageBean<Book>> queryBook(@RequestParam List<String> paramMap) {
@@ -66,9 +68,13 @@ public class BookController {
     return new Responses<>(ResponseCode.SUCCESS, "图书删除成功", null);
   }
 
-  @GetMapping("/recommend")
-  public Responses<List<Book>> getRecommendedBooks(@RequestBody int userCategoryId) {
-    // TODO：获取推荐图书，实现逻辑在BookService中
-    return null; // 占位符
+  @GetMapping("/recommends")
+  public Responses<PageBean<Book>> getRecommendedBooks(@RequestBody int userId) {
+    PageBean<Book> listRecommendBook = bookService.recommendBook(userId);
+    if(listRecommendBook == null){
+      return new Responses<>(ResponseCode.BORROW_NOT_EXIST,"还未借阅书籍，无法推荐",null);
+    }else{
+      return new Responses<>(ResponseCode.SUCCESS,"推荐书籍成功",listRecommendBook);
+    }
   }
 }

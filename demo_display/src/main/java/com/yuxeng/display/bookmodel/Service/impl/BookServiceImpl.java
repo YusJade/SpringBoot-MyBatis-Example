@@ -3,6 +3,7 @@ package com.yuxeng.display.bookmodel.Service.impl;
 import com.yuxeng.display.bookmodel.Dao.BookDao;
 import com.yuxeng.display.bookmodel.Pojo.Book;
 import com.yuxeng.display.bookmodel.Pojo.BookCategory;
+import com.yuxeng.display.usermodel.UserController;
 import com.yuxeng.display.util.PageBean;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,6 +19,8 @@ public class BookServiceImpl implements BookService{
 
   @Autowired
   private BookDao bookDao;
+  @Autowired
+  private UserController user;
 
   @Override
   public PageBean<Book> listBooksByPage(List<String> params) {
@@ -75,6 +78,11 @@ public class BookServiceImpl implements BookService{
   @Override
   public void removeBook(int bookId) {
   bookDao.deleteBook(bookId);
+  }
+
+  @Override
+  public PageBean<Book> recommendBook(int userId){
+    return bookDao.recommendBook(userId);
   }
 
 }
