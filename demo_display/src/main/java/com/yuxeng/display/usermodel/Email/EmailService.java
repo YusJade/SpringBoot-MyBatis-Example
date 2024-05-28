@@ -8,6 +8,8 @@ public interface EmailService {
 
   void sendMail(String mail);
 
+  void sendHtmlMail(String mail, String filePath);
+
   void generateRandomCode(String mail);
 
   Runnable resetCode(String mail);
