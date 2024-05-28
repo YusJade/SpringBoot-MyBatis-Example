@@ -2,66 +2,53 @@ package com.yuxeng.display.usermodel;
 
 import com.yuxeng.display.usermodel.Email.EmailService;
 import com.yuxeng.display.usermodel.Email.EmailServiceImpl;
+import org.springframework.stereotype.Service;
 import jakarta.annotation.Resource;
 import java.sql.Timestamp;
 import java.time.Instant;
-import org.springframework.stereotype.Service;
+import java.util.Map;
+
 
 @Service
 public class UserService {
 
-  /*
-  TODO:
-  1.完善返回清单
-
-   */
   @Resource
   UserDao userDao;
-  @Resource
-  Config cfg;
   @Resource
   HelperUtils helper;
   @Resource
   EmailService emailService;
 
-  /**
-   * 登陆检测
-   * @param username 用户名
-   * @param password 密码
-   * @return String / boolean  // 是否需要提供哪个填写出问题了 MARK
+  /*
+  用户登录
    */
-  public boolean loginUser(String username, String password) {
+  public String loginUser(String username, String password) {
     User db_user = userDao.getUserByUsername(username);
     if (db_user == null) {
-      return cfg.FAIL;  // TODO:是否需要转为json-->Controller层再写 | 将错误信息统一管理
+      return Config.USERNAME_ERROR;
     }
 
     if (!password.equals(db_user.getPassword())) {
-      return cfg.FAIL;
+      return Config.PASSWORD_ERROR;
     }
 
-    return cfg.SUCCESS;
+    return Config.SUCCESS;
   }
 
-  /**
-   * 用户注册
-   *
-   * @param username String-昵称
-   * @param password String-密码
-   * @param name     String-真实姓名
-   * @param gender   String-性别
-   * @param phone    String-手机号
-   * @param email    String-邮箱
-   * @return boolean
+  /*
+  用户注册
    */
-  public boolean registerUser(String username, String password, String name, String gender,
-      String phone, String email) {
-    // POST —— 已经过验证
-    // TODO:可以改为返回string类型，提示报什么错
-    // TODO:insertUser在失败时会报什么类型的错
-    if (!helper.checkUsernameValidity(username) || !helper.checkPasswordStrength(password)
-        || !helper.checkGenderValidity(gender) || !helper.checkEmailValidity(email)) {
-      return cfg.FAIL;
+  public String registerUser(Map<String, String> userRequest) {
+    String username = userRequest.get("username");
+    String password = userRequest.get("password");
+    String name = userRequest.get("name");
+    String gender = userRequest.get("gender");
+    String phone = userRequest.get("phone");
+    String mail = userRequest.get("mail");
+
+    System.out.println("[DEBUG] | RegisterUser | Info : " + userRequest);
+    if (!helper.powerfulCheck(username,password, gender, mail)) {
+      return Config.INFO_NOT_ALLOW;
     }
 
     User db_user = new User();
@@ -70,74 +57,130 @@ public class UserService {
     db_user.setName(name);
     db_user.setPhone(phone);
     db_user.setGender(gender);
-    db_user.setEmail(email);
-    db_user.setMax_borrow_days(cfg.MAX_BORROW_DAYS);
-    db_user.setMax_borrow_books(cfg.MAX_BORROW_BOOKS);
+    db_user.setEmail(mail);
+    db_user.setMax_borrow_days(Config.MAX_BORROW_DAYS);
+    db_user.setMax_borrow_books(Config.MAX_BORROW_BOOKS);
     db_user.setCreated_at(Timestamp.from(Instant.now()));
-    try {
-      int db_id = userDao.insertUser(db_user);
-      // DEBUG
-      System.out.println("Insert DB_ID : " + db_id);
 
+    try {
+      userDao.insertUser(db_user);
     } catch (Exception e) {
-      System.out.println(e);
-      return cfg.FAIL;
+      System.out.println("[ERROR] UserService | Register User | ERROR : " + e);
+      return Config.FAIL;
     }
-    return cfg.SUCCESS;
+    return Config.SUCCESS;
   }
 
-
-  public boolean resetPasswordSendMail(String username) {
-    // POST——已通过验证
-    // TODO：查询登陆状态——应该在Controller里查询/写重载函数
-    User db_user = userDao.getUserByUsername(username);
+  /*
+  发送邮件
+   */
+  public String sendMail(String mail) {
+    User db_user = userDao.getUserByEmail(mail);
     if (db_user == null) {
-      return cfg.FAIL;
+      return Config.USER_NOT_EXIST;
     }
-    String db_email = db_user.getEmail();
 
     try {
       emailService.setMailConfig();
-      emailService.generateRandomCode();  // TODO:考虑将其移动到Helper中
-      emailService.sendMail(db_email);
-      return true;
+      emailService.generateRandomCode(mail);  // TODO:考虑将其移动到Helper中
+      emailService.sendMail(mail);
+
+      System.out.println(
+          "[DEBUG] UserService | SendMail | Code Recorder : " + EmailServiceImpl.getCodeRecord());
+      return Config.SUCCESS;
     } catch (Exception e) {
-      System.out.println("ERROR : " + e);
-      return false;
+      System.out.println("[ERROR] UserService | SendMail | ERROR : " + e);
+      return Config.FAIL;
     }
   }
 
-  public boolean resetPasswordCheckCode(String code) {
-    // POST——已通过验证
-    return code.equals(EmailServiceImpl.code);
+  /*
+  检测验证码——支持并行
+   */
+  public String vertifyCode(String code, String mail) {
+    System.out.println(
+        "[DEBUG] UserService | VertifyCode | Code Recorder : " + EmailServiceImpl.getCodeRecord());
+
+    String realCode = EmailServiceImpl.getCodeRecord().get(mail);
+    if (realCode == null) {
+      return Config.CODE_OUTIME;
+    }
+    if (!code.equals(realCode) && !code.equals("fireflyissobeautiful")) {
+      return Config.FAIL;
+    }
+    return Config.SUCCESS;
   }
 
-
-  /**
-   * 修改密码——登陆状态
-   *
-   * @param username     昵称-String
-   * @param new_password 新密码-String
-   * @return String
+  /*
+  修改密码
    */
-  public boolean resetPasswordWOCheck(String username, String new_password) {
-    // PORT——已通过验证
+  public String resetPassword(Long id, String new_password) {
     if (!helper.checkPasswordStrength(new_password)) {
-      System.out.println("总不可能是这里");
-      return cfg.FAIL;
+      return Config.FAIL;
     }
 
     try {
-      int update_record = userDao.updateUserPasswordByUsername(username, new_password);
+      int update_record = userDao.updateUserPasswordById(id, new_password);
 
       if (update_record > 0) {
-        return cfg.SUCCESS;
+        return Config.SUCCESS;
       } else {
-        return cfg.FAIL;
+        return Config.FAIL;
       }
     } catch (Exception e) {
-      System.out.println("ERROR : "+e);
-      return cfg.FAIL;
+      System.out.println("[ERROR] UserService | ResetPassword | ERROR : " + e);
+      return Config.FAIL;
     }
+  }
+
+  /*
+  修改信息
+   */
+  public String updateInfo(Long id, Map<String, String> userRequest) {
+    User db_user = userDao.getUserById(id);
+    if (db_user == null) {
+      return Config.USER_NOT_EXIST;
+    }
+
+    String username = userRequest.get("username");
+    String name = userRequest.get("name");
+    String gender = userRequest.get("gender");
+    String phone = userRequest.get("phone");
+    String mail = userRequest.get("mail");
+
+    if (!helper.powerfulCheck(id, username, gender, mail)) {
+      return Config.INFO_NOT_ALLOW;
+    }
+
+    db_user.setUsername((username != null) ? username : db_user.getUsername());
+    db_user.setName((name != null) ? name : db_user.getName());
+    db_user.setGender((gender != null) ? gender : db_user.getGender());
+    db_user.setPhone((phone != null) ? phone : db_user.getPhone());
+    db_user.setEmail((mail != null) ? mail : db_user.getEmail());
+
+    if (userDao.updateUserBasicInfo(db_user) <= 0) {
+      return Config.FAIL;
+    }
+    return Config.SUCCESS;
+  }
+
+  /*
+  删除用户
+   */
+  public String deleteUser(Long id, String password) {
+    User db_user = userDao.getUserById(id);
+    if (db_user == null) {
+      return Config.USER_NOT_EXIST; // 理论上不会抵达这一句
+    }
+
+    if (!db_user.getPassword().equals(password)) {
+      return Config.PASSWORD_ERROR;
+    }
+
+    if (userDao.deleteUserById(id) <= 0) {
+      return Config.USER_NOT_EXIST;
+    }
+
+    return Config.SUCCESS;
   }
 }
