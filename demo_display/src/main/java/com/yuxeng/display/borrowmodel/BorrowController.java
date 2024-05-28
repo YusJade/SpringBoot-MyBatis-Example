@@ -42,9 +42,10 @@ public class BorrowController {
   Responses<List<Borrow>> queryBorrow(
       @RequestParam(value = "user_id", required = false) Integer userId,
       @RequestParam(value = "book_id", required = false) Integer bookId,
-      @RequestParam(value = "category_id", required = false) Integer categoryId) {
+      @RequestParam(value = "category_id", required = false) Integer categoryId,
+      @RequestParam(value = "contain_finished", required = false) Boolean isContainFinished) {
     return new Responses<>(ResponseCode.SUCCESS, "借阅记录查询成功",
-        borrowService.listBorrow(userId, bookId, categoryId));
+        borrowService.listBorrow(userId, bookId, categoryId, isContainFinished));
   }
 
 

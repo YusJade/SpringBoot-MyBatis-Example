@@ -34,12 +34,16 @@ public class BorrowService {
    * @param categoryId 借阅图书的分类 Id，null 则全匹配
    * @return 符合条件的所有借阅记录
    */
-  List<Borrow> listBorrow(Integer userId, Integer bookId, Integer categoryId) {
+  List<Borrow> listBorrow(Integer userId, Integer bookId, Integer categoryId,
+      Boolean isContainFinished) {
     Map<String, Object> map = new HashMap<>();
     map.put("user_id", userId);
     map.put("book_id", bookId);
     map.put("category_id", categoryId);
-    return borrowDao.selectBorrow(map, true);
+    if (isContainFinished == null) {
+      isContainFinished = true;
+    }
+    return borrowDao.selectBorrow(map, isContainFinished);
   }
 
   List<Borrow> listBorrowByBook(int bookId) {
