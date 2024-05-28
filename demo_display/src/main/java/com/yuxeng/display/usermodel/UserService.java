@@ -47,8 +47,12 @@ public class UserService {
     String mail = userRequest.get("mail");
 
     System.out.println("[DEBUG] | RegisterUser | Info : " + userRequest);
+
     if (!helper.powerfulCheck(username, password, name, gender, mail)) {
       return Config.INFO_NOT_ALLOW;
+    }
+    if (!helper.checkUsernameNotRepeat(username)){
+      return Config.USERNAME_ERROR;
     }
 
     User db_user = new User();
@@ -147,6 +151,10 @@ public class UserService {
     String gender = userRequest.get("gender");
     String phone = userRequest.get("phone");
     String mail = userRequest.get("mail");
+
+    if (username!=null && !username.equals(userDao.getUserById(id).getUsername()) && !helper.checkUsernameNotRepeat(username)) {
+      return Config.USERNAME_ERROR;
+    }
 
     if (!helper.powerfulCheck(id, username, gender, mail)) {
       return Config.INFO_NOT_ALLOW;

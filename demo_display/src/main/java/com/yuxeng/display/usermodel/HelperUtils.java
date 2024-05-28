@@ -79,7 +79,6 @@ public class HelperUtils {
         name != null &&
         mail != null &&
         checkUsernameValidity(username) &&
-        checkUsernameNotRepeat(username) &&
         checkPasswordStrength(password) &&
         checkGenderValidity(gender) &&
         checkEmailValidity(mail);
