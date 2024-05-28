@@ -51,9 +51,9 @@ public interface BookDao {
   /**
    * 插入新书籍
    *
-   * @param book 要插入的Book对象
+   * @param bookMap 要插入的Book对象
    */
-  void insertBook(Book book);
+  void insertBook(Map<String, Object> bookMap);
 
   /**
    * 更新书籍信息

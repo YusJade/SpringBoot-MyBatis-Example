@@ -30,9 +30,9 @@ public interface BookService {
   /**
    * 保存新书。
    *
-   * @param book 要保存的图书对象。
+   * @param map 要保存的图书对象。
    */
-  void saveBook(Book book);
+  void saveBook(Map<String, Object> map);
 
   /**
    * 根据图书ID检索图书。

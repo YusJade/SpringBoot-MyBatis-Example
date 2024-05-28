@@ -40,6 +40,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.BookCategoryServiceTest.executor": "Run",
+    "JUnit.BookTest.executor": "Run",
     "JUnit.BookTest.testGetBookById.executor": "Run",
     "JUnit.BookTest.testListBooksByPage.executor": "Run",
     "JUnit.BookTest.testListCategory.executor": "Run",
@@ -72,8 +73,8 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.BookTest.testListBooksByPage">
-    <configuration name="BookCategoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BookTest.testSaveBook">
+    <configuration name="BookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
       <extension name="coverage">
         <pattern>
@@ -82,7 +83,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
-      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookCategoryTest" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,7 +137,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookTest.testUpdateBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookTest.testSaveBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
       <extension name="coverage">
         <pattern>
@@ -146,7 +147,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
       <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
-      <option name="METHOD_NAME" value="testUpdateBook" />
+      <option name="METHOD_NAME" value="testSaveBook" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BookTest.testSaveBook" />
+        <item itemvalue="JUnit.BookTest" />
         <item itemvalue="JUnit.BookTest.testListBooksByPage" />
         <item itemvalue="JUnit.BookTest.testRemoveBook" />
         <item itemvalue="JUnit.BookTest.testGetBookById" />
-        <item itemvalue="JUnit.BookCategoryTest" />
-        <item itemvalue="JUnit.BookTest.testUpdateBook" />
       </list>
     </recent_temporary>
   </component>
@@ -181,6 +182,7 @@
       <workItem from="1716711229720" duration="12350000" />
       <workItem from="1716792153899" duration="9169000" />
       <workItem from="1716816568872" duration="7225000" />
+      <workItem from="1716867231879" duration="9833000" />
     </task>
     <servers />
   </component>

@@ -20,29 +20,25 @@ public class BookController {
   private BookService bookService;
 
   @GetMapping
-  // TODO： 没有书籍和关键词匹配的情况
   public Responses<PageBean<Book>> queryBook(@RequestParam List<String> paramMap) {
-    return new Responses<>(ResponseCode.SUCCESS,"书籍查询成功",
-        bookService.listBooksByPage(paramMap));
-  }
+    PageBean<Book> queryBook = bookService.listBooksByPage(paramMap);
+    if(queryBook != null){
+      return new Responses<>(ResponseCode.SUCCESS,"书籍查询成功",
+          bookService.listBooksByPage(paramMap));
+    }else{
+      return new Responses<>(ResponseCode.BOOK_NOT_EXIST,"没有与关键词匹配的书籍！",
+          null);
+    }
 
+  }
 
   @PostMapping
-  public Responses<Book> addBook(@RequestBody Book book) {
-    // 先根据图书id查看图书是否存在
-    Book existingBook = bookService.getBookById(book.getId());
-    if (existingBook != null) {
-      // 图书已存在，则增加数量
-      int newQuantity = existingBook.getQuantity() + book.getQuantity();
-      existingBook.setQuantity(newQuantity);
-        return new Responses<>(ResponseCode.SUCCESS, "图书数量增加成功", existingBook);
-    } else {
-      // TODO 固定输入的信息
-      // 图书不存在，依次输入图书信息并保存
-      return new Responses<>(ResponseCode.SUCCESS, "图书添加成功", book);
-    }
+  public Responses<Book> addBook(@RequestBody Map<String, Object> bookMap) {
+    bookService.saveBook(bookMap);
+    int id = (int)bookMap.get("id");
+    Book book = bookService.getBookById(id);
+    return new Responses<>(ResponseCode.SUCCESS, "图书添加成功",book);
   }
-
 
   @GetMapping("/{id}")
   public Responses<Book> getBook(@PathVariable int id) {
@@ -71,7 +67,7 @@ public class BookController {
   }
 
   @GetMapping("/recommend")
-  public Responses<List<Book>> getRecommendedBooks() {
+  public Responses<List<Book>> getRecommendedBooks(@RequestBody int userCategoryId) {
     // TODO：获取推荐图书，实现逻辑在BookService中
     return null; // 占位符
   }

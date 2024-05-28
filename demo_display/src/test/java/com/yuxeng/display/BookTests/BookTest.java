@@ -70,12 +70,31 @@ class BookTest {
   @Test
   void testSaveBook() {
     Book book = new Book();
-    doNothing().when(bookDao).insertBook(book);
+    book.setTitle("Sample Title");
+    book.setAuthor("Sample Author");
+    book.setCategory_id(1);
+    book.setPublisher("Sample Publisher");
+    book.setQuantity(10);
 
-    bookService.saveBook(book);
+    // 将Book对象转换为Map
+    Map<String, Object> bookMap = new HashMap<>();
+    bookMap.put("title", book.getTitle());
+    bookMap.put("author", book.getAuthor());
+    bookMap.put("category_id", book.getCategory_id());
+    bookMap.put("publisher", book.getPublisher());
+    bookMap.put("quantity", book.getQuantity());
+    bookMap.put("created_at", book.getCreated_at());
 
-    verify(bookDao, times(1)).insertBook(book);
+    // Mock bookDao.insertBook(bookMap)而不是bookDao.insertBook(book)
+    doNothing().when(bookDao).insertBook(bookMap);
+
+    // 调用bookService.saveBook(book)
+    bookService.saveBook(bookMap);
+
+    // 验证bookDao.insertBook(bookMap)是否被调用了一次
+    verify(bookDao, times(1)).insertBook(bookMap);
   }
+
 
   @Test
   void testGetBookById() {

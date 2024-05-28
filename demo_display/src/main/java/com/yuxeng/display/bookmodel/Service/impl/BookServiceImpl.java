@@ -51,8 +51,15 @@ public class BookServiceImpl implements BookService{
   }
 
   @Override
-  public void saveBook(Book book) {
-    bookDao.insertBook(book);
+  public void saveBook(Map<String, Object> bookMap) {
+    // 从bookMap中获取数据并创建Book对象
+    Book book = new Book();
+    book.setTitle((String) bookMap.get("title"));
+    book.setAuthor((String) bookMap.get("author"));
+    book.setCategory_id((Integer) bookMap.get("category_id"));
+    book.setPublisher((String) bookMap.get("publisher"));
+    book.setQuantity((Integer) bookMap.get("quantity"));
+    bookDao.insertBook(bookMap);
   }
 
   @Override
@@ -69,6 +76,5 @@ public class BookServiceImpl implements BookService{
   public void removeBook(int bookId) {
   bookDao.deleteBook(bookId);
   }
-
 
 }
