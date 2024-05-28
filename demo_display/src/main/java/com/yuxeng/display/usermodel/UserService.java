@@ -47,7 +47,7 @@ public class UserService {
     String mail = userRequest.get("mail");
 
     System.out.println("[DEBUG] | RegisterUser | Info : " + userRequest);
-    if (!helper.powerfulCheck(username,password, gender, mail)) {
+    if (!helper.powerfulCheck(username, password, name, gender, mail)) {
       return Config.INFO_NOT_ALLOW;
     }
 
