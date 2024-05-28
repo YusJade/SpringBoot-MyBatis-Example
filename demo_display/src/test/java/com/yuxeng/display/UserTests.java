@@ -36,11 +36,20 @@ class UserTests {
   private Scanner scanner;
 
   @Test
-  public void sendMailTest() {
+  public void sendHtmlMailTest(){
     emailService.setMailConfig();
-    emailService.sendMail("35245906658@qq.com");
+    emailService.generateRandomCode("3524506658@qq.com");  // TODO:考虑将其移动到Helper中
+    // 普通发送
+//    emailService.sendMail("3524506658@qq.com");
+    // HTML发送
+    emailService.sendHtmlMail("3524506658@qq.com","null");
   }
 
+//  @Test
+//  public void sendMailTest() {
+//    emailService.setMailConfig();
+//    emailService.sendMail("35245906658@qq.com");
+//  }
 //  @Test
 //  public void waitTimeTestNotWhile() {
 //    helper.startScheduledTask(emailService.testTime(), 10);
@@ -56,13 +65,13 @@ class UserTests {
 //      int x = 1;
 //    }
 //  }
-
-  @Test
-  void resetPasswordWOCheckTest(){
-    String username = "Firefly";
-    String password = "1234Qwert12345";
-    userService.resetPassword(1L,password);
-  }
+//
+//  @Test
+//  void resetPasswordWOCheckTest(){
+//    String username = "Firefly";
+//    String password = "1234Qwert12345";
+//    userService.resetPassword(1L,password);
+//  }
 //  @Test
 //  void addUser() {
 //    String username = "Firefly";

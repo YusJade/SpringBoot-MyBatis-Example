@@ -83,8 +83,8 @@ public class UserService {
     try {
       emailService.setMailConfig();
       emailService.generateRandomCode(mail);  // TODO:考虑将其移动到Helper中
-      emailService.sendMail(mail);
-
+//      emailService.sendMail(mail);
+      emailService.sendHtmlMail(mail, "");
       System.out.println(
           "[DEBUG] UserService | SendMail | Code Recorder : " + EmailServiceImpl.getCodeRecord());
       return Config.SUCCESS;

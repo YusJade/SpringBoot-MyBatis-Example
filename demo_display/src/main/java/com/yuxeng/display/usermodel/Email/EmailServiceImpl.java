@@ -2,13 +2,20 @@ package com.yuxeng.display.usermodel.Email;
 
 import com.yuxeng.display.usermodel.HelperUtils;
 import jakarta.annotation.Resource;
+import jakarta.mail.internet.MimeMessage;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMailMessage;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,6 +68,33 @@ public class EmailServiceImpl implements EmailService {
   }
 
   /*
+  发送邮件——使用HTML
+   */
+  @Override
+  public void sendHtmlMail(String mail, String filePath) {
+    MimeMessage message = mailSender.createMimeMessage();
+    ClassPathResource resource = new ClassPathResource("templates/Email-Code.html");
+    // DEBUG
+    try{
+      filePath = resource.getFile().getPath();
+      MimeMessageHelper messageHelper = new MimeMessageHelper(message, true);
+      messageHelper.setFrom(EmailConfig.EMAIL);
+      messageHelper.setTo(mail);
+      messageHelper.setSubject("SpringBoot-MyBatis-Example项目组");
+
+      // 读取Html————芝士学报的方法是在方法外读取
+      String htmlFile = new String(Files.readAllBytes(Paths.get(filePath)));
+      htmlFile = htmlFile.replace("{{code}}",codeRecord.get(mail)); // 替换{{code}}里的内容
+      messageHelper.setText(htmlFile, true);
+
+      // 发送
+      mailSender.send(message);
+    }catch (Exception e){
+      System.out.println("[ERROR] EmailService | SendHtmlMail Error : " + e);
+    }
+  }
+
+  /*
   生成随机六位验证码并载入
    */
   @Override
@@ -88,7 +122,8 @@ public class EmailServiceImpl implements EmailService {
     // 该任务是定时任务——CODETIME
     return () -> {
       System.out.println(
-          "[DEL] EmailService | ResetCode | CodeRecorder : " + codeRecord.get(mail)); // DEBUG:查看剩余有效验证码列表
+          "[DEL] EmailService | ResetCode | CodeRecorder : " + codeRecord.get(
+              mail)); // DEBUG:查看剩余有效验证码列表
       codeRecord.remove(mail);
     };
   }
