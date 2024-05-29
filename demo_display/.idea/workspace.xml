@@ -65,7 +65,7 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DemoDisplayApplication.executor": "Debug",
+    "Spring Boot.DemoDisplayApplication.executor": "Run",
     "git-widget-placeholder": "serendipity",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "S:/Study/GitHub/Project/SpringBoot-MyBatis-Example/demo_display/src/main/resources/mappers",
@@ -192,6 +192,8 @@
       <workItem from="1716816568872" duration="7225000" />
       <workItem from="1716867231879" duration="29034000" />
       <workItem from="1716946051084" duration="17435000" />
+      <workItem from="1716971026229" duration="5345000" />
+      <workItem from="1716984229394" duration="8931000" />
     </task>
     <servers />
   </component>
@@ -226,8 +228,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/bookmodel/Service/impl/BookServiceImpl.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="6" />
+          <line>56</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/bookmodel/Controller/BookController.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/bookmodel/Controller/BookController.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

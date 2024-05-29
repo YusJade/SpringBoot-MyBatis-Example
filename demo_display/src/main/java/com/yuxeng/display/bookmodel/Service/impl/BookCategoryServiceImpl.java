@@ -19,11 +19,11 @@ public class BookCategoryServiceImpl implements BookCategoryService {
     PageBean<BookCategory> bean = new PageBean<>(startPage, pageSize);
 
     bean.setTotalSize(bookCategoryDao.countBookCategories());
-    bean.setTotalPage(bookCategoryDao.countBookCategories()/pageSize);
+    bean.setTotalPage((int)Math.ceil((double) bookCategoryDao.countBookCategories() /pageSize) );
     bean.setPageSize(pageSize);
     bean.setPageOn(startPage);
 
-    int startIndex = (startPage-1)*pageSize;
+    int startIndex = (startPage-1) * pageSize;
     bean.setDatas(bookCategoryDao.selectCategory(startIndex,pageSize));
     return bean;
   }
@@ -31,6 +31,11 @@ public class BookCategoryServiceImpl implements BookCategoryService {
   @Override
   public BookCategory getCategoryById(int categoryId){
     return bookCategoryDao.selectCategoryById(categoryId);
+  }
+
+  @Override
+  public BookCategory getCategoryByName(String categoryName) {
+    return bookCategoryDao.selectCategoryByName(categoryName);
   }
 
   @Override

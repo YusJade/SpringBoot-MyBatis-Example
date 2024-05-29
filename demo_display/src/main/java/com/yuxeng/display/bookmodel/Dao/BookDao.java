@@ -45,9 +45,9 @@ public interface BookDao {
   /**
    * 插入新书籍
    *
-   * @param bookMap 要插入的Book对象
+   * @param book 要插入的Book
    */
-  void insertBook(Map<String, Object> bookMap);
+  void insertBook(Book book);
 
   /**
    * 更新书籍信息
@@ -61,7 +61,7 @@ public interface BookDao {
    * @param userId 用户id
    * @return 给用户推荐的书籍的列表，按照分页显示
    */
-  // todo
-  PageBean<Book> recommendBook(int userId);
+  //
+  List<Book> recommendBook(int userId,@Param("startIndex")int startIndex,@Param("pageSize")int pageSize);
 }
 

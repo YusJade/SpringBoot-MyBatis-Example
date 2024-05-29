@@ -29,8 +29,8 @@ public class BookController {
       @RequestParam(value = "author", required = false) String author,
       @RequestParam(value = "category_id", required = false) Integer categoryId,
       @RequestParam(value = "publisher", required = false) String publisher,
-      @RequestParam(value = "start_page", defaultValue = "0") int startIndex,
-      @RequestParam(value = "page_size", defaultValue = "10") int pageSize) {
+      @RequestParam(value = "start_page",  defaultValue = "1") Integer startIndex,
+      @RequestParam(value = "page_size", defaultValue = "10") Integer pageSize) {
       PageBean<Book> books = bookService.listBooksByPage(title,author,categoryId,publisher,startIndex,pageSize);
     if (books != null) {
       return new Responses<>(ResponseCode.SUCCESS, "分类列表获取成功", books);
@@ -41,10 +41,11 @@ public class BookController {
   }
 
   @PostMapping
-  public Responses<Book> addBook(@RequestBody Map<String, Object> bookMap) {
-    bookService.saveBook(bookMap);
-    return new Responses<>(ResponseCode.SUCCESS, "图书添加成功",null);
+  public Responses<Integer> addBook(@RequestBody Map<String, Object> bookMap) {
+    int bookId = bookService.saveBook(bookMap);
+    return new Responses<>(ResponseCode.SUCCESS, "图书添加成功",bookId);
   }
+
 
   @GetMapping("/{id}")
   public Responses<Book> getBook(@PathVariable int id) {
@@ -74,9 +75,13 @@ public class BookController {
   }
 
   @GetMapping("/recommends")
-  public Responses<PageBean<Book>> getRecommendedBooks(@RequestBody int userId) {
-    PageBean<Book> listRecommendBook = bookService.recommendBook(userId);
-    if(listRecommendBook == null){
+  public Responses<PageBean<Book>> getRecommendedBooks(
+      @RequestParam (value = "user_id")Integer userId,
+      @RequestParam (value = "start_page",defaultValue = "1")Integer startPage,
+      @RequestParam (value = "page_size",defaultValue = "10" ) Integer pageSize
+      ) {
+    PageBean<Book> listRecommendBook = bookService.recommendBook(userId,startPage,pageSize);
+    if(listRecommendBook.getTotalSize() == 0){
       return new Responses<>(ResponseCode.BORROW_NOT_EXIST,"还未借阅书籍，无法推荐",null);
     }else{
       return new Responses<>(ResponseCode.SUCCESS,"推荐书籍成功",listRecommendBook);

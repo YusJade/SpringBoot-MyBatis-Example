@@ -21,11 +21,11 @@ public class BookCategoryController {
 
   @GetMapping
   public Responses<PageBean<BookCategory>> queryCategories(
-      @RequestParam (value = "start_page",defaultValue = "0")int startPage,
-      @RequestParam (value = "page_size",defaultValue = "10")int pageSize
+      @RequestParam (value = "start_page",defaultValue = "1")Integer startPage,
+      @RequestParam (value = "page_size",defaultValue = "10")Integer pageSize
   ) {
     PageBean<BookCategory> categories = bookCategoryService.listCategoryByPage(startPage,pageSize);
-    if (categories != null) {
+    if (categories.getTotalSize() != 0) {
       return new Responses<>(ResponseCode.SUCCESS, "分类列表获取成功", categories);
     } else {
       return new Responses<>(ResponseCode.CATEGORY_NOT_EXIST, "分类列表为空", null);
@@ -33,13 +33,30 @@ public class BookCategoryController {
   }
 
   @PostMapping
-  public Responses<String> addCategory(@RequestParam String categoryName) {
-    bookCategoryService.saveBookCategory(categoryName);
-    return new Responses<>(ResponseCode.SUCCESS, "分类添加成功", categoryName);
+  public Responses<Integer> addCategory(@RequestParam String categoryName) {
+
+    // 保证名字不重复
+    BookCategory existCategory = bookCategoryService.getCategoryByName(categoryName);
+
+    if (existCategory != null){
+      return new Responses<>(ResponseCode.CATEGORY_EXIST, "分类名字不能重复，添加失败", null);
+    }else{
+      bookCategoryService.saveBookCategory(categoryName);
+      BookCategory newCategory = bookCategoryService.getCategoryByName(categoryName);
+      return new Responses<>(ResponseCode.SUCCESS, "分类添加成功", newCategory.getId());
+    }
   }
 
   @PutMapping("/{id}")
   public Responses<BookCategory> updateCategory(@PathVariable int id, @RequestParam String categoryName) {
+
+    // 保证名字不重复
+    BookCategory existCategory = bookCategoryService.getCategoryByName(categoryName);
+
+    if (existCategory != null){
+       return new Responses<>(ResponseCode.CATEGORY_EXIST, "分类名字不能重复，更新失败", existCategory);
+    }
+
     bookCategoryService.updateBookCategory(id,categoryName);
     BookCategory bookCategory = bookCategoryService.getCategoryById(id);
     return new Responses<>(ResponseCode.SUCCESS, "分类信息更新成功", bookCategory);
