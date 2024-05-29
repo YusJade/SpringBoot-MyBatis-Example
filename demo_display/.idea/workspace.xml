@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="920ebc42-5c51-4fe4-8ece-325464512012" name="Changes" comment="" />
+    <list default="true" id="ad48f1bf-943c-423b-9d80-c855d025c2a1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,37 +13,49 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< HEAD
         <option value="Enum" />
         <option value="spring-beans.schema" />
         <option value="Interface" />
         <option value="XML MyBatis Mapper" />
+=======
+>>>>>>> Serendipity
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+<<<<<<< HEAD
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+=======
+  <component name="LLMProjectSettings">
+    <option name="aiignore_manually_set" value="true" />
+>>>>>>> Serendipity
   </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2gggKl6D45Qv4zvXNLCiCLobdvf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2gzrQ3MTH1cMRaVYFXF34jhASIt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+<<<<<<< HEAD
     "JUnit.BookTests.addBookTest.executor": "Debug",
     "JUnit.BookTests.deleteBookTest.executor": "Run",
     "JUnit.BookTests.editBookTest.executor": "Run",
@@ -55,23 +67,46 @@
     "JUnit.DemoDisplayApplicationTests.contextLoads.executor": "Run",
     "JUnit.DemoDisplayApplicationTests.executor": "Debug",
     "JUnit.UserTests.executor": "Run",
+=======
+    "JUnit.BookCategoryServiceTest.executor": "Run",
+    "JUnit.BookTest.testGetBookById.executor": "Run",
+    "JUnit.BookTest.testListBooksByPage.executor": "Run",
+    "JUnit.BookTest.testListCategory.executor": "Run",
+    "JUnit.BookTest.testRemoveBook.executor": "Run",
+    "JUnit.BookTest.testSaveBook.executor": "Run",
+    "JUnit.BookTest.testUpdateBook.executor": "Run",
+    "JUnit.BookTests.executor": "Run",
+    "JUnit.BookTests.testBookCategoryPojo.executor": "Run",
+    "JUnit.BookTests.testBookPojo.executor": "Run",
+    "JUnit.BookTests.testListBooksByPage.executor": "Run",
+    "JUnit.BookTests.testListCategory.executor": "Run",
+    "JUnit.DemoDisplayApplicationTests.executor": "Run",
+    "JUnit.UserTests.sendMailTest.executor": "Run",
+    "JUnit.UserTests.waitTimeTestNotWhile.executor": "Run",
+    "JUnit.UserTests.waitTimeTestWithWhile.executor": "Run",
+>>>>>>> Serendipity
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.DemoDisplayApplication.executor": "Run",
+<<<<<<< HEAD
     "git-widget-placeholder": "YuXeng",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "S:/Study/GitHub/Project/MyLibrary",
+=======
+    "git-widget-placeholder": "serendipity",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "S:/Study/GitHub/Project/zpy_demo/SpringBoot-MyBatis-Example/demo_display",
+>>>>>>> Serendipity
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
+<<<<<<< HEAD
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -97,21 +132,59 @@
   </component>
   <component name="RunManager" selected="Spring Boot.DemoDisplayApplication">
     <configuration name="BookTests.addBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.BookTest.testListBooksByPage">
+    <configuration name="BookCategoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.yuxeng.display.*" />
+          <option name="PATTERN" value="com.yuxeng.display.BookTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.yuxeng.display" />
-      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests" />
-      <option name="METHOD_NAME" value="addBookTest" />
+      <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookCategoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookTest.testGetBookById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="display" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuxeng.display.BookTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
+      <option name="METHOD_NAME" value="testGetBookById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BookTest.testListBooksByPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+>>>>>>> Serendipity
+      <module name="display" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuxeng.display.BookTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
+      <option name="METHOD_NAME" value="testListBooksByPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+<<<<<<< HEAD
     <configuration name="BookTests.getBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="display" />
       <extension name="coverage">
@@ -126,57 +199,65 @@
       </method>
     </configuration>
     <configuration name="DemoDisplayApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="BookTest.testRemoveBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+>>>>>>> Serendipity
       <module name="display" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.yuxeng.display.*" />
+          <option name="PATTERN" value="com.yuxeng.display.BookTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+<<<<<<< HEAD
       <option name="PACKAGE_NAME" value="com.yuxeng.display" />
       <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.DemoDisplayApplicationTests" />
       <option name="METHOD_NAME" value="contextLoads" />
+=======
+      <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
+      <option name="METHOD_NAME" value="testRemoveBook" />
+>>>>>>> Serendipity
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="UserTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="BookTest.testUpdateBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+>>>>>>> Serendipity
       <module name="display" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.yuxeng.display.*" />
+          <option name="PATTERN" value="com.yuxeng.display.BookTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.yuxeng.display" />
-      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.UserTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DemoDisplayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="display" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yuxeng.display.DemoDisplayApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yuxeng.display.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
+      <option name="METHOD_NAME" value="testUpdateBook" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Spring Boot.DemoDisplayApplication" />
         <item itemvalue="JUnit.DemoDisplayApplicationTests.contextLoads" />
         <item itemvalue="JUnit.UserTests" />
         <item itemvalue="JUnit.BookTests.getBookTest" />
         <item itemvalue="JUnit.BookTests.addBookTest" />
+=======
+        <item itemvalue="JUnit.BookTest.testListBooksByPage" />
+        <item itemvalue="JUnit.BookTest.testRemoveBook" />
+        <item itemvalue="JUnit.BookTest.testGetBookById" />
+        <item itemvalue="JUnit.BookCategoryTest" />
+        <item itemvalue="JUnit.BookTest.testUpdateBook" />
+>>>>>>> Serendipity
       </list>
     </recent_temporary>
   </component>
@@ -190,10 +271,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="920ebc42-5c51-4fe4-8ece-325464512012" name="Changes" comment="" />
-      <created>1716119165854</created>
+      <changelist id="ad48f1bf-943c-423b-9d80-c855d025c2a1" name="Changes" comment="" />
+      <created>1716711228175</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1716119165854</updated>
       <workItem from="1716119166841" duration="4155000" />
       <workItem from="1716124575307" duration="5191000" />
@@ -210,12 +292,19 @@
       <workItem from="1716774934448" duration="26420000" />
       <workItem from="1716867192301" duration="1437000" />
       <workItem from="1716946559526" duration="891000" />
+=======
+      <updated>1716711228175</updated>
+      <workItem from="1716711229720" duration="12350000" />
+      <workItem from="1716792153899" duration="9169000" />
+      <workItem from="1716816568872" duration="7225000" />
+>>>>>>> Serendipity
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
@@ -281,5 +370,34 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="serendipity" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/demo_display$BookTests_testListCategory.ic" NAME="BookTests.testListCategory Coverage Results" MODIFIED="1716737706289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.yuxeng.display.*</FILTER>
+    </SUITE>
+>>>>>>> Serendipity
   </component>
 </project>
