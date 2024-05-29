@@ -93,7 +93,7 @@ class BookTest {
     Book book = new Book();
     doNothing().when(bookDao).updateBook(book);
 
-    bookService.updateBook(book);
+//    bookService.updateBook(book);
 
     verify(bookDao, times(1)).updateBook(book);
   }

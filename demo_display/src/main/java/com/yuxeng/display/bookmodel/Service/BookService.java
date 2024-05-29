@@ -47,7 +47,7 @@ public interface BookService {
    *
    * @param book 更新后的图书对象。
    */
-  void updateBook(Book book);
+  int updateBook(int id, Book book);
 
   /**
    * 从数据库中移除图书。

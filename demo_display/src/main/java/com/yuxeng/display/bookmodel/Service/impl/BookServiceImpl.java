@@ -60,9 +60,21 @@ public class BookServiceImpl implements BookService{
     return bookDao.selectById(bookId);
   }
 
+  /**
+   *
+   * @param id
+   * @param book 更新后的图书对象。
+   * @return -1：图书不存在；1：更新成功
+   */
   @Override
-  public void updateBook(Book book) {
+  public int updateBook(int id, Book book) {
+    Book search = bookDao.selectById(id);
+    if (search == null) {
+      return -1;
+    }
+    book.setId(id);
     bookDao.updateBook(book);
+    return 1;
   }
 
   @Override

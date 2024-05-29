@@ -6,6 +6,7 @@ import com.yuxeng.display.bookmodel.Service.BookService;
 import com.yuxeng.display.util.PageBean;
 import com.yuxeng.display.util.ResponseCode;
 import com.yuxeng.display.util.Responses;
+import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +22,9 @@ public class BookController {
 
   @GetMapping
   // TODO： 没有书籍和关键词匹配的情况
-  public Responses<PageBean<Book>> queryBook(@RequestParam List<String> paramMap) {
-    return new Responses<>(ResponseCode.SUCCESS,"书籍查询成功",
+  public Responses<PageBean<Book>> queryBook(
+      @RequestParam(name = "keywords") List<String> paramMap) {
+    return new Responses<>(ResponseCode.SUCCESS, "书籍查询成功",
         bookService.listBooksByPage(paramMap));
   }
 
@@ -35,7 +37,7 @@ public class BookController {
       // 图书已存在，则增加数量
       int newQuantity = existingBook.getQuantity() + book.getQuantity();
       existingBook.setQuantity(newQuantity);
-        return new Responses<>(ResponseCode.SUCCESS, "图书数量增加成功", existingBook);
+      return new Responses<>(ResponseCode.SUCCESS, "图书数量增加成功", existingBook);
     } else {
       // TODO 固定输入的信息
       // 图书不存在，依次输入图书信息并保存
@@ -57,10 +59,13 @@ public class BookController {
 
   @PutMapping("/{id}")
   public Responses<Book> updateBook(@PathVariable int id, @RequestBody Book book) {
-    // 更新图书信息
-    book.setId(id);
-    bookService.updateBook(book);
-    return new Responses<>(ResponseCode.SUCCESS, "图书信息更新成功", book);
+    int res = bookService.updateBook(id, book);
+    return switch (res) {
+      case -1 -> new Responses<>(ResponseCode.BOOK_NOT_EXIST, "图书不存在", new Book());
+      case 1 ->
+          new Responses<>(ResponseCode.SUCCESS, "图书信息更新成功", bookService.getBookById(id));
+      default -> new Responses<>(ResponseCode.FAILED, "系统错误", new Book());
+    };
   }
 
   @DeleteMapping("/{id}")

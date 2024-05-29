@@ -38,46 +38,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.BookTests.addBookTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.BookTests.deleteBookTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTests.editBookTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTests.getAllBooksTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTests.getBookTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTests.matchBookTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTests.queryBookTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DemoDisplayApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DemoDisplayApplicationTests.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.UserTests.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.DemoDisplayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;S:/Study/GitHub/Project/MyLibrary&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.BookTests.addBookTest.executor": "Debug",
+    "JUnit.BookTests.deleteBookTest.executor": "Run",
+    "JUnit.BookTests.editBookTest.executor": "Run",
+    "JUnit.BookTests.executor": "Run",
+    "JUnit.BookTests.getAllBooksTest.executor": "Run",
+    "JUnit.BookTests.getBookTest.executor": "Run",
+    "JUnit.BookTests.matchBookTest.executor": "Run",
+    "JUnit.BookTests.queryBookTest.executor": "Run",
+    "JUnit.DemoDisplayApplicationTests.contextLoads.executor": "Run",
+    "JUnit.DemoDisplayApplicationTests.executor": "Debug",
+    "JUnit.UserTests.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.DemoDisplayApplication.executor": "Debug",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "S:/Study/GitHub/Project/MyLibrary",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;MySQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Documents\CodeField\SpringBoot-MyBatis-Example\demo_display\src\main\resources\templates" />
@@ -250,6 +250,15 @@
           </properties>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/bookmodel/Controller/BookController.java</url>
+          <line>60</line>
+          <properties class="com.yuxeng.display.bookmodel.Controller.BookController" method="updateBook">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/borrowmodel/BorrowService.java</url>
           <line>91</line>
@@ -259,6 +268,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserController.java</url>
           <line>65</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/bookmodel/Controller/BookController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

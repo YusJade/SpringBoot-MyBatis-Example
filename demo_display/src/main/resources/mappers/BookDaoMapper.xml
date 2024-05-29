@@ -19,21 +19,12 @@
     </if>
     <if test="publisher != null and publisher != ''">
       AND publisher LIKE CONCAT('%', #{publisher}, '%')
-<<<<<<< HEAD
-    </if>gitg
-  </select>
-
-  <!-- 根据查询参数获取符合条件的书籍数量 -->
-=======
-    <!-- 分页查询 -->
-      <!-- TODO: 用户可选正序还是倒序输出 -->
     </if>
     ORDER BY id
     LIMIT #{startIndex}, #{pageSize}
   </select>
 
   <!-- 根据查询参数获取符合条件的书籍（或者分类）数量 -->
->>>>>>> Serendipity
   <select id="selectBookCount" parameterType="map" resultType="int">
     SELECT COUNT(*)
     FROM tb_book
