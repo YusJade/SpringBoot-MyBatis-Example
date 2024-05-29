@@ -75,10 +75,6 @@ public class EmailServiceImpl implements EmailService {
     MimeMessage message = mailSender.createMimeMessage();
     ClassPathResource resource = new ClassPathResource("templates/Email-Code.html");
     // DEBUG
-<<<<<<< HEAD
-=======
-//    filePath = "D:\\File\\IntelliJ IDEA\\Project\\SpringBoot-MyBatis-Example\\demo_display\\src\\main\\java\\com\\yuxeng\\display\\usermodel\\Email\\templates\\Email-Code.html";
->>>>>>> XYX_ILoveFirefly
     try{
       filePath = resource.getFile().getPath();
       MimeMessageHelper messageHelper = new MimeMessageHelper(message, true);
