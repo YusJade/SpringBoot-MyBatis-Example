@@ -6,10 +6,7 @@ import com.yuxeng.display.usermodel.UserController;
 import com.yuxeng.display.util.PageBean;
 import com.yuxeng.display.util.ResponseCode;
 import com.yuxeng.display.util.Responses;
-<<<<<<< HEAD
-=======
 import java.sql.Timestamp;
->>>>>>> serendipity
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,13 +24,6 @@ public class BookController {
   private UserController user;
 
   @GetMapping
-<<<<<<< HEAD
-  // TODO： 没有书籍和关键词匹配的情况
-  public Responses<PageBean<Book>> queryBook(
-      @RequestParam(name = "keywords") List<String> paramMap) {
-    return new Responses<>(ResponseCode.SUCCESS, "书籍查询成功",
-        bookService.listBooksByPage(paramMap));
-=======
   public Responses<PageBean<Book>> queryBook(
       @RequestParam(value = "title", required = false) String title,
       @RequestParam(value = "author", required = false) String author,
@@ -48,29 +38,12 @@ public class BookController {
       return new Responses<>(ResponseCode.CATEGORY_NOT_EXIST, "分类列表为空", null);
     }
 
->>>>>>> serendipity
   }
 
   @PostMapping
-<<<<<<< HEAD
-  public Responses<Book> addBook(@RequestBody Book book) {
-    // 先根据图书id查看图书是否存在
-    Book existingBook = bookService.getBookById(book.getId());
-    if (existingBook != null) {
-      // 图书已存在，则增加数量
-      int newQuantity = existingBook.getQuantity() + book.getQuantity();
-      existingBook.setQuantity(newQuantity);
-      return new Responses<>(ResponseCode.SUCCESS, "图书数量增加成功", existingBook);
-    } else {
-      // TODO 固定输入的信息
-      // 图书不存在，依次输入图书信息并保存
-      return new Responses<>(ResponseCode.SUCCESS, "图书添加成功", book);
-    }
-=======
   public Responses<Integer> addBook(@RequestBody Map<String, Object> bookMap) {
     int bookId = bookService.saveBook(bookMap);
     return new Responses<>(ResponseCode.SUCCESS, "图书添加成功",bookId);
->>>>>>> serendipity
   }
 
 
@@ -87,21 +60,11 @@ public class BookController {
 
   @PutMapping("/{id}")
   public Responses<Book> updateBook(@PathVariable int id, @RequestBody Book book) {
-<<<<<<< HEAD
-    int res = bookService.updateBook(id, book);
-    return switch (res) {
-      case -1 -> new Responses<>(ResponseCode.BOOK_NOT_EXIST, "图书不存在", new Book());
-      case 1 ->
-          new Responses<>(ResponseCode.SUCCESS, "图书信息更新成功", bookService.getBookById(id));
-      default -> new Responses<>(ResponseCode.FAILED, "系统错误", new Book());
-    };
-=======
     // 更新图书信息
     book.setId(id);
     bookService.updateBook(book);
     book.setCreated_at(new Timestamp(System.currentTimeMillis()));
     return new Responses<>(ResponseCode.SUCCESS, "图书信息更新成功", book);
->>>>>>> serendipity
   }
 
   @DeleteMapping("/{id}")

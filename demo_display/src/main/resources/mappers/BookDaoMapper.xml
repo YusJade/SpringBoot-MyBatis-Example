@@ -7,21 +7,6 @@
   <select id="selectBook" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
     SELECT *
     FROM tb_book
-<<<<<<< HEAD
-    WHERE 1 = 1
-    <if test="title != null and title != ''">
-      AND title LIKE CONCAT('%', #{title}, '%')
-    </if>
-    <if test="author != null and author != ''">
-      AND author LIKE CONCAT('%', #{author}, '%')
-    </if>
-    <if test="category_id != null">
-      AND category_id = #{category_id}
-    </if>
-    <if test="publisher != null and publisher != ''">
-      AND publisher LIKE CONCAT('%', #{publisher}, '%')
-    </if>
-=======
     <where>
       <if test="title != null and title != ''">
         AND title LIKE CONCAT('%', #{title}, '%')
@@ -37,7 +22,6 @@
       </if>
     </where>
     <!-- 分页查询 -->
->>>>>>> serendipity
     ORDER BY id
     LIMIT #{startIndex}, #{pageSize}
   </select>
