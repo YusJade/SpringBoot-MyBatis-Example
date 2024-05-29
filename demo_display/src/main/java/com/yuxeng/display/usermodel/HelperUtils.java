@@ -31,7 +31,7 @@ public class HelperUtils {
   /*
   检测用户名是否重复——重复false/不重复true
    */
-  public boolean checkUsernameRepeat(String username) {
+  public boolean checkUsernameNotRepeat(String username) {
     System.out.println("[DEBUG] HelperUtils | CheckUsernameRepeat : " + username);
     return userDao.getUserByUsername(username) == null;
   }
@@ -72,13 +72,13 @@ public class HelperUtils {
   /*
   融合检测——未注册用户
    */
-  public boolean powerfulCheck(String username, String password, String gender, String mail) {
+  public boolean powerfulCheck(String username, String password, String name, String gender, String mail) {
     return username != null &&
         password != null &&
         gender != null &&
+        name != null &&
         mail != null &&
         checkUsernameValidity(username) &&
-        checkUsernameRepeat(username) &&
         checkPasswordStrength(password) &&
         checkGenderValidity(gender) &&
         checkEmailValidity(mail);
@@ -92,7 +92,7 @@ public class HelperUtils {
   public boolean powerfulCheck(Long id, String username, String gender, String mail) {
     return (username == null || checkUsernameValidity(username)) &&
         (username == null || username.equals(userDao.getUserById(id).getUsername()))
-        || checkUsernameRepeat(username) &&
+        || checkUsernameNotRepeat(username) &&
         (gender == null || checkGenderValidity(gender)) &&
         (mail == null || checkEmailValidity(mail));
   }
