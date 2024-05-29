@@ -73,7 +73,9 @@ public class BorrowService {
    * 创建借阅记录
    *
    * @param map 请求体内容
-   * @return -1：用户不存在，无法借阅；-2：图书不存在，无法借阅； -3：  同种图书已被用户借阅，且未被归还，无法再次借阅； 0：用户已经达到最大借阅数，无法订阅；n：借阅记录的Id
+   * @return -1：用户不存在，无法借阅；-2：图书不存在，无法借阅； -3：  同种图书已被用户借阅，且未被归还，无法再次借阅；
+   * -4：图书库存不足
+   * 0：用户已经达到最大借阅数，无法订阅；n：借阅记录的Id
    */
   int saveBorrow(Map<String, Object> map) {
     Integer userId = (Integer) map.get("user_id");
@@ -90,6 +92,9 @@ public class BorrowService {
     if (!borrowDao.selectBorrow(Map.of("user_id", userId, "book_id", bookId),
         false).isEmpty()) {
       return -3; // 同种图书已被用户借阅，且未被归还，无法再次借阅
+    }
+    if (book.getQuantity() <= 0) {
+      return -4;
     }
     if (user.getMax_borrow_books() <=
         borrowDao.countBorrow(Map.of("user_id", userId), false)) {

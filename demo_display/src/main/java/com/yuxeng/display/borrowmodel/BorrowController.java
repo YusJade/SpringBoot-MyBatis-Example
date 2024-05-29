@@ -53,6 +53,7 @@ public class BorrowController {
   Responses<Borrow> addBorrow(@RequestBody Map<String, Object> map) {
     int res = borrowService.saveBorrow(map);
     return switch (res) {
+      case -4 -> new Responses<>(ResponseCode.BOOK_UNAVAILABLE, "图书库存不足", null);
       case -3 -> new Responses<>(ResponseCode.BORROW_ALREADY, "无法重复借阅同一本图书", null);
       case -2 -> new Responses<>(ResponseCode.BOOK_NOT_EXIST, "图书不存在", null);
       case -1 -> new Responses<>(ResponseCode.ACCOUNT_NOT_EXIST, "用户不存在", null);
