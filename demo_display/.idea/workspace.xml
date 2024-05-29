@@ -5,57 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="920ebc42-5c51-4fe4-8ece-325464512012" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82e07412-7707-43f0-add1-41db9f297efa/storage_v2/_src_/schema/demo.4_0uAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82e07412-7707-43f0-add1-41db9f297efa/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82e07412-7707-43f0-add1-41db9f297efa/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82e07412-7707-43f0-add1-41db9f297efa/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82e07412-7707-43f0-add1-41db9f297efa/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/DemoDisplayApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/DemoDisplayApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/AdminDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/AdminDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/AdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Controller/BookController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Dao/BookCategoryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Dao/BookCategoryDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Dao/BookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Dao/BookDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Pojo/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Pojo/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Pojo/BookCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Pojo/BookCategory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/BookCategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/BookCategoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/BookService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/impl/BookCategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/impl/BookCategoryServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/impl/BookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/Borrow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/Borrow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/BorrowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/BorrowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/BorrowDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/BorrowDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/BorrowService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/BorrowService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/interceptor/AdminLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/interceptor/AdminLoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/interceptor/LoginConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/interceptor/LoginConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/interceptor/UserLoginOmterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/interceptor/UserLoginOmterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Email/EmailConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Email/EmailConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Email/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Email/EmailService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Email/EmailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Email/EmailServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/HelperUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/HelperUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/PageBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/PageBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/ResponseCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/ResponseCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/Responses.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/Responses.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/StringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/StringUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/BookTests/BookCategoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/BookTests/BookCategoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/BookTests/BookTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/BookTests/BookTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/DemoDisplayApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/DemoDisplayApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/UserTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/UserTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../guide/Q&amp;A.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
