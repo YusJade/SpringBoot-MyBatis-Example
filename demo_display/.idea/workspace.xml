@@ -4,7 +4,59 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="920ebc42-5c51-4fe4-8ece-325464512012" name="Changes" comment="" />
+    <list default="true" id="920ebc42-5c51-4fe4-8ece-325464512012" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82e07412-7707-43f0-add1-41db9f297efa/storage_v2/_src_/schema/demo.4_0uAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82e07412-7707-43f0-add1-41db9f297efa/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82e07412-7707-43f0-add1-41db9f297efa/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82e07412-7707-43f0-add1-41db9f297efa/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82e07412-7707-43f0-add1-41db9f297efa/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/DemoDisplayApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/DemoDisplayApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/AdminDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/AdminDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/adminmodel/AdminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Controller/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Dao/BookCategoryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Dao/BookCategoryDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Dao/BookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Dao/BookDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Pojo/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Pojo/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Pojo/BookCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Pojo/BookCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/BookCategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/BookCategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/BookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/impl/BookCategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/impl/BookCategoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/bookmodel/Service/impl/BookServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/Borrow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/Borrow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/BorrowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/BorrowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/BorrowDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/BorrowDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/BorrowService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/borrowmodel/BorrowService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/interceptor/AdminLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/interceptor/AdminLoginInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/interceptor/LoginConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/interceptor/LoginConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/interceptor/UserLoginOmterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/interceptor/UserLoginOmterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Email/EmailConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Email/EmailConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Email/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Email/EmailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Email/EmailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/Email/EmailServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/HelperUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/HelperUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/usermodel/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/PageBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/PageBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/ResponseCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/ResponseCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/Responses.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/Responses.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/StringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yuxeng/display/util/StringUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/BookTests/BookCategoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/BookTests/BookCategoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/BookTests/BookTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/BookTests/BookTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/DemoDisplayApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/DemoDisplayApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/UserTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/yuxeng/display/UserTests.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +70,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="serendipity" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -38,46 +95,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.BookTests.addBookTest.executor": "Debug",
-    "JUnit.BookTests.deleteBookTest.executor": "Run",
-    "JUnit.BookTests.editBookTest.executor": "Run",
-    "JUnit.BookTests.executor": "Run",
-    "JUnit.BookTests.getAllBooksTest.executor": "Run",
-    "JUnit.BookTests.getBookTest.executor": "Run",
-    "JUnit.BookTests.matchBookTest.executor": "Run",
-    "JUnit.BookTests.queryBookTest.executor": "Run",
-    "JUnit.DemoDisplayApplicationTests.contextLoads.executor": "Run",
-    "JUnit.DemoDisplayApplicationTests.executor": "Debug",
-    "JUnit.UserTests.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DemoDisplayApplication.executor": "Debug",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "S:/Study/GitHub/Project/MyLibrary",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.BookTests.addBookTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.BookTests.deleteBookTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookTests.editBookTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookTests.getAllBooksTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookTests.getBookTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookTests.matchBookTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookTests.queryBookTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DemoDisplayApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DemoDisplayApplicationTests.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.UserTests.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DemoDisplayApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;S:/Study/GitHub/Project/MyLibrary&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Color Scheme Font&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "MySQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;MySQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Documents\CodeField\SpringBoot-MyBatis-Example\demo_display\src\main\resources\templates" />
@@ -243,7 +300,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserService.java</url>
-          <line>26</line>
+          <line>21</line>
           <properties class="com.yuxeng.display.usermodel.UserService">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -253,7 +310,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/bookmodel/Controller/BookController.java</url>
           <line>60</line>
-          <properties class="com.yuxeng.display.bookmodel.Controller.BookController" method="updateBook">
+          <properties class="com.yuxeng.display.bookmodel.Controller.BookController">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -261,17 +318,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/borrowmodel/BorrowService.java</url>
-          <line>91</line>
+          <line>102</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserController.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/bookmodel/Controller/BookController.java</url>
-          <line>26</line>
+          <line>24</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
