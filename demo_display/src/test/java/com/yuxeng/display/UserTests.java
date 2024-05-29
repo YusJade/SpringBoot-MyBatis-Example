@@ -40,9 +40,9 @@ class UserTests {
     emailService.setMailConfig();
     emailService.generateRandomCode("3524506658@qq.com");  // TODO:考虑将其移动到Helper中
     // 普通发送
-//    emailService.sendMail("3524506658@qq.com");
+    emailService.sendMail("3524506658@qq.com");
     // HTML发送
-    emailService.sendHtmlMail("3524506658@qq.com","null");
+//    emailService.sendHtmlMail("3524506658@qq.com","null");
   }
 
 //  @Test
