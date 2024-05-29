@@ -13,10 +13,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
-        <option value="spring-beans.schema" />
-        <option value="Interface" />
-        <option value="XML MyBatis Mapper" />
         <option value="Class" />
       </list>
     </option>
@@ -246,6 +242,15 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserService.java</url>
+          <line>26</line>
+          <properties class="com.yuxeng.display.usermodel.UserService">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/yuxeng/display/DemoDisplayApplicationTests.java</url>
           <line>14</line>
           <properties class="com.yuxeng.display.DemoDisplayApplicationTests">
@@ -257,7 +262,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/adminmodel/AdminController.java</url>
           <line>57</line>
-          <properties class="com.yuxeng.display.adminmodel.AdminController" method="modifyInfo">
+          <properties class="com.yuxeng.display.adminmodel.AdminController">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -268,6 +273,16 @@
           <line>11</line>
           <properties field="userService" class="com.yuxeng.display.DemoDisplayApplicationTests" />
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/borrowmodel/BorrowService.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/UserController.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/Email/EmailServiceImpl.java</url>

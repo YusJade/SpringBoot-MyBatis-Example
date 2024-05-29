@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yuxeng.display.borrowmodel.BorrowDao">
+  <!--namespace根据自己需要创建的的mapper的路径和名称填写-->
+  <insert id="insertBorrow" useGeneratedKeys="true" keyProperty="id">
+    INSERT INTO tb_borrow(user_id, book_id, borrow_date, return_date)
+    VALUES (#{user_id}, #{book_id}, #{borrow_date}, #{return_date})
+  </insert>
+
+  <select id="selectBorrowById" resultType="com.yuxeng.display.borrowmodel.Borrow">
+    SELECT * FROM tb_borrow WHERE id = #{id}
+  </select>
+
+  <select id="selectBorrow" resultType="com.yuxeng.display.borrowmodel.Borrow">
+    SELECT * FROM tb_borrow
+    <where>
+      <if test="map.user_id != null">
+        AND user_id = #{map.user_id}
+      </if>
+      <if test="map.book_id != null">
+        AND book_id = #{map.book_id}
+      </if>
+      <if test="map.category_id != null">
+        AND (SELECT category_id FROM tb_book WHERE tb_book.id = book_id LIMIT 1) = #{map.category_id}
+      </if>
+      <if test="isContainFinished == false">
+        AND really_return_date IS NULL
+      </if>
+    </where>
+  </select>
+
+  <select id="countBorrow" resultType="java.lang.Integer">
+    SELECT COUNT(*) FROM tb_borrow
+    <where>
+      <if test="map.user_id != null">
+        AND user_id = #{map.user_id}
+      </if>
+      <if test="map.book_id != null">
+        AND book_id = #{map.book_id}
+      </if>
+      <if test="map.category_id != null">
+        AND (SELECT category_id FROM tb_book, tb_borrow
+          WHERE tb_book.id == tb_borrow.book_id LIMIT 1) = #{map.category_id}
+      </if>
+      <if test="isContainFinished == false">
+        AND really_return_date IS NULL
+      </if>
+    </where>
+  </select>
+
+  <update id="updateBorrowById">
+    UPDATE tb_borrow
+    <set>
+      <if test="user_id != null ">
+        user_id = #{user_id}
+      </if>
+      <if test="book_id != null ">
+        book_id = #{book_id}
+      </if>
+      <if test="borrow_date != null ">
+        borrow_date = #{borrow_date}
+      </if>
+      <if test="return_date != null ">
+        return_date = #{return_date}
+      </if>
+      <if test="really_return_date != null ">
+        really_return_date = #{really_return_date}
+      </if>
+    </set>
+    WHERE id = #{id}
+  </update>
+</mapper>
