@@ -3,6 +3,7 @@ package com.yuxeng.display.bookmodel.Service.impl;
 import com.yuxeng.display.bookmodel.Dao.BookDao;
 import com.yuxeng.display.bookmodel.Pojo.Book;
 import com.yuxeng.display.bookmodel.Pojo.BookCategory;
+import com.yuxeng.display.usermodel.UserController;
 import com.yuxeng.display.util.PageBean;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,41 +19,43 @@ public class BookServiceImpl implements BookService{
 
   @Autowired
   private BookDao bookDao;
+  @Autowired
+  private UserController user;
+
 
   @Override
-  public PageBean<Book> listBooksByPage(List<String> params) {
-    int pageOn = Integer.parseInt(params.get(0)); // 获取当前页码
-    int pageSize = Integer.parseInt(params.get(1)); // 获取每页显示的数量
+  public PageBean<Book> listBooksByPage(String title, String author, Integer categoryId,
+      String publisher, int startPage, int pageSize) {
+    Map<String,Object> map = new HashMap<>();
+    map.put("title",title);
+    map.put("author",author);
+    map.put("category_id",categoryId);
+    map.put("publisher",publisher);
 
-    PageBean<Book> pageBean = new PageBean<>(pageOn, pageSize);
-    int startIndex = pageBean.getStartIndex(); // 计算起始索引
+    PageBean<Book> bean = new PageBean<>(startPage,pageSize);
 
-    // 构建参数Map
-    Map<String, Object> paramMap = new HashMap<>();
-    paramMap.put("startIndex", startIndex);
-    for (int i = 2; i < params.size(); i++) {
-      paramMap.put("param" + (i - 1), params.get(i)); // 参数名为param1, param2, ...
-    }
+    bean.setTotalSize(bookDao.selectBookCount(map));
+    bean.setTotalPage(bookDao.selectBookCount(map)/pageSize);
+    bean.setPageSize(pageSize);
+    bean.setPageOn(startPage);
 
-    // 查询符合条件的图书列表
-    List<Book> datas = bookDao.selectBook(paramMap);
-    pageBean.setDatas(datas);
-
-    // 查询符合条件的图书总数
-    int totalRecords = bookDao.selectBookCount(paramMap);
-    pageBean.setTotalSize(totalRecords);
-
-    return pageBean;
+    int startIndex = (startPage - 1) * pageSize;
+    map.put("startIndex",startIndex);
+    map.put("pageSize",pageSize);
+    bean.setDatas(bookDao.selectBook(map));
+    return bean;
   }
 
   @Override
-  public List<BookCategory> listCategory() {
-    return bookDao.selectBookByCategory();
-  }
-
-  @Override
-  public void saveBook(Book book) {
+  public int saveBook(Map<String, Object> bookMap) {
+    Book book = new Book();
+    book.setTitle((String) bookMap.get("title"));
+    book.setAuthor((String) bookMap.get("author"));
+    book.setCategory_id((Integer) bookMap.get("category_id"));
+    book.setPublisher((String) bookMap.get("publisher"));
+    book.setQuantity((Integer) bookMap.get("quantity"));
     bookDao.insertBook(book);
+    return book.getId();
   }
 
   @Override
@@ -82,5 +85,17 @@ public class BookServiceImpl implements BookService{
   bookDao.deleteBook(bookId);
   }
 
+  @Override
+  public PageBean<Book> recommendBook(int userId,int startPage,int pageSize){
+    PageBean<Book> bean = new PageBean<>(startPage,pageSize);
+    bean.setTotalSize(bookDao.recommendBook(userId,startPage,pageSize).size());
+    bean.setTotalPage((int) Math.ceil((double) bean.getTotalSize() /pageSize));
+    bean.setPageSize(pageSize);
+    bean.setPageOn(startPage);
+    int startIndex = (startPage - 1) * 10;
+    bean.setDatas(bookDao.recommendBook(userId,startIndex,pageSize));
+
+    return bean;
+  }
 
 }

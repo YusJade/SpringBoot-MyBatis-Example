@@ -5,9 +5,12 @@ import com.yuxeng.display.util.Responses;
 import jakarta.annotation.Resource;
 import java.util.List;
 import java.util.Map;
+<<<<<<< HEAD
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.DeleteMapping;
+=======
+>>>>>>> serendipity
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,10 +45,16 @@ public class BorrowController {
   Responses<List<Borrow>> queryBorrow(
       @RequestParam(value = "user_id", required = false) Integer userId,
       @RequestParam(value = "book_id", required = false) Integer bookId,
+<<<<<<< HEAD
       @RequestParam(value = "category_id", required = false) Integer categoryId,
       @RequestParam(value = "contain_finished", required = false) Boolean isContainFinished) {
     return new Responses<>(ResponseCode.SUCCESS, "借阅记录查询成功",
         borrowService.listBorrow(userId, bookId, categoryId, isContainFinished));
+=======
+      @RequestParam(value = "category_id", required = false) Integer categoryId) {
+    return new Responses<>(ResponseCode.SUCCESS, "借阅记录查询成功",
+        borrowService.listBorrow(userId, bookId, categoryId));
+>>>>>>> serendipity
   }
 
 
@@ -53,7 +62,10 @@ public class BorrowController {
   Responses<Borrow> addBorrow(@RequestBody Map<String, Object> map) {
     int res = borrowService.saveBorrow(map);
     return switch (res) {
+<<<<<<< HEAD
       case -4 -> new Responses<>(ResponseCode.BOOK_UNAVAILABLE, "图书库存不足", null);
+=======
+>>>>>>> serendipity
       case -3 -> new Responses<>(ResponseCode.BORROW_ALREADY, "无法重复借阅同一本图书", null);
       case -2 -> new Responses<>(ResponseCode.BOOK_NOT_EXIST, "图书不存在", null);
       case -1 -> new Responses<>(ResponseCode.ACCOUNT_NOT_EXIST, "用户不存在", null);

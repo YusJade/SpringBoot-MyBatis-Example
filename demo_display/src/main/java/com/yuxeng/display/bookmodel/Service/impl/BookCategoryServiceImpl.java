@@ -3,6 +3,7 @@ package com.yuxeng.display.bookmodel.Service.impl;
 import com.yuxeng.display.bookmodel.Dao.BookCategoryDao;
 import com.yuxeng.display.bookmodel.Pojo.BookCategory;
 import com.yuxeng.display.bookmodel.Service.BookCategoryService;
+import com.yuxeng.display.util.PageBean;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,17 +15,36 @@ public class BookCategoryServiceImpl implements BookCategoryService {
   private BookCategoryDao bookCategoryDao;
 
   @Override
-  public ArrayList<BookCategory> listCategory() {
-    return bookCategoryDao.selectCategory();
+  public PageBean<BookCategory> listCategoryByPage(int startPage,int pageSize) {
+    PageBean<BookCategory> bean = new PageBean<>(startPage, pageSize);
+
+    bean.setTotalSize(bookCategoryDao.countBookCategories());
+    bean.setTotalPage((int)Math.ceil((double) bookCategoryDao.countBookCategories() /pageSize) );
+    bean.setPageSize(pageSize);
+    bean.setPageOn(startPage);
+
+    int startIndex = (startPage-1) * pageSize;
+    bean.setDatas(bookCategoryDao.selectCategory(startIndex,pageSize));
+    return bean;
   }
 
   @Override
-  public void updateBookCategory(BookCategory category) {
-    bookCategoryDao.updateBookCategory(category);
+  public BookCategory getCategoryById(int categoryId){
+    return bookCategoryDao.selectCategoryById(categoryId);
   }
 
   @Override
-  public void removeBookCategory(Integer categoryId) {
+  public BookCategory getCategoryByName(String categoryName) {
+    return bookCategoryDao.selectCategoryByName(categoryName);
+  }
+
+  @Override
+  public void updateBookCategory(int id,String categoryName) {
+    bookCategoryDao.updateBookCategory(id,categoryName);
+  }
+
+  @Override
+  public void removeBookCategory(int categoryId) {
     bookCategoryDao.deleteBookCategory(categoryId);
   }
 

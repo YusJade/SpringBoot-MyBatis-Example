@@ -32,8 +32,13 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+<<<<<<< HEAD
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+=======
+  <component name="LLMProjectSettings">
+    <option name="aiignore_manually_set" value="true" />
+>>>>>>> serendipity
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -46,6 +51,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;JUnit.BookTests.addBookTest.executor&quot;: &quot;Debug&quot;,
@@ -130,6 +136,52 @@
       </method>
     </configuration>
     <configuration name="DemoDisplayApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.BookCategoryServiceTest.executor": "Run",
+    "JUnit.BookTest.executor": "Run",
+    "JUnit.BookTest.testGetBookById.executor": "Run",
+    "JUnit.BookTest.testListBooksByPage.executor": "Run",
+    "JUnit.BookTest.testListCategory.executor": "Run",
+    "JUnit.BookTest.testRemoveBook.executor": "Run",
+    "JUnit.BookTest.testSaveBook.executor": "Run",
+    "JUnit.BookTest.testUpdateBook.executor": "Run",
+    "JUnit.BookTests.executor": "Run",
+    "JUnit.BookTests.testBookCategoryPojo.executor": "Run",
+    "JUnit.BookTests.testBookPojo.executor": "Run",
+    "JUnit.BookTests.testListBooksByPage.executor": "Run",
+    "JUnit.BookTests.testListCategory.executor": "Run",
+    "JUnit.DemoDisplayApplicationTests.executor": "Run",
+    "JUnit.UserTests.sendMailTest.executor": "Run",
+    "JUnit.UserTests.waitTimeTestNotWhile.executor": "Run",
+    "JUnit.UserTests.waitTimeTestWithWhile.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.DemoDisplayApplication.executor": "Run",
+    "git-widget-placeholder": "serendipity",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "S:/Study/GitHub/Project/SpringBoot-MyBatis-Example/demo_display/src/main/resources/mappers",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="S:\Study\GitHub\Project\SpringBoot-MyBatis-Example\demo_display\src\main\resources\mappers" />
+      <recent name="S:\Study\GitHub\Project\SpringBoot-MyBatis-Example\demo_display\src\main\java\com\yuxeng\display" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.DemoDisplayApplication">
+    <configuration name="BookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+>>>>>>> serendipity
       <module name="display" />
       <extension name="coverage">
         <pattern>
@@ -137,10 +189,16 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+<<<<<<< HEAD
       <option name="PACKAGE_NAME" value="com.yuxeng.display" />
       <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.DemoDisplayApplicationTests" />
       <option name="METHOD_NAME" value="contextLoads" />
       <option name="TEST_OBJECT" value="method" />
+=======
+      <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
+      <option name="TEST_OBJECT" value="class" />
+>>>>>>> serendipity
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -170,6 +228,43 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+<<<<<<< HEAD
+=======
+      <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
+      <option name="METHOD_NAME" value="testRemoveBook" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookTest.testSaveBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="display" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuxeng.display.BookTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuxeng.display.BookTests" />
+      <option name="MAIN_CLASS_NAME" value="com.yuxeng.display.BookTests.BookTest" />
+      <option name="METHOD_NAME" value="testSaveBook" />
+      <option name="TEST_OBJECT" value="method" />
+>>>>>>> serendipity
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoDisplayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="display" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yuxeng.display.DemoDisplayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuxeng.display.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -177,10 +272,17 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.DemoDisplayApplication" />
+<<<<<<< HEAD
         <item itemvalue="JUnit.DemoDisplayApplicationTests.contextLoads" />
         <item itemvalue="JUnit.UserTests" />
         <item itemvalue="JUnit.BookTests.getBookTest" />
         <item itemvalue="JUnit.BookTests.addBookTest" />
+=======
+        <item itemvalue="JUnit.BookTest.testSaveBook" />
+        <item itemvalue="JUnit.BookTest" />
+        <item itemvalue="JUnit.BookTest.testListBooksByPage" />
+        <item itemvalue="JUnit.BookTest.testRemoveBook" />
+>>>>>>> serendipity
       </list>
     </recent_temporary>
   </component>
@@ -198,6 +300,7 @@
       <created>1716119165854</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1716119165854</updated>
       <workItem from="1716119166841" duration="4155000" />
       <workItem from="1716124575307" duration="5191000" />
@@ -214,6 +317,16 @@
       <workItem from="1716774934448" duration="26420000" />
       <workItem from="1716867192301" duration="1437000" />
       <workItem from="1716946559526" duration="2942000" />
+=======
+      <updated>1716711228175</updated>
+      <workItem from="1716711229720" duration="12350000" />
+      <workItem from="1716792153899" duration="9169000" />
+      <workItem from="1716816568872" duration="7225000" />
+      <workItem from="1716867231879" duration="29034000" />
+      <workItem from="1716946051084" duration="17435000" />
+      <workItem from="1716971026229" duration="5345000" />
+      <workItem from="1716984229394" duration="8931000" />
+>>>>>>> serendipity
     </task>
     <servers />
   </component>
@@ -243,6 +356,7 @@
       </map>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
@@ -288,5 +402,32 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+=======
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/bookmodel/Service/impl/BookServiceImpl.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/bookmodel/Controller/BookController.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/bookmodel/Controller/BookController.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/demo_display$BookTests_testListCategory.ic" NAME="BookTests.testListCategory Coverage Results" MODIFIED="1716737706289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.yuxeng.display.*</FILTER>
+    </SUITE>
+>>>>>>> serendipity
   </component>
 </project>

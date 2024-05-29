@@ -12,27 +12,14 @@ import java.util.Map;
  */
 public interface BookService {
 
- /**
-  * 根据提供的参数获取分页的图书列表。
-  *
-  * @param params 分页和过滤的参数列表。顺序应为 [pageOn, pageSize, param1, param2, ...]
-  * @return 分页的图书列表。
-  */
- PageBean<Book> listBooksByPage(List<String> params);
-
-  /**
-   * 获取所有图书类别的列表。
-   *
-   * @return 图书类别的列表。
-   */
-  List<BookCategory> listCategory();
+  PageBean<Book> listBooksByPage(String title,String author,Integer categoryId,String publisher,int startPage,int pageSize);
 
   /**
    * 保存新书。
    *
-   * @param book 要保存的图书对象。
+   * @param map 要保存的图书对象。
    */
-  void saveBook(Book book);
+  int saveBook(Map<String, Object> map);
 
   /**
    * 根据图书ID检索图书。
@@ -55,4 +42,6 @@ public interface BookService {
    * @param bookId 要移除的图书ID。
    */
   void removeBook(int bookId);
+
+  PageBean<Book> recommendBook(int userId,int startPage,int pageSize);
 }

@@ -2,6 +2,7 @@ package com.yuxeng.display.bookmodel.Dao;
 
 import com.yuxeng.display.bookmodel.Pojo.Book;
 import com.yuxeng.display.bookmodel.Pojo.BookCategory;
+import com.yuxeng.display.util.PageBean;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
@@ -27,13 +28,6 @@ public interface BookDao {
   List<Book> selectBook(Map<String,Object> paramMap);
 
   /**
-   * 获取所有的书籍类别
-   *
-   * @return 包含所有书籍类别的列表
-   */
-  List<BookCategory> selectBookByCategory();
-
-  /**
    * 根据书籍ID获取书籍详情
    *
    * @param bookId 书籍ID
@@ -46,12 +40,12 @@ public interface BookDao {
    *
    * @param bookId 书籍id
    */
-  void deleteBook(@Param("bookId") Integer bookId);
+  void deleteBook(int bookId);
 
   /**
    * 插入新书籍
    *
-   * @param book 要插入的Book对象
+   * @param book 要插入的Book
    */
   void insertBook(Book book);
 
@@ -61,5 +55,13 @@ public interface BookDao {
    * @param book 要更新的Book对象
    */
   void updateBook(Book book);
+
+  /**
+   * 给用户推荐书籍
+   * @param userId 用户id
+   * @return 给用户推荐的书籍的列表，按照分页显示
+   */
+  //
+  List<Book> recommendBook(int userId,@Param("startIndex")int startIndex,@Param("pageSize")int pageSize);
 }
 
