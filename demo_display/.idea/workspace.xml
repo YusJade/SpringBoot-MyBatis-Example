@@ -61,7 +61,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DemoDisplayApplication.executor": "Debug",
+    "Spring Boot.DemoDisplayApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "S:/Study/GitHub/Project/MyLibrary",
@@ -209,7 +209,7 @@
       <workItem from="1716549929823" duration="7035000" />
       <workItem from="1716774934448" duration="26420000" />
       <workItem from="1716867192301" duration="1437000" />
-      <workItem from="1716946559526" duration="2291000" />
+      <workItem from="1716946559526" duration="2942000" />
     </task>
     <servers />
   </component>
