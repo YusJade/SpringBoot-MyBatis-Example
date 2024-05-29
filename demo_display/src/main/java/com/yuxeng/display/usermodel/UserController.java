@@ -44,10 +44,12 @@ public class UserController {
   @PostMapping("/register")
   public Responses<Long> registerUser(@RequestBody Map<String, String> userRequest) {
     // POST -- 注册用户 -- 已验证
-    // TODO: 状态码新增用户名重复 BY YuXeng
+    // Finished_TODO: 状态码新增用户名重复 BY YuXeng
     return switch (userService.registerUser(userRequest)) {
       case Config.INFO_NOT_ALLOW ->
           new Responses<>(ResponseCode.BAD_REQUEST, "Input Info Unallow", null);
+      case Config.USERNAME_ERROR ->
+          new Responses<>(ResponseCode.USERNAME_REPEATED, "Username Repeat", null);
       case Config.FAIL -> new Responses<>(ResponseCode.FAILED, "Register Failed", null);
       case Config.SUCCESS -> new Responses<>(ResponseCode.SUCCESS, "Register Success",
           userDao.getUserByUsername(userRequest.get("username")).getId());
@@ -113,6 +115,8 @@ public class UserController {
     return switch (userService.updateInfo(id, userRequest)) {
       case Config.USER_NOT_EXIST ->
           new Responses<>(ResponseCode.ACCOUNT_NOT_EXIST, "Can't Find The User", null);
+      case Config.USERNAME_ERROR ->
+          new Responses<>(ResponseCode.USERNAME_REPEATED, "Username Repeat", null);
       case Config.INFO_NOT_ALLOW -> new Responses<>(ResponseCode.BAD_REQUEST, "INFO UNALLOW", null);
       case Config.FAIL -> new Responses<>(ResponseCode.FAILED, "Update Failed", null);
       case Config.SUCCESS -> new Responses<>(ResponseCode.SUCCESS, "Update Success", 1);
