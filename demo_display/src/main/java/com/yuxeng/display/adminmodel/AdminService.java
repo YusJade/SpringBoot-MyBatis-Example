@@ -63,9 +63,9 @@ public class AdminService {
       return -1;
     }
     if (newPassword != null && admin.getPassword().equals(originPassword)) {
-      if (newPassword.equals(originPassword))
+      if (newPassword.equals(admin.getPassword()))
         return  1;
-      return adminDao.updateAdmin(Map.of("password", newPassword));
+      return adminDao.updateAdmin(Map.of("id", admin.getId(), "password", newPassword));
     }
     return 0;
   }

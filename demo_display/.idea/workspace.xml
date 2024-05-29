@@ -61,7 +61,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DemoDisplayApplication.executor": "Run",
+    "Spring Boot.DemoDisplayApplication.executor": "Debug",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "S:/Study/GitHub/Project/MyLibrary",
@@ -209,7 +209,7 @@
       <workItem from="1716549929823" duration="7035000" />
       <workItem from="1716774934448" duration="26420000" />
       <workItem from="1716867192301" duration="1437000" />
-      <workItem from="1716946559526" duration="1540000" />
+      <workItem from="1716946559526" duration="2291000" />
     </task>
     <servers />
   </component>
@@ -292,6 +292,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/usermodel/Email/EmailServiceImpl.java</url>
           <line>74</line>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/adminmodel/AdminService.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
