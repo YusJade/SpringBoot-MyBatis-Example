@@ -12,14 +12,14 @@ import java.util.Map;
  */
 public interface BookService {
 
-  PageBean<Book> listBooksByPage(String title,String author,int categoryId,String publisher,int startPage,int pageSize);
+  PageBean<Book> listBooksByPage(String title,String author,Integer categoryId,String publisher,int startPage,int pageSize);
 
   /**
    * 保存新书。
    *
    * @param map 要保存的图书对象。
    */
-  void saveBook(Map<String, Object> map);
+  int saveBook(Map<String, Object> map);
 
   /**
    * 根据图书ID检索图书。
@@ -43,5 +43,5 @@ public interface BookService {
    */
   void removeBook(int bookId);
 
-  PageBean<Book> recommendBook(int userId);
+  PageBean<Book> recommendBook(int userId,int startPage,int pageSize);
 }

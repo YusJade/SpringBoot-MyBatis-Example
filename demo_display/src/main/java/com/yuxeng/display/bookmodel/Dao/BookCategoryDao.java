@@ -25,6 +25,8 @@ public interface BookCategoryDao {
    */
   BookCategory selectCategoryById(int id);
 
+  BookCategory selectCategoryByName(String categoryName);
+
   /**
    * 获取图书类别数量
    * @return 类别数量

@@ -18,6 +18,8 @@ public interface BookCategoryService {
 
   BookCategory getCategoryById(int categoryId);
 
+  BookCategory getCategoryByName(String categoryName);
+
   /**
    * 更新图书类别信息。
    *

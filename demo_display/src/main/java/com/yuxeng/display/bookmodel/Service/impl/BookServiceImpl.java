@@ -19,10 +19,12 @@ public class BookServiceImpl implements BookService{
 
   @Autowired
   private BookDao bookDao;
+  @Autowired
+  private UserController user;
 
 
   @Override
-  public PageBean<Book> listBooksByPage(String title, String author, int categoryId,
+  public PageBean<Book> listBooksByPage(String title, String author, Integer categoryId,
       String publisher, int startPage, int pageSize) {
     Map<String,Object> map = new HashMap<>();
     map.put("title",title);
@@ -45,15 +47,15 @@ public class BookServiceImpl implements BookService{
   }
 
   @Override
-  public void saveBook(Map<String, Object> bookMap) {
-    // 从bookMap中获取数据并创建Book对象
+  public int saveBook(Map<String, Object> bookMap) {
     Book book = new Book();
     book.setTitle((String) bookMap.get("title"));
     book.setAuthor((String) bookMap.get("author"));
     book.setCategory_id((Integer) bookMap.get("category_id"));
     book.setPublisher((String) bookMap.get("publisher"));
     book.setQuantity((Integer) bookMap.get("quantity"));
-    bookDao.insertBook(bookMap);
+    bookDao.insertBook(book);
+    return book.getId();
   }
 
   @Override
@@ -72,8 +74,16 @@ public class BookServiceImpl implements BookService{
   }
 
   @Override
-  public PageBean<Book> recommendBook(int userId){
-    return bookDao.recommendBook(userId);
+  public PageBean<Book> recommendBook(int userId,int startPage,int pageSize){
+    PageBean<Book> bean = new PageBean<>(startPage,pageSize);
+    bean.setTotalSize(bookDao.recommendBook(userId,startPage,pageSize).size());
+    bean.setTotalPage((int) Math.ceil((double) bean.getTotalSize() /pageSize));
+    bean.setPageSize(pageSize);
+    bean.setPageOn(startPage);
+    int startIndex = (startPage - 1) * 10;
+    bean.setDatas(bookDao.recommendBook(userId,startIndex,pageSize));
+
+    return bean;
   }
 
 }
