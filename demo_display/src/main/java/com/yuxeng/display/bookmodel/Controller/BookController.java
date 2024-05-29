@@ -61,8 +61,7 @@ public class BookController {
   @PutMapping("/{id}")
   public Responses<Book> updateBook(@PathVariable int id, @RequestBody Book book) {
     // 更新图书信息
-    book.setId(id);
-    bookService.updateBook(book);
+    bookService.updateBook(id, book);
     book.setCreated_at(new Timestamp(System.currentTimeMillis()));
     return new Responses<>(ResponseCode.SUCCESS, "图书信息更新成功", book);
   }

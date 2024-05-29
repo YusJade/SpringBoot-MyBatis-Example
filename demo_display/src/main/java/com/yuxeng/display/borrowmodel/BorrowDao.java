@@ -8,9 +8,8 @@ import org.apache.ibatis.annotations.Mapper;
 public interface BorrowDao {
 
   Borrow selectBorrowById(int id);
-  List<Borrow> selectBorrow(Map<String, Object> map);
+  List<Borrow> selectBorrow(Map<String, Object> map, boolean isContainFinished);
   void insertBorrow(Borrow borrow);
-  void deleteBorrowById(int id);
   int updateBorrowById(Map<String, Object> map);
-  int countBorrow(Map<String, Object> map);
+  int countBorrow(Map<String, Object> map, boolean isContainFinished);
 }
