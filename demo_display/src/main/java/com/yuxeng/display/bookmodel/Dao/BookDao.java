@@ -28,13 +28,6 @@ public interface BookDao {
   List<Book> selectBook(Map<String,Object> paramMap);
 
   /**
-   * 获取所有的书籍类别
-   *
-   * @return 包含所有书籍类别的列表
-   */
-  List<BookCategory> selectBookByCategory();
-
-  /**
    * 根据书籍ID获取书籍详情
    *
    * @param bookId 书籍ID
@@ -47,7 +40,7 @@ public interface BookDao {
    *
    * @param bookId 书籍id
    */
-  void deleteBook(@Param("bookId") Integer bookId);
+  void deleteBook(int bookId);
 
   /**
    * 插入新书籍
@@ -68,6 +61,7 @@ public interface BookDao {
    * @param userId 用户id
    * @return 给用户推荐的书籍的列表，按照分页显示
    */
+  // todo
   PageBean<Book> recommendBook(int userId);
 }
 

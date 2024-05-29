@@ -25,10 +25,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="LLMProjectSettings">
     <option name="aiignore_manually_set" value="true" />
   </component>
@@ -65,10 +65,10 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DemoDisplayApplication.executor": "Run",
+    "Spring Boot.DemoDisplayApplication.executor": "Debug",
     "git-widget-placeholder": "serendipity",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "S:/Study/GitHub/Project/SpringBoot-MyBatis-Example/demo_display/src/main/java/com/yuxeng/display",
+    "last_opened_file_path": "S:/Study/GitHub/Project/SpringBoot-MyBatis-Example/demo_display/src/main/resources/mappers",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,6 +79,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="S:\Study\GitHub\Project\SpringBoot-MyBatis-Example\demo_display\src\main\resources\mappers" />
       <recent name="S:\Study\GitHub\Project\SpringBoot-MyBatis-Example\demo_display\src\main\java\com\yuxeng\display" />
     </key>
   </component>
@@ -189,7 +190,8 @@
       <workItem from="1716711229720" duration="12350000" />
       <workItem from="1716792153899" duration="9169000" />
       <workItem from="1716816568872" duration="7225000" />
-      <workItem from="1716867231879" duration="17153000" />
+      <workItem from="1716867231879" duration="29034000" />
+      <workItem from="1716946051084" duration="17435000" />
     </task>
     <servers />
   </component>
@@ -218,6 +220,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yuxeng/display/bookmodel/Service/impl/BookServiceImpl.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/demo_display$BookTests_testListCategory.ic" NAME="BookTests.testListCategory Coverage Results" MODIFIED="1716737706289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

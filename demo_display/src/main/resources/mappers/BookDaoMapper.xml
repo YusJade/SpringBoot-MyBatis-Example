@@ -4,7 +4,7 @@
 <mapper namespace="com.yuxeng.display.bookmodel.Dao.BookDao">
 
   <!-- 根据查询参数获取所有符合条件的书籍 -->
-  <select id="selectBook" parameterType="map" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
+  <select id="selectBook" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
     SELECT *
     FROM tb_book
     WHERE 1 = 1
@@ -25,7 +25,7 @@
     LIMIT #{startIndex}, #{pageSize}
   </select>
 
-  <!-- 根据查询参数获取符合条件的书籍（或者分类）数量 -->
+  <!-- 根据查询参数获取符合条件的书籍数量 -->
   <select id="selectBookCount" parameterType="map" resultType="int">
     SELECT COUNT(*)
     FROM tb_book
@@ -45,12 +45,6 @@
   </select>
 
 
-  <!-- 根据书籍类别查询所有书籍 -->
-  <select id="selectBookByCategory" resultType="com.yuxeng.display.bookmodel.Pojo.BookCategory">
-    SELECT id AS categoryId, name AS categoryName
-    FROM tb_book_category
-  </select>
-
   <!-- 根据书籍ID查询书籍详情 -->
   <select id="selectById" parameterType="int" resultType="com.yuxeng.display.bookmodel.Pojo.Book">
     SELECT *
@@ -65,8 +59,8 @@
 
   <!-- 插入新书籍 -->
   <insert id="insertBook">
-    INSERT INTO tb_book (title, author, category_id, publisher, quantity, created_at)
-    VALUES (#{title}, #{author}, #{category_id}, #{publisher}, #{quantity}, #{created_at})
+    INSERT INTO tb_book (title, author, category_id, publisher, quantity)
+    VALUES (#{title}, #{author}, #{category_id}, #{publisher}, #{quantity})
   </insert>
 
   <!-- 更新书籍 -->
@@ -78,7 +72,7 @@
       <if test="category_id != null"> category_id = #{category_id}, </if>
       <if test="publisher != null"> publisher = #{publisher}, </if>
       <if test="quantity != null"> quantity = #{quantity}, </if>
-      <if test="created_at != null"> created_at = #{created_at}, </if>
+<!--      <if test="created_at != null"> created_at = #{created_at}, </if>-->
     </set>
     WHERE id = #{id}
   </update>

@@ -3,15 +3,30 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yuxeng.display.bookmodel.Dao.BookCategoryDao">
 
-  <!-- 显示全部分类 -->
-  <select id="selectCategory" resultType="com.yuxeng.display.bookmodel.Pojo.BookCategory">
-    SELECT * FROM tb_book_category
+  <!-- 获取全部分类并分页 -->
+  <select id="selectCategory"  resultType="com.yuxeng.display.bookmodel.Pojo.BookCategory">
+    SELECT *
+    FROM tb_book_category
+    ORDER BY id
+    LIMIT #{startIndex}, #{pageSize}
+  </select>
+
+  <!-- 通过类别id寻找对应类别 -->
+  <select id="selectCategoryById" resultType="com.yuxeng.display.bookmodel.Pojo.BookCategory">
+    SELECT *
+    FROM tb_book_category
+    WHERE id = #{id}
+  </select>
+
+  <!-- 计算 BookCategory 记录的数量 -->
+  <select id="countBookCategories" resultType="int">
+    SELECT COUNT(*) FROM tb_book_category
   </select>
 
   <!-- 更新书籍分类信息 -->
   <update id="updateBookCategory">
     UPDATE tb_book_category
-    SET name = #{name}
+    SET name = #{categoryName}
     WHERE id = #{id}
   </update>
 

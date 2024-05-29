@@ -6,6 +6,8 @@ import com.yuxeng.display.usermodel.UserController;
 import com.yuxeng.display.util.PageBean;
 import com.yuxeng.display.util.ResponseCode;
 import com.yuxeng.display.util.Responses;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,14 +24,18 @@ public class BookController {
   private UserController user;
 
   @GetMapping
-  public Responses<PageBean<Book>> queryBook(@RequestParam List<String> paramMap) {
-    PageBean<Book> queryBook = bookService.listBooksByPage(paramMap);
-    if(queryBook != null){
-      return new Responses<>(ResponseCode.SUCCESS,"书籍查询成功",
-          bookService.listBooksByPage(paramMap));
-    }else{
-      return new Responses<>(ResponseCode.BOOK_NOT_EXIST,"没有与关键词匹配的书籍！",
-          null);
+  public Responses<PageBean<Book>> queryBook(
+      @RequestParam(value = "title", required = false) String title,
+      @RequestParam(value = "author", required = false) String author,
+      @RequestParam(value = "category_id", required = false) Integer categoryId,
+      @RequestParam(value = "publisher", required = false) String publisher,
+      @RequestParam(value = "start_page", defaultValue = "0") int startIndex,
+      @RequestParam(value = "page_size", defaultValue = "10") int pageSize) {
+      PageBean<Book> books = bookService.listBooksByPage(title,author,categoryId,publisher,startIndex,pageSize);
+    if (books != null) {
+      return new Responses<>(ResponseCode.SUCCESS, "分类列表获取成功", books);
+    } else {
+      return new Responses<>(ResponseCode.CATEGORY_NOT_EXIST, "分类列表为空", null);
     }
 
   }
@@ -37,9 +43,7 @@ public class BookController {
   @PostMapping
   public Responses<Book> addBook(@RequestBody Map<String, Object> bookMap) {
     bookService.saveBook(bookMap);
-    int id = (int)bookMap.get("id");
-    Book book = bookService.getBookById(id);
-    return new Responses<>(ResponseCode.SUCCESS, "图书添加成功",book);
+    return new Responses<>(ResponseCode.SUCCESS, "图书添加成功",null);
   }
 
   @GetMapping("/{id}")
@@ -58,6 +62,7 @@ public class BookController {
     // 更新图书信息
     book.setId(id);
     bookService.updateBook(book);
+    book.setCreated_at(new Timestamp(System.currentTimeMillis()));
     return new Responses<>(ResponseCode.SUCCESS, "图书信息更新成功", book);
   }
 

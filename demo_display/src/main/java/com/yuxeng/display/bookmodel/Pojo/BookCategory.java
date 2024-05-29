@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class BookCategory {
-  private long id;
+  private Integer id;
   private String name;
   private Integer quantity;
   private Timestamp created_at;

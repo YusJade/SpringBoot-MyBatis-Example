@@ -12,20 +12,7 @@ import java.util.Map;
  */
 public interface BookService {
 
- /**
-  * 根据提供的参数获取分页的图书列表。
-  *
-  * @param params 分页和过滤的参数列表。顺序应为 [pageOn, pageSize, param1, param2, ...]
-  * @return 分页的图书列表。
-  */
- PageBean<Book> listBooksByPage(List<String> params);
-
-  /**
-   * 获取所有图书类别的列表。
-   *
-   * @return 图书类别的列表。
-   */
-  List<BookCategory> listCategory();
+  PageBean<Book> listBooksByPage(String title,String author,int categoryId,String publisher,int startPage,int pageSize);
 
   /**
    * 保存新书。
