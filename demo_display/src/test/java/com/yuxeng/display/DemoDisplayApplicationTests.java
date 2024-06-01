@@ -24,9 +24,9 @@ class DemoDisplayApplicationTests {
 
   @Test
   void contextLoads() {
-    Map<String, Object> map = new HashMap<>();
-    map.put("pageOn", 1);
-    map.put("pageSize", 10);
+    // Map<String, Object> map = new HashMap<>();
+    // map.put("pageOn", 1);
+    // map.put("pageSize", 10);
 //    PageBean<Book> res = bookService.listBooksByPage(map);
 //    System.out.println(res.getDatas().size());
   }
