@@ -3,6 +3,7 @@ package com.yuxeng.display.usermodel.Email;
 import com.yuxeng.display.usermodel.HelperUtils;
 import jakarta.annotation.Resource;
 import jakarta.mail.internet.MimeMessage;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -19,6 +20,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.FileCopyUtils;
 
 
 @Service
@@ -76,14 +78,14 @@ public class EmailServiceImpl implements EmailService {
     ClassPathResource resource = new ClassPathResource("templates/Email-Code.html");
     // DEBUG
     try{
-      filePath = resource.getFile().getPath();
+      byte[] bytes = FileCopyUtils.copyToByteArray(resource.getInputStream());
       MimeMessageHelper messageHelper = new MimeMessageHelper(message, true);
       messageHelper.setFrom(EmailConfig.EMAIL);
       messageHelper.setTo(mail);
       messageHelper.setSubject("SpringBoot-MyBatis-Example项目组");
 
       // 读取Html————芝士学报的方法是在方法外读取
-      String htmlFile = new String(Files.readAllBytes(Paths.get(filePath)));
+      String htmlFile = new String(bytes, StandardCharsets.UTF_8);
       htmlFile = htmlFile.replace("{{code}}",codeRecord.get(mail)); // 替换{{code}}里的内容
       messageHelper.setText(htmlFile, true);
 
