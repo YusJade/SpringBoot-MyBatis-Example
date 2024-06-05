@@ -12,7 +12,8 @@ import java.util.Map;
  */
 public interface BookService {
 
-  PageBean<Book> listBooksByPage(String title,String author,Integer categoryId,String publisher,int startPage,int pageSize);
+  PageBean<Book> listBooksByPage(String title, String author, Integer categoryId, String publisher,
+      int startPage, int pageSize, String keyword);
 
   /**
    * 保存新书。
@@ -43,5 +44,5 @@ public interface BookService {
    */
   void removeBook(int bookId);
 
-  PageBean<Book> recommendBook(int userId,int startPage,int pageSize);
+  PageBean<Book> recommendBook(int userId, int startPage, int pageSize);
 }

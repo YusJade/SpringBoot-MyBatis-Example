@@ -25,12 +25,13 @@ public class BookServiceImpl implements BookService{
 
   @Override
   public PageBean<Book> listBooksByPage(String title, String author, Integer categoryId,
-      String publisher, int startPage, int pageSize) {
+      String publisher, int startPage, int pageSize, String keyword) {
     Map<String,Object> map = new HashMap<>();
     map.put("title",title);
     map.put("author",author);
     map.put("category_id",categoryId);
     map.put("publisher",publisher);
+    map.put("keyword", keyword);
 
     PageBean<Book> bean = new PageBean<>(startPage,pageSize);
 

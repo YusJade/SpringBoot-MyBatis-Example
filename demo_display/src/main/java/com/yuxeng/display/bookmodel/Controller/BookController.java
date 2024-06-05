@@ -8,6 +8,7 @@ import com.yuxeng.display.util.ResponseCode;
 import com.yuxeng.display.util.Responses;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import org.apache.ibatis.jdbc.Null;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,13 +30,15 @@ public class BookController {
       @RequestParam(value = "author", required = false) String author,
       @RequestParam(value = "category_id", required = false) Integer categoryId,
       @RequestParam(value = "publisher", required = false) String publisher,
-      @RequestParam(value = "start_page",  defaultValue = "1") Integer startIndex,
-      @RequestParam(value = "page_size", defaultValue = "10") Integer pageSize) {
-      PageBean<Book> books = bookService.listBooksByPage(title,author,categoryId,publisher,startIndex,pageSize);
+      @RequestParam(value = "start_page", defaultValue = "1") Integer startIndex,
+      @RequestParam(value = "page_size", defaultValue = "10") Integer pageSize,
+      @RequestParam(value = "keyword", defaultValue = "") String keyword) {
+    PageBean<Book> books = bookService.listBooksByPage(title, author, categoryId, publisher,
+        startIndex, pageSize, keyword);
     if (books != null) {
-      return new Responses<>(ResponseCode.SUCCESS, "分类列表获取成功", books);
+      return new Responses<>(ResponseCode.SUCCESS, "查询成功", books);
     } else {
-      return new Responses<>(ResponseCode.CATEGORY_NOT_EXIST, "分类列表为空", null);
+      return new Responses<>(ResponseCode.FAILED, "系统错误", null);
     }
 
   }
@@ -43,7 +46,7 @@ public class BookController {
   @PostMapping
   public Responses<Integer> addBook(@RequestBody Map<String, Object> bookMap) {
     int bookId = bookService.saveBook(bookMap);
-    return new Responses<>(ResponseCode.SUCCESS, "图书添加成功",bookId);
+    return new Responses<>(ResponseCode.SUCCESS, "图书添加成功", bookId);
   }
 
 
@@ -75,15 +78,15 @@ public class BookController {
 
   @GetMapping("/recommends")
   public Responses<PageBean<Book>> getRecommendedBooks(
-      @RequestParam (value = "user_id")Integer userId,
-      @RequestParam (value = "start_page",defaultValue = "1")Integer startPage,
-      @RequestParam (value = "page_size",defaultValue = "10" ) Integer pageSize
-      ) {
-    PageBean<Book> listRecommendBook = bookService.recommendBook(userId,startPage,pageSize);
-    if(listRecommendBook.getTotalSize() == 0){
-      return new Responses<>(ResponseCode.BORROW_NOT_EXIST,"还未借阅书籍，无法推荐",null);
-    }else{
-      return new Responses<>(ResponseCode.SUCCESS,"推荐书籍成功",listRecommendBook);
+      @RequestParam(value = "user_id") Integer userId,
+      @RequestParam(value = "start_page", defaultValue = "1") Integer startPage,
+      @RequestParam(value = "page_size", defaultValue = "10") Integer pageSize
+  ) {
+    PageBean<Book> listRecommendBook = bookService.recommendBook(userId, startPage, pageSize);
+    if (listRecommendBook.getTotalSize() == 0) {
+      return new Responses<>(ResponseCode.BORROW_NOT_EXIST, "还未借阅书籍，无法推荐", null);
+    } else {
+      return new Responses<>(ResponseCode.SUCCESS, "推荐书籍成功", listRecommendBook);
     }
   }
 }

@@ -11,6 +11,8 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface BookDao {
 
+  List<Book> selectBookByKeyword(String keyword);
+
   /**
    * 根据查询参数获取符合条件的书籍数量
    *
