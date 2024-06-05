@@ -46,6 +46,9 @@ public class BookController {
   @PostMapping
   public Responses<Integer> addBook(@RequestBody Map<String, Object> bookMap) {
     int bookId = bookService.saveBook(bookMap);
+    if (bookId == -1) {
+      return new Responses<>(ResponseCode.BOOK_ALREADY_EXIT, "标题、作者、出版商相同的图书已存在", -1);
+    }
     return new Responses<>(ResponseCode.SUCCESS, "图书添加成功", bookId);
   }
 

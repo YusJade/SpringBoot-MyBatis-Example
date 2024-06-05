@@ -1,5 +1,0 @@
-# Created at 2024-06-01T09:46:43.431
-Boot Manifest-JAR contains absolute paths in classpath 'E:\Documents\CodeField\SpringBoot-MyBatis-Example\demo_display\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-'other' has different root
-

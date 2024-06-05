@@ -10,12 +10,12 @@ import java.util.HashMap;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import  com.yuxeng.display.bookmodel.Service.BookService;
+import com.yuxeng.display.bookmodel.Service.BookService;
 
 import java.util.List;
 
 @Service
-public class BookServiceImpl implements BookService{
+public class BookServiceImpl implements BookService {
 
   @Autowired
   private BookDao bookDao;
@@ -26,23 +26,23 @@ public class BookServiceImpl implements BookService{
   @Override
   public PageBean<Book> listBooksByPage(String title, String author, Integer categoryId,
       String publisher, int startPage, int pageSize, String keyword) {
-    Map<String,Object> map = new HashMap<>();
-    map.put("title",title);
-    map.put("author",author);
-    map.put("category_id",categoryId);
-    map.put("publisher",publisher);
+    Map<String, Object> map = new HashMap<>();
+    map.put("title", title);
+    map.put("author", author);
+    map.put("category_id", categoryId);
+    map.put("publisher", publisher);
     map.put("keyword", keyword);
 
-    PageBean<Book> bean = new PageBean<>(startPage,pageSize);
+    PageBean<Book> bean = new PageBean<>(startPage, pageSize);
 
     bean.setTotalSize(bookDao.selectBookCount(map));
-    bean.setTotalPage(bookDao.selectBookCount(map)/pageSize);
+    bean.setTotalPage(bookDao.selectBookCount(map) / pageSize);
     bean.setPageSize(pageSize);
     bean.setPageOn(startPage);
 
     int startIndex = (startPage - 1) * pageSize;
-    map.put("startIndex",startIndex);
-    map.put("pageSize",pageSize);
+    map.put("startIndex", startIndex);
+    map.put("pageSize", pageSize);
     bean.setDatas(bookDao.selectBook(map));
     return bean;
   }
@@ -55,6 +55,15 @@ public class BookServiceImpl implements BookService{
     book.setCategory_id((Integer) bookMap.get("category_id"));
     book.setPublisher((String) bookMap.get("publisher"));
     book.setQuantity((Integer) bookMap.get("quantity"));
+    PageBean<Book> repeats = listBooksByPage(book.getTitle(), book.getAuthor(), null, book.getPublisher(),
+        1, 10, null);
+    if (!repeats.getDatas().isEmpty()) {
+      return -1; // 有重复项插入，拒绝
+    }
+//    Integer id = (Integer) bookMap.get("id");
+//    if ( id != null) {
+//      book.setId(id);
+//    }
     bookDao.insertBook(book);
     return book.getId();
   }
@@ -65,7 +74,6 @@ public class BookServiceImpl implements BookService{
   }
 
   /**
-   *
    * @param id
    * @param book 更新后的图书对象。
    * @return -1：图书不存在；1：更新成功
@@ -83,18 +91,18 @@ public class BookServiceImpl implements BookService{
 
   @Override
   public void removeBook(int bookId) {
-  bookDao.deleteBook(bookId);
+    bookDao.deleteBook(bookId);
   }
 
   @Override
-  public PageBean<Book> recommendBook(int userId,int startPage,int pageSize){
-    PageBean<Book> bean = new PageBean<>(startPage,pageSize);
-    bean.setTotalSize(bookDao.recommendBook(userId,startPage,pageSize).size());
-    bean.setTotalPage((int) Math.ceil((double) bean.getTotalSize() /pageSize));
+  public PageBean<Book> recommendBook(int userId, int startPage, int pageSize) {
+    PageBean<Book> bean = new PageBean<>(startPage, pageSize);
+    bean.setTotalSize(bookDao.recommendBook(userId, startPage, pageSize).size());
+    bean.setTotalPage((int) Math.ceil((double) bean.getTotalSize() / pageSize));
     bean.setPageSize(pageSize);
     bean.setPageOn(startPage);
     int startIndex = (startPage - 1) * 10;
-    bean.setDatas(bookDao.recommendBook(userId,startIndex,pageSize));
+    bean.setDatas(bookDao.recommendBook(userId, startIndex, pageSize));
 
     return bean;
   }
