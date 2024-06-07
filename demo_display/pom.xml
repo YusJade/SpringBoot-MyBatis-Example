@@ -12,7 +12,7 @@
     <artifactId>display</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <!--    打包为 war 包-->
-    <packaging>war</packaging>
+<!--    <packaging>war</packaging>-->
     <name>demo_display</name>
     <description>demo_display</description>
     <properties>
@@ -85,7 +85,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
+<!--            <scope>provided</scope>-->
         </dependency>
     </dependencies>
     <build>
