@@ -2,7 +2,7 @@
 
 ### 配置环境和打包
 - 确保你安装了`JDK`，并可以在终端(`PowerShell`、`cmd`)执行`java`命令。
-- 在我们仓库的 Realse 上下载 Jar 包，或者自行打包我们的项目。
+- 在我们仓库的 Release 上下载 Jar 包，或者自行打包我们的项目。
 
 ### 配置数据库
 - 运行你的 MySQL ，在`demo`数据库下执行我们仓库提供的建表 SQL `database\database_model.sql`
