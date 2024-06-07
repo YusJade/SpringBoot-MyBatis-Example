@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuxeng.display.bookmodel.Dao.BookCategoryDao">
+
+  <!-- 获取全部分类并分页 -->
+  <select id="selectCategory"  resultType="com.yuxeng.display.bookmodel.Pojo.BookCategory">
+    SELECT *
+    FROM tb_book_category
+    ORDER BY id
+    LIMIT #{startIndex}, #{pageSize}
+  </select>
+
+  <!-- 通过类别id寻找对应类别 -->
+  <select id="selectCategoryById" resultType="com.yuxeng.display.bookmodel.Pojo.BookCategory">
+    SELECT *
+    FROM tb_book_category
+    WHERE id = #{id}
+  </select>
+
+  <!-- 通过类别名字寻找对应类别 -->
+  <select id="selectCategoryByName" resultType="com.yuxeng.display.bookmodel.Pojo.BookCategory">
+    SELECT *
+    FROM tb_book_category
+    WHERE name = #{categoryName}
+  </select>
+
+  <!-- 计算 BookCategory 记录的数量 -->
+  <select id="countBookCategories" resultType="int">
+    SELECT COUNT(*) FROM tb_book_category
+  </select>
+
+  <!-- 更新书籍分类信息 -->
+  <update id="updateBookCategory">
+    UPDATE tb_book_category
+    SET name = #{categoryName}
+    WHERE id = #{id}
+  </update>
+
+  <!-- 删除书籍分类 -->
+  <delete id="deleteBookCategory">
+    DELETE FROM tb_book_category
+    WHERE id = #{id}
+  </delete>
+
+  <!-- 添加新书籍分类 -->
+  <insert id="insertBookCategory" parameterType="string">
+    INSERT INTO tb_book_category (name)
+    VALUES (#{name})
+  </insert>
+
+
+</mapper>
