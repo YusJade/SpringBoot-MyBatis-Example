@@ -2,16 +2,16 @@
 
 ### 配置环境和打包
 - 确保你安装了`JDK`，并可以在终端(`PowerShell`、`cmd`)执行`java`命令。
-- 在我们仓库的 Realse 上下载 Jar 包，或者自行打包我们的项目。
+- 在我们仓库的 Release 上下载 Jar 包，或者自行打包我们的项目。
 
 ### 配置数据库
-- 运行你的 MySQL ，在`demo`数据库下执行我们仓库提供的建表 SQL `database\database_model.sql`
+- 运行你的 MySql ，在`demo`数据库下执行我们仓库提供的建表 SQL `database\database_model.sql`
 - 我们也提供了测试数据的插入 SQL ，可在同目录下找到。
 
 ### 启动程序
 打开终端，在 Jar 包所在目录下，执行命令：
 ```bash
- java -jar <jar包名> --spring.datasource.password=<你的密码>
+ java -jar <jar包名> --spring.datasource.password=<你的MySql密码>
 ```
 看到以下输出，说明程序启动成功：
 ```log
