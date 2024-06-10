@@ -2,6 +2,9 @@ package com.yuxeng.display.usermodel;
 
 import com.yuxeng.display.usermodel.Email.EmailService;
 import com.yuxeng.display.usermodel.Email.EmailServiceImpl;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import jakarta.annotation.Resource;
 import java.sql.Timestamp;
@@ -10,6 +13,7 @@ import java.util.Map;
 
 
 @Service
+@Slf4j
 public class UserService {
 
   @Resource
@@ -44,11 +48,14 @@ public class UserService {
     String name = userRequest.get("name");
     String gender = userRequest.get("gender");
     String phone = userRequest.get("phone");
-    String mail = userRequest.get("mail");
+    String email = userRequest.get("email");
 
-    System.out.println("[DEBUG] | RegisterUser | Info : " + userRequest);
+    Logger logger = LoggerFactory.getLogger(getClass());
 
-    if (!helper.powerfulCheck(username, password, name, gender, mail)) {
+    logger.info("有新用户注册,正在对信息进行验证：" + userRequest);
+//    System.out.println("[DEBUG] | RegisterUser | Info : " + userRequest);
+
+    if (!helper.powerfulCheck(username, password, name, gender, email)) {
       return Config.INFO_NOT_ALLOW;
     }
     if (!helper.checkUsernameNotRepeat(username)){
@@ -61,7 +68,7 @@ public class UserService {
     db_user.setName(name);
     db_user.setPhone(phone);
     db_user.setGender(gender);
-    db_user.setEmail(mail);
+    db_user.setEmail(email);
     db_user.setMax_borrow_days(Config.MAX_BORROW_DAYS);
     db_user.setMax_borrow_books(Config.MAX_BORROW_BOOKS);
     db_user.setCreated_at(Timestamp.from(Instant.now()));

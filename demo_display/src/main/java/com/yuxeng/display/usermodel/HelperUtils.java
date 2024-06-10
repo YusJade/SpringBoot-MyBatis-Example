@@ -5,11 +5,14 @@ import jakarta.annotation.Resource;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.concurrent.ScheduledFuture;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.stereotype.Service;
 
 
 @Service
+@Slf4j
 public class HelperUtils {
 
   @Resource
@@ -32,7 +35,8 @@ public class HelperUtils {
   检测用户名是否重复——重复false/不重复true
    */
   public boolean checkUsernameNotRepeat(String username) {
-    System.out.println("[DEBUG] HelperUtils | CheckUsernameRepeat : " + username);
+    log.info(String.format("验证用户名 %s 是否重复", username));
+//    System.out.println("[DEBUG] HelperUtils | CheckUsernameRepeat : " + username);
     return userDao.getUserByUsername(username) == null;
   }
 
@@ -40,7 +44,8 @@ public class HelperUtils {
   检测用户名是否符合要求
    */
   public boolean checkUsernameValidity(String username) {
-    System.out.println("[DEBUG] HelperUtils | CheckUsernameValidity : " + username);
+    log.info(String.format("验证用户名 %s 是否合法", username));
+//    System.out.println("[DEBUG] HelperUtils | CheckUsernameValidity : " + username);
     return username.matches(Config.USERNAME_REGEX) && !username.equals("admin")
         && username.length() <= 50;
   }
@@ -49,7 +54,8 @@ public class HelperUtils {
   检测密码强度
    */
   public boolean checkPasswordStrength(String password) {
-    System.out.println("[DEBUG] HelperUtils | CheckPasswordStrength : " + password);
+    log.info("验证用户密码是否符合强度要求");
+//    System.out.println("[DEBUG] HelperUtils | CheckPasswordStrength : " + password);
     return password.matches(Config.PASSWORD_REGEX) && password.length() <= 50;
   } // 无需反转
 
@@ -57,7 +63,8 @@ public class HelperUtils {
   检测邮箱是否符合要求
    */
   public boolean checkEmailValidity(String mail) {
-    System.out.println("[DEBUG] HelperUtils | CheckEmailValidity : " + mail);
+    log.info(String.format("验证邮箱 %s 是否合法", mail));
+//    System.out.println("[DEBUG] HelperUtils | CheckEmailValidity : " + mail);
     return mail.matches(Config.MAIL_REGEX);
   }
 
@@ -65,7 +72,8 @@ public class HelperUtils {
   检测性别是否符合要求
    */
   public boolean checkGenderValidity(String gender) {
-    System.out.println("[DEBUG] HelperUtils | CheckGenderValidity : " + gender);
+    log.info(String.format("验证性别 %s 是否合法", gender));
+//    System.out.println("[DEBUG] HelperUtils | CheckGenderValidity : " + gender);
     return Config.GENDER_LIST.contains(gender);
   }
 

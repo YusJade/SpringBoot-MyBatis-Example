@@ -26,4 +26,8 @@ public class Config {
   public static final String USER_NOT_EXIST = "USERNOTEXIST";
   public static final String INFO_NOT_ALLOW = "INFONOTALLOW";
   public static final String CODE_OUTIME = "CODEOUTIME";
+  public static final String WEAK_PASSWORD = "WEAK_PASSWORD";
+  public static final String BAD_USERNAME = "WEAK_PASSWORD";
+  public static final String BAD_EMAIL = "BAD_EMAIL";
+  public static final String BAD_GENDER = "BAD_GENDER";
 }

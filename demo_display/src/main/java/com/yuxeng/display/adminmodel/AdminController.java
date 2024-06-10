@@ -39,7 +39,7 @@ public class AdminController {
         Admin admin = adminService.getAdminByUsername(loginInfo.get("username"));
         // 将管理员信息写入 session 中
         request.getSession().setAttribute("admin", admin);
-        return new Responses<>(ResponseCode.LOGIN_SUCCESS, "登录成功",
+        return new Responses<>(ResponseCode.SUCCESS, "登录成功",
             admin.getId());
     }
     return new Responses<>(ResponseCode.FAILED, "系统错误", 0);
@@ -70,7 +70,7 @@ public class AdminController {
     return switch (res) {
       case 0 -> new Responses<>(ResponseCode.WRONG_PASSWORD, "密码错误",
           "");
-      case 1 -> new Responses<>(ResponseCode.LOGIN_SUCCESS, "密码修改成功",
+      case 1 -> new Responses<>(ResponseCode.SUCCESS, "密码修改成功",
           passwords.get("new_password"));
       case -1 -> new Responses<>(ResponseCode.ACCOUNT_NOT_EXIST, "管理员不存在",
           "");
