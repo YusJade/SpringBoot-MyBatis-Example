@@ -48,6 +48,11 @@
       <if test="publisher != null and publisher != ''">
         AND publisher LIKE CONCAT('%', #{publisher}, '%')
       </if>
+      <if test="keyword != null and keyword != ''">
+        AND ( author LIKE CONCAT('%', #{keyword}, '%') OR
+        title LIKE CONCAT('%', #{keyword}, '%') OR
+        publisher LIKE CONCAT('%', #{keyword}, '%'))
+      </if>
     </where>
   </select>
 

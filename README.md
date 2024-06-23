@@ -1,4 +1,10 @@
 # 使用 SpringBoot + MyBatis 搭建 Web 应用的样例
+
+##### 感谢本仓库的贡献者
+<a href="https://github.com/YusJade/SpringBoot-MyBatis-Example/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=YusJade/SpringBoot-MyBatis-Example&name=true" />
+</a>
+
 ## 仓库浏览指引
  - `guide`: 开发向导和入门指南。
  - `demo_preview`: 用以预习的工程文件，配合`guide`中的教学食用。

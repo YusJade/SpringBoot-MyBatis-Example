@@ -36,7 +36,7 @@ public class BookServiceImpl implements BookService {
     PageBean<Book> bean = new PageBean<>(startPage, pageSize);
 
     bean.setTotalSize(bookDao.selectBookCount(map));
-    bean.setTotalPage(bookDao.selectBookCount(map) / pageSize);
+    bean.setTotalPage((int) Math.ceil((double) bookDao.selectBookCount(map) / pageSize));
     bean.setPageSize(pageSize);
     bean.setPageOn(startPage);
 
