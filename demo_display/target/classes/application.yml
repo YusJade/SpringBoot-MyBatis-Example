@@ -4,6 +4,7 @@ server:
       cookie:
         http-only: false
         secure: false
+  port: 25565
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
