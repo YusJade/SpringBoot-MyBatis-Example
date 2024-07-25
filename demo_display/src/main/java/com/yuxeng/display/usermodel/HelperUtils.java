@@ -62,10 +62,10 @@ public class HelperUtils {
   /*
   检测邮箱是否符合要求
    */
-  public boolean checkEmailValidity(String mail) {
-    log.info(String.format("验证邮箱 %s 是否合法", mail));
-//    System.out.println("[DEBUG] HelperUtils | CheckEmailValidity : " + mail);
-    return mail.matches(Config.MAIL_REGEX);
+  public boolean checkEmailValidity(String email) {
+    log.info(String.format("验证邮箱 %s 是否合法", email));
+//    System.out.println("[DEBUG] HelperUtils | CheckEmailValidity : " + email);
+    return email.matches(Config.MAIL_REGEX);
   }
 
   /*
@@ -80,16 +80,16 @@ public class HelperUtils {
   /*
   融合检测——未注册用户
    */
-  public boolean powerfulCheck(String username, String password, String name, String gender, String mail) {
+  public boolean powerfulCheck(String username, String password, String name, String gender, String email) {
     return username != null &&
         password != null &&
         gender != null &&
         name != null &&
-        mail != null &&
+        email != null &&
         checkUsernameValidity(username) &&
         checkPasswordStrength(password) &&
         checkGenderValidity(gender) &&
-        checkEmailValidity(mail);
+        checkEmailValidity(email);
 
   }
 
@@ -97,12 +97,12 @@ public class HelperUtils {
   /*
   融合检测——已注册用户
    */
-  public boolean powerfulCheck(Long id, String username, String gender, String mail) {
+  public boolean powerfulCheck(Long id, String username, String gender, String email) {
     return (username == null || checkUsernameValidity(username)) &&
         (username == null || username.equals(userDao.getUserById(id).getUsername()))
         || checkUsernameNotRepeat(username) &&
         (gender == null || checkGenderValidity(gender)) &&
-        (mail == null || checkEmailValidity(mail));
+        (email == null || checkEmailValidity(email));
   }
 
   /*
