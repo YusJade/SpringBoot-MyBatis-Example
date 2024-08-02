@@ -63,10 +63,10 @@ ALTER TABLE 'tb_book' MODIFY COLUMN `author` TEXT;
 CREATE TRIGGER trg_tb_borrow_upd_book_quantity_u
 AFTER UPDATE ON tb_borrow FOR EACH ROW
 BEGIN
-    IF NEW.return_date IS NOT NULL AND OLD.return_date IS NULL THEN
+    IF NEW.really_return_date IS NOT NULL AND OLD.really_return_date IS NULL THEN
         UPDATE tb_book SET quantity = quantity + 1 WHERE id = NEW.book_id;
     END IF;
-    IF NEW.return_date IS NULL AND OLD.return_date IS NOT NULL THEN
+    IF NEW.really_return_date IS NULL AND OLD.really_return_date IS NOT NULL THEN
         UPDATE tb_book SET quantity = quantity - 1 WHERE id = NEW.book_id;
     END IF;
 END;
@@ -75,7 +75,7 @@ END;
 CREATE TRIGGER trg_tb_borrow_upd_book_quantity_i
 AFTER INSERT ON tb_borrow FOR EACH ROW
 BEGIN
-    IF NEW.return_date IS NULL THEN
+    IF NEW.really_return_date IS NULL THEN
         UPDATE tb_book SET quantity = quantity - 1 WHERE id = NEW.book_id;
     END IF;
 END;
